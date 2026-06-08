@@ -2,7 +2,7 @@ name: Actualizar datos de Jira
 
 on:
   schedule:
-    - cron: '0 */4 * * *'   # Corre cada 4 horas automáticamente
+    - cron: '0 14 * * 3,5'   # Corre cada 4 horas automáticamente
   workflow_dispatch:          # También permite correrlo manualmente desde GitHub
 
 jobs:
