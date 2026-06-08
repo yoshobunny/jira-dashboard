@@ -649,9 +649,11 @@
   // ── Tabla ────────────────────────────────────────────────
   let allIssues = [];
 
+let tableLimit = 15;
+
   function renderTable(issues) {
     const tbody = $('issues-table');
-    const slice = issues.slice(0, 50);
+    const slice = issues.slice(0, tableLimit);
     tbody.innerHTML = slice.map(i => `
       <tr>
         <td><span class="issue-key">${i.key}</span></td>
