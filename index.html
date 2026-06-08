@@ -482,7 +482,7 @@
             <th>Clave</th>
             <th>Iniciativa</th>
             <th>Estatus</th>
-            <th>Responsable</th>
+            
             <th>Épicas</th>
             <th>Storys</th>
           </tr>
@@ -865,7 +865,7 @@
           <td><span class="issue-key">${ini.key}</span></td>
           <td style="max-width:300px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${ini.summary}</td>
           <td>${statusBadge(ini.status)}</td>
-          <td style="color:#9ca3af;font-size:0.78rem">${ini.assignee}</td>
+          
           <td style="font-family:'DM Mono',monospace;font-size:0.75rem;text-align:center;color:var(--accent)">${epicasByIniciativa[ini.key] || 0}</td>
           <td style="font-family:'DM Mono',monospace;font-size:0.75rem;text-align:center;color:var(--accent3)">${issuesCountByIniciativa[ini.key] || 0}</td>
         </tr>
