@@ -512,7 +512,7 @@
             <th>Resumen</th>
             <th>Estatus</th>
             <th>Prioridad</th>
-            <th>Responsable</th>
+            
             <th>Actualizado</th>
           </tr>
         </thead>
@@ -660,7 +660,7 @@ let tableLimit = 15;
         <td style="max-width:320px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${i.summary}</td>
         <td>${statusBadge(i.status)}</td>
         <td>${priorityBadge(i.priority)}</td>
-        <td style="color:#9ca3af;font-size:0.78rem">${i.assignee}</td>
+        
         <td style="font-family:'DM Mono',monospace;font-size:0.7rem;color:#6b7280">${i.updated}</td>
       </tr>
     `).join('');
