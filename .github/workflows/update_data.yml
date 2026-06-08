@@ -23,8 +23,8 @@ jobs:
 
       - name: Correr fetch_jira.py
         env:
-          JIRA_EMAIL:     ${{ secrets.JIRAM }}
-          JIRA_API_TOKEN: ${{ secrets.JAT }}
+          JIRAM: ${{ secrets.JIRAM }}
+          JAT:   ${{ secrets.JAT }}
         run: python fetch_jira.py
 
       - name: Commit y push de data.json
