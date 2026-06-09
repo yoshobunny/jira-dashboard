@@ -30,6 +30,31 @@ function priorityBadge(p) {
   return `<span class="badge ${cls}">${label}</span>`;
 }
 
+function dueBadge(dueDate, status) {
+  if (!dueDate) return '<span style="color:#4b5563;font-size:0.72rem">—</span>';
+  const short = dueDate.slice(2); // 2026-06-30 → 26-06-30
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const due = new Date(dueDate);
+  const diffDays = Math.round((due - today) / (1000 * 60 * 60 * 24));
+
+  // Done: solo fecha en gris, sin semaforo
+  if (status && status.toLowerCase() === 'done') {
+    return `<span style="font-family:'DM Mono',monospace;font-size:0.72rem;color:#6b7280">${short}</span>`;
+  }
+
+  // Activas: semaforo por dias restantes
+  if (diffDays < 0) {
+    return `<span title="Vencida hace ${Math.abs(diffDays)} dia(s)">🔴 ${short}</span>`;
+  } else if (diffDays <= 1) {
+    return `<span title="Vence en ${diffDays} dia(s)">🔴 ${short}</span>`;
+  } else if (diffDays <= 8) {
+    return `<span title="Vence en ${diffDays} dia(s)">🟡 ${short}</span>`;
+  } else {
+    return `<span title="Vence en ${diffDays} dia(s)">🟢 ${short}</span>`;
+  }
+}
+
 function count(arr, key) {
   return arr.reduce((acc, i) => {
     acc[i[key]] = (acc[i[key]] || 0) + 1;
@@ -129,7 +154,7 @@ function line(id, labels, data) {
 
 // ── Tabla ─────────────────────────────────────────────────
 let allIssues = [];
-let tableLimit = 15;
+let tableLimit = 10;
 
 function renderTable(issues) {
   const tbody = $('issues-table');
@@ -140,7 +165,7 @@ function renderTable(issues) {
       <td style="max-width:320px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${i.summary}</td>
       <td>${statusBadge(i.status)}</td>
       <td>${priorityBadge(i.priority)}</td>
-      <td style="font-family:'DM Mono',monospace;font-size:0.7rem;color:#6b7280">${i.updated}</td>
+      <td style="font-family:'DM Mono',monospace;font-size:0.7rem;color:#6b7280">${i.updated.slice(2)}</td>
     </tr>
   `).join('');
 }
@@ -265,10 +290,19 @@ async function init() {
       }]
     });
 
-    // Chart prioridad
+    // Chart prioridad — leyenda HTML a la izquierda
     const byPriority = count(iniciativas, 'priority');
     const prioLabels = Object.keys(byPriority);
     const prioColors = prioLabels.map(p => PRIORITY_COLORS[p.toLowerCase()] || '#6b7280');
+
+    // Inyectar leyenda en el div #prio-legend
+    $('prio-legend').innerHTML = prioLabels.map((label, i) => `
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px">
+        <div style="width:10px;height:10px;border-radius:50%;background:${prioColors[i]};flex-shrink:0"></div>
+        <span style="font-family:'DM Mono',monospace;font-size:0.68rem;color:#9ca3af;white-space:nowrap">${label}</span>
+      </div>
+    `).join('');
+
     new Chart($('chartPriority'), {
       type: 'doughnut',
       data: {
@@ -277,7 +311,7 @@ async function init() {
       },
       options: {
         responsive: true, maintainAspectRatio: false, cutout: '68%',
-        plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, padding: 14, color: '#9ca3af' } } }
+        plugins: { legend: { display: false } }
       }
     });
 
@@ -339,16 +373,22 @@ async function init() {
     });
 
     const tbodyIn = $('iniciativas-table');
-    tbodyIn.innerHTML = iniciativasSorted.map((ini, idx) => `
-      <tr>
-        <td style="font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--muted)">${idx + 1}</td>
-        <td><span class="issue-key">${ini.key}</span></td>
-        <td style="max-width:300px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${ini.summary}</td>
-        <td>${statusBadge(ini.status)}</td>
-        <td style="font-family:'DM Mono',monospace;font-size:0.75rem;text-align:center;color:var(--accent)">${epicasByIniciativa[ini.key] || 0}</td>
-        <td style="font-family:'DM Mono',monospace;font-size:0.75rem;text-align:center;color:var(--accent3)">${issuesCountByIniciativa[ini.key] || 0}</td>
-      </tr>
-    `).join('');
+
+    function rowIniciativa(ini, idx) {
+      return `
+        <tr>
+          <td style="font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--muted)">${idx + 1}</td>
+          <td><span class="issue-key">${ini.key}</span></td>
+          <td style="max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${ini.summary}</td>
+          <td>${statusBadge(ini.status)}</td>
+          <td style="font-family:'DM Mono',monospace;font-size:0.72rem;white-space:nowrap">${dueBadge(ini.due_date, ini.status)}</td>
+          <td style="font-family:'DM Mono',monospace;font-size:0.75rem;text-align:center;color:var(--accent)">${epicasByIniciativa[ini.key] || 0}</td>
+          <td style="font-family:'DM Mono',monospace;font-size:0.75rem;text-align:center;color:var(--accent3)">${issuesCountByIniciativa[ini.key] || 0}</td>
+        </tr>
+      `;
+    }
+
+    tbodyIn.innerHTML = iniciativasSorted.map((ini, idx) => rowIniciativa(ini, idx)).join('');
 
     $('search-iniciativas').addEventListener('input', e => {
       const q = e.target.value.toLowerCase();
@@ -357,17 +397,7 @@ async function init() {
         i.summary.toLowerCase().includes(q) ||
         i.assignee.toLowerCase().includes(q)
       );
-      tbodyIn.innerHTML = filtered.map((ini, idx) => `
-        <tr>
-          <td style="font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--muted)">${idx + 1}</td>
-          <td><span class="issue-key">${ini.key}</span></td>
-          <td style="max-width:300px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${ini.summary}</td>
-          <td>${statusBadge(ini.status)}</td>
-          <td style="color:#9ca3af;font-size:0.78rem">${ini.assignee}</td>
-          <td style="font-family:'DM Mono',monospace;font-size:0.75rem;text-align:center;color:var(--accent)">${epicasByIniciativa[ini.key] || 0}</td>
-          <td style="font-family:'DM Mono',monospace;font-size:0.75rem;text-align:center;color:var(--accent3)">${issuesCountByIniciativa[ini.key] || 0}</td>
-        </tr>
-      `).join('');
+      tbodyIn.innerHTML = filtered.map((ini, idx) => rowIniciativa(ini, idx)).join('');
     });
 
     // Tabla actividad reciente
