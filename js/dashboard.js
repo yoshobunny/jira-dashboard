@@ -277,7 +277,7 @@ async function init() {
       },
       options: {
         responsive: true, maintainAspectRatio: false, cutout: '68%',
-        plugins: { legend: { position: 'right', labels: { boxWidth: 10, padding: 14, color: '#9ca3af' } } }
+        plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, padding: 14, color: '#9ca3af' } } }
       }
     });
 
