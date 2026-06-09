@@ -49,10 +49,10 @@ header {
 }
 
 .header-left h1 {
-  font-family: 'Syne', sans-serif;
-  font-size: 2rem;
-  font-weight: 300;
-  letter-spacing: -0.03em;
+  font-family: 'Abril Fatface', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: -0.02sem;
   line-height: 1;
 }
 
