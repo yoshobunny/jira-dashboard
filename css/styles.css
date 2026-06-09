@@ -1,1 +1,510 @@
+:root {
+  --bg:        #0d0f14;
+  --surface:   #151820;
+  --border:    #23283a;
+  --accent:    #c084fc;
+  --accent2:   #ff6b6b;
+  --accent3:   #36d399;
+  --accent4:   #ffd164;
+  --text:      #e8eaf0;
+  --muted:     #b3b3b3;
+  --done:      #36d399;
+  --inprogress:#00c9ff;
+  --todo:      #cfcfcf;
+}
 
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* Background grid pattern */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(79,124,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79,124,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; }
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.header-left h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.header-left h1 span { color: var(--accent3); }
+
+.header-left p {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 0.4rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.last-updated {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-align: right;
+}
+
+.last-updated span {
+  display: block;
+  color: var(--accent3);
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+/* KPI Cards */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.kpi-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.kpi-card.total:hover { border-color: var(--accent); }
+.kpi-card.done:hover  { border-color: var(--done); }
+.kpi-card.prog:hover  { border-color: var(--inprogress); }
+.kpi-card.todo:hover  { border-color: var(--accent4); }
+
+.kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+}
+
+.kpi-card.total::before  { background: var(--accent); }
+.kpi-card.done::before   { background: var(--done); }
+.kpi-card.prog::before   { background: var(--inprogress); }
+.kpi-card.todo::before   { background: var(--accent4); }
+
+.kpi-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.kpi-value {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.kpi-card.total  .kpi-value { color: var(--accent); }
+.kpi-card.done   .kpi-value { color: var(--done); }
+.kpi-card.prog   .kpi-value { color: var(--inprogress); }
+.kpi-card.todo   .kpi-value { color: var(--accent4); }
+
+.kpi-sub {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 0.4rem;
+}
+
+/* Progress bar */
+.progress-track { position: relative; }
+.progress-track:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -36px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e2330;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.progress-bar-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+}
+
+.progress-label strong { color: var(--done); font-size: 0.85rem; }
+
+.progress-track {
+  height: 16px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: visible;
+  display: flex;
+  position: relative;
+}
+
+.progress-fill-done {
+  height: 100%;
+  background: var(--done);
+  border-radius: 99px 0 0 99px;
+  transition: width 1s ease;
+}
+
+.progress-fill-prog {
+  height: 100%;
+  background: var(--inprogress);
+  transition: width 1s ease;
+}
+
+/* Charts grid */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.chart-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.chart-card.full { grid-column: 1 / -1; }
+
+.chart-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+}
+
+.chart-wrap {
+  position: relative;
+  height: 240px;
+}
+
+.chart-wrap.tall { height: 300px; }
+
+/* Table */
+.table-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.table-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.search-input {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  padding: 0.4rem 0.75rem;
+  outline: none;
+  width: 200px;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus { border-color: var(--accent); }
+.search-input::placeholder { color: var(--muted); }
+
+table { width: 100%; border-collapse: collapse; }
+
+th {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+td {
+  padding: 0.6rem 0.75rem;
+  font-size: 0.82rem;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  vertical-align: middle;
+}
+
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(79,124,255,0.04); }
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 99px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-done     { background: rgba(54,211,153,0.15); color: var(--done); }
+.badge-progress { background: rgba(79,124,255,0.15); color: var(--inprogress); }
+.badge-todo     { background: rgba(107,114,128,0.15); color: var(--muted); }
+.badge-high     { background: rgba(255,107,107,0.15); color: var(--accent2); }
+.badge-medium   { background: rgba(251,191,36,0.15);  color: var(--accent4); }
+.badge-low      { background: rgba(107,114,128,0.15); color: var(--muted); }
+
+.issue-key {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--accent);
+}
+
+/* Loading */
+#loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 40px; height: 40px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+#loading p {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+#error-msg {
+  display: none;
+  background: rgba(255,107,107,0.1);
+  border: 1px solid rgba(255,107,107,0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  color: var(--accent2);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+#dashboard { display: none; }
+
+/* Fade in */
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn { to { opacity: 1; } }
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  body {
+    padding: 1rem;
+  }
+
+  /* Header: apilar verticalmente */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .last-updated {
+    text-align: left;
+  }
+
+  /* KPIs: 2 columnas en móvil */
+  .kpi-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .kpi-value {
+    font-size: 1.8rem;
+  }
+
+  .kpi-label {
+    font-size: 0.62rem;
+  }
+
+  /* Charts: una columna */
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Gráficas más altas en móvil para que respiren */
+  .chart-wrap {
+    height: 280px;
+  }
+
+  .chart-wrap.tall {
+    height: 260px;
+  }
+
+  /* Tabla: header en columna */
+  .table-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  /* Ocultar columnas menos críticas en móvil */
+  table th:nth-child(4),
+  table td:nth-child(4) {
+    display: none;
+  }
+
+  td {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.5rem;
+  }
+
+  th {
+    font-size: 0.6rem;
+    padding: 0.4rem 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .header-left h1 {
+    font-size: 1.5rem;
+  }
+
+  /* KPIs: una sola columna en pantallas muy pequeñas */
+  .kpi-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+
+  .kpi-card {
+    padding: 1rem;
+  }
+
+  /* Ocultar más columnas en pantallas muy pequeñas */
+  table th:nth-child(5),
+  table td:nth-child(5) {
+    display: none;
+  }
+}
+
+/* ── Fixes tabla actividad reciente ─────────────────────── */
+
+/* Badge nunca rompe en dos líneas */
+.badge {
+  white-space: nowrap;
+}
+
+/* Tabla con scroll contenido, no desborda el layout */
+.table-card {
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+
+  /* Ocultar columna Actualizado en actividad reciente */
+  /* (es la última columna — th:last-child / td:last-child) */
+  .table-card table th:last-child,
+  .table-card table td:last-child {
+    display: none;
+  }
+
+  /* Clave: ancho fijo para que no rompa */
+  .table-card table td:first-child,
+  .table-card table th:first-child {
+    width: 72px;
+    min-width: 72px;
+  }
+
+  /* Resumen: que se corte con ellipsis */
+  .table-card table td:nth-child(2) {
+    max-width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
