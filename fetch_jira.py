@@ -26,7 +26,7 @@ def get_issues():
         params = {
             "jql": f"project = {PROJECT_KEY} ORDER BY created DESC",
             "maxResults": 100,
-            "fields": "summary,status,assignee,priority,issuetype,created,updated,parent"
+            "fields": "summary,status,assignee,priority,issuetype,created,updated,parent,duedate,customfield_10015,customfield_10200"
         }
 
         if next_token:
@@ -56,24 +56,31 @@ def process_issues(issues):
     for issue in issues:
         fields = issue["fields"]
 
-        parent = fields.get("parent")
-        parent_key     = parent["key"]                       if parent else None
-        parent_summary = parent["fields"]["summary"]         if parent else None
-        parent_type    = parent["fields"]["issuetype"]["name"] if parent else None
+        try:
+            parent = fields.get("parent")
+            parent_key     = parent["key"]                         if parent else None
+            parent_summary = parent["fields"]["summary"]           if parent else None
+            parent_type    = parent["fields"]["issuetype"]["name"] if parent else None
 
-        processed.append({
-            "key":            issue["key"],
-            "summary":        fields["summary"],
-            "status":         fields["status"]["name"],
-            "priority":       fields["priority"]["name"] if fields.get("priority") else "Sin prioridad",
-            "type":           fields["issuetype"]["name"],
-            "assignee":       fields["assignee"]["displayName"] if fields.get("assignee") else "Sin asignar",
-            "created":        fields["created"][:10],
-            "updated":        fields["updated"][:10],
-            "parent_key":     parent_key,
-            "parent_summary": parent_summary,
-            "parent_type":    parent_type,
-        })
+            print(f"Procesando issue #{len(processed)+1}: {issue['key']}")
+            processed.append({
+                "key":            issue["key"],
+                "summary":        fields["summary"],
+                "status":         fields["status"]["name"],
+                "priority":       fields["priority"]["name"] if fields.get("priority") else "Sin prioridad",
+                "type":           fields["issuetype"]["name"],
+                "assignee":       fields["assignee"]["displayName"] if fields.get("assignee") else "Sin asignar",
+                "created":        fields["created"][:10],
+                "updated":        fields["updated"][:10],
+                "parent_key":     parent_key,
+                "parent_summary": parent_summary,
+                "parent_type":    parent_type,
+                "due_date": fields.get("customfield_10200") or fields.get("duedate"),
+                "start_date":     fields.get("customfield_10015"),
+            })
+        except Exception as e:
+            print(f"ERROR en {issue['key']}: {e}")
+            continue
     return processed
 
 def main():
@@ -91,6 +98,7 @@ def main():
 
     print(f"\n✅ Listo — {len(processed)} issues guardados en data.json")
 
+    # Resumen rápido en consola
     statuses = {}
     for issue in processed:
         s = issue["status"]
