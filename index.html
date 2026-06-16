@@ -23,8 +23,8 @@
 
     <header class="fade-in">
       <div class="header-left">
-        <h1>PORTAFOLIO <span>GDLU</span></h1>
-        <p>Tablero de seguimiento Jira</p>
+        <h1>Gestión de la <span>Universidad</span></h1>
+        <p> Tablero se seguimiento Jira</p>
       </div>
       <div class="last-updated">
         Última actualización
@@ -67,8 +67,7 @@
         <div class="progress-fill-prog"  id="bar-prog" style="width:0%"></div>
       </div>
     </div>
-
-    <!-- Charts -->
+<!-- Charts -->
     <div class="charts-grid fade-in">
       <div class="chart-card">
         <div class="chart-title">Iniciativas por estatus</div>
@@ -86,9 +85,21 @@
         </div>
       </div>
       <div class="chart-card">
-        <div class="chart-title">Iniciativas por responsable</div>
+        <div class="chart-title">Iniciativas activas por responsable</div>
         <div class="chart-wrap">
           <canvas id="chartAssignee"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Total histórico por responsable</div>
+        <div class="chart-wrap">
+          <canvas id="chartAssigneeTotal"></canvas>
+        </div>
+      </div>
+      <div class="chart-card full">
+        <div class="chart-title">Cierres por bimestre</div>
+        <div class="chart-wrap">
+          <canvas id="chartBimestre"></canvas>
         </div>
       </div>
     </div>
@@ -107,6 +118,7 @@
             <th>Iniciativa</th>
             <th>Estatus</th>
             <th>Fecha fin</th>
+            <th>Responsable</th>
             <th>Épicas</th>
             <th>Storys</th>
           </tr>
