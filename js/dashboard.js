@@ -5,6 +5,13 @@ const NAME_MAP = {
   'Eduardo Rodriguez': 'ER',
 };
 
+// ── Color fijo por persona ─────────────────────────────────
+const ASSIGNEE_COLORS = {
+  'JN': '#c084fc',
+  'ER': '#00c9ff',
+  'JM': '#ffa87c',
+};
+
 // ── Helpers ───────────────────────────────────────────────
 const $ = id => document.getElementById(id);
 
@@ -330,14 +337,27 @@ async function init() {
       topIniciativas.map(e => e[1]),
       '#a78bfa');
 
-    // Chart responsable — con NAME_MAP aplicado
-    const byAssignee = count(iniciativas, 'assignee');
-    const top8 = Object.entries(byAssignee).sort((a,b) => b[1]-a[1]).slice(0,8);
+    // Chart responsable — activas (excluye Done)
+    const iniciativasActivas = iniciativas.filter(i => i.status.toLowerCase() !== 'done');
+    const byAssigneeActivas = count(iniciativasActivas, 'assignee');
+    const top8activas = Object.entries(byAssigneeActivas).sort((a,b) => b[1]-a[1]).slice(0,8);
+    const labelsActivas = top8activas.map(([a]) => NAME_MAP[a] || a);
     hbar(
       'chartAssignee',
-      top8.map(([assignee]) => NAME_MAP[assignee] || assignee), // ← aquí se aplica el mapeo
-      top8.map(([, val]) => val),
-      COLORS
+      labelsActivas,
+      top8activas.map(([, val]) => val),
+      labelsActivas.map(k => ASSIGNEE_COLORS[k] || '#6b7280')
+    );
+
+    // Chart responsable — total histórico (incluye Done)
+    const byAssigneeTotal = count(iniciativas, 'assignee');
+    const top8total = Object.entries(byAssigneeTotal).sort((a,b) => b[1]-a[1]).slice(0,8);
+    const labelsTotal = top8total.map(([a]) => NAME_MAP[a] || a);
+    hbar(
+      'chartAssigneeTotal',
+      labelsTotal,
+      top8total.map(([, val]) => val),
+      labelsTotal.map(k => ASSIGNEE_COLORS[k] || '#6b7280')
     );
 
     // Charts — actividad últimos 30 días
@@ -382,6 +402,7 @@ async function init() {
           <td style="max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${ini.summary}</td>
           <td>${statusBadge(ini.status)}</td>
           <td style="font-family:'DM Mono',monospace;font-size:0.72rem;white-space:nowrap">${dueBadge(ini.due_date, ini.status)}</td>
+          <td style="font-family:'DM Mono',monospace;font-size:0.72rem;text-align:center;color:var(--muted)">${NAME_MAP[ini.assignee] || ini.assignee || '—'}</td>
           <td style="font-family:'DM Mono',monospace;font-size:0.75rem;text-align:center;color:var(--accent)">${epicasByIniciativa[ini.key] || 0}</td>
           <td style="font-family:'DM Mono',monospace;font-size:0.75rem;text-align:center;color:var(--accent3)">${issuesCountByIniciativa[ini.key] || 0}</td>
         </tr>
@@ -404,6 +425,74 @@ async function init() {
     const sorted = [...issues].sort((a,b) => b.updated.localeCompare(a.updated));
     allIssues = sorted;
     renderTable(sorted);
+
+    //Nueva grafica por bimestre iniciativas cerrada
+    // Chart cierres por bimestre
+    const bimestreLabels = ['Nov–Dic 25', 'Ene–Feb 26', 'Mar–Abr 26', 'May–Jun 26', 'Jul–Ago 26', 'Sep–Oct 26', 'Nov–Dic 26'];
+    const bimestreRanges = [
+      ['2025-11-01', '2025-12-31'],
+      ['2026-01-01', '2026-02-28'],
+      ['2026-03-01', '2026-04-30'],
+      ['2026-05-01', '2026-06-30'],
+      ['2026-07-01', '2026-08-31'],
+      ['2026-09-01', '2026-10-31'],
+      ['2026-11-01', '2026-12-31'],
+    ];
+    const bimestreData = bimestreRanges.map(([start, end]) =>
+      iniciativas.filter(i => {
+        if (i.status.toLowerCase() !== 'done' || !i.due_date) return false;
+        return i.due_date >= start && i.due_date <= end;
+      }).length
+    );
+
+    new Chart($('chartBimestre'), {
+      type: 'bar',
+      data: {
+        labels: bimestreLabels,
+        datasets: [{
+          data: bimestreData,
+          backgroundColor: ['#00c9ff', '#ff86a7', '#ffa87c', '#36d399'],
+          borderRadius: 6,
+          borderSkipped: false,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.y} iniciativa${ctx.parsed.y !== 1 ? 's' : ''}` } }
+        },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: '#6b7280' } },
+          y: {
+            grid: { color: 'rgba(255,255,255,0.04)' },
+            ticks: { color: '#6b7280', stepSize: 1 },
+            beginAtZero: true,
+            max: Math.max(...bimestreData) + 1
+          }
+        }
+      },
+      plugins: [{
+        id: 'topLabels',
+        afterDatasetsDraw(chart) {
+          const { ctx, data } = chart;
+          chart.getDatasetMeta(0).data.forEach((bar, i) => {
+            const val = data.datasets[0].data[i];
+            ctx.save();
+            ctx.font = "bold 11px 'DM Mono', monospace";
+            ctx.fillStyle = '#e8eaf0';
+            ctx.textAlign = 'center';
+            ctx.fillText(val, bar.x, bar.y - 6);
+            ctx.restore();
+          });
+        }
+      }]
+    });
+
+    
+
+
 
     // Show
     $('loading').style.display  = 'none';
