@@ -11,7 +11,7 @@
     "parent_key": "LDP-226",
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
-    "due_date": "2026-09-18",
+    "due_date": "2026-08-28",
     "start_date": "2026-06-10"
   },
   {
@@ -176,7 +176,7 @@
     "parent_key": "LDP-226",
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
-    "due_date": "2026-10-01",
+    "due_date": "2026-09-30",
     "start_date": "2026-06-08"
   },
   {
@@ -371,7 +371,7 @@
     "parent_key": "UGSU01-105",
     "parent_summary": "636 Cámaras de seguridad Ferrería",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-03-20",
     "start_date": "2026-01-05"
   },
   {
@@ -446,7 +446,7 @@
     "parent_key": "UGSU01-132",
     "parent_summary": "635 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2026-02-06",
     "start_date": "2026-01-26"
   },
   {
@@ -461,7 +461,7 @@
     "parent_key": "UGSU01-132",
     "parent_summary": "635 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2026-02-06",
     "start_date": "2026-01-26"
   },
   {
@@ -476,7 +476,7 @@
     "parent_key": "UGSU01-132",
     "parent_summary": "635 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2026-01-30",
     "start_date": "2026-01-12"
   },
   {
@@ -491,7 +491,7 @@
     "parent_key": "UGSU01-132",
     "parent_summary": "635 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2025-12-22",
     "start_date": "2025-12-19"
   },
   {
@@ -551,7 +551,7 @@
     "parent_key": "UGSU01-104",
     "parent_summary": "635 Cámaras de seguridad Durango",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-01-23",
     "start_date": "2025-12-19"
   },
   {
@@ -641,7 +641,7 @@
     "parent_key": "UGSU01-120",
     "parent_summary": "627 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2026-02-06",
     "start_date": "2026-01-26"
   },
   {
@@ -656,7 +656,7 @@
     "parent_key": "UGSU01-120",
     "parent_summary": "627 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2026-01-30",
     "start_date": "2026-01-12"
   },
   {
@@ -671,7 +671,7 @@
     "parent_key": "UGSU01-120",
     "parent_summary": "627 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2025-12-08",
     "start_date": "2025-12-05"
   },
   {
@@ -731,7 +731,7 @@
     "parent_key": "UGSU01-106",
     "parent_summary": "627 Laboratorio de Redes Industriales Querétaro",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-01-30",
     "start_date": "2025-12-05"
   },
   {
@@ -821,7 +821,7 @@
     "parent_key": "UGSU01-108",
     "parent_summary": "634 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2026-01-30",
     "start_date": "2026-01-19"
   },
   {
@@ -836,7 +836,7 @@
     "parent_key": "UGSU01-108",
     "parent_summary": "634 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2026-01-23",
     "start_date": "2025-12-23"
   },
   {
@@ -851,7 +851,7 @@
     "parent_key": "UGSU01-108",
     "parent_summary": "634 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2025-12-23",
     "start_date": "2025-12-19"
   },
   {
@@ -881,7 +881,7 @@
     "parent_key": "UGSU01-103",
     "parent_summary": "634 Cámaras de seguridad Mazatlán",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-02-20",
     "start_date": "2026-01-26"
   },
   {
@@ -896,7 +896,7 @@
     "parent_key": "UGSU01-103",
     "parent_summary": "634 Cámaras de seguridad Mazatlán",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-01-23",
     "start_date": "2025-12-22"
   },
   {
@@ -911,7 +911,7 @@
     "parent_key": "UGSU01-103",
     "parent_summary": "634 Cámaras de seguridad Mazatlán",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-04-30",
     "start_date": "2025-12-19"
   },
   {
@@ -922,11 +922,11 @@
     "type": "Iniciativa",
     "assignee": "Jazz Novelo",
     "created": "2025-12-22",
-    "updated": "2026-06-07",
+    "updated": "2026-06-15",
     "parent_key": null,
     "parent_summary": null,
     "parent_type": null,
-    "due_date": null,
+    "due_date": "2026-08-31",
     "start_date": "2026-01-07"
   },
   {
@@ -941,7 +941,7 @@
     "parent_key": null,
     "parent_summary": null,
     "parent_type": null,
-    "due_date": null,
+    "due_date": "2026-05-01",
     "start_date": "2025-12-08"
   },
   {
@@ -956,7 +956,7 @@
     "parent_key": null,
     "parent_summary": null,
     "parent_type": null,
-    "due_date": null,
+    "due_date": "2026-03-20",
     "start_date": "2026-01-05"
   },
   {
@@ -971,7 +971,7 @@
     "parent_key": null,
     "parent_summary": null,
     "parent_type": null,
-    "due_date": null,
+    "due_date": "2026-01-23",
     "start_date": "2025-11-24"
   },
   {
@@ -986,7 +986,7 @@
     "parent_key": null,
     "parent_summary": null,
     "parent_type": null,
-    "due_date": null,
+    "due_date": "2026-02-06",
     "start_date": "2025-12-01"
   },
   {
@@ -1031,7 +1031,7 @@
     "parent_key": "UGSU01-50",
     "parent_summary": "609 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2025-10-10",
     "start_date": "2025-10-06"
   },
   {
@@ -1046,7 +1046,7 @@
     "parent_key": "UGSU01-50",
     "parent_summary": "609 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2026-01-02",
     "start_date": "2025-09-17"
   },
   {
@@ -1061,7 +1061,7 @@
     "parent_key": "UGSU01-50",
     "parent_summary": "609 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2026-01-02",
     "start_date": "2025-09-17"
   },
   {
@@ -1076,7 +1076,7 @@
     "parent_key": "UGSU01-50",
     "parent_summary": "609 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2025-09-16",
     "start_date": "2025-09-16"
   },
   {
@@ -1151,7 +1151,7 @@
     "parent_key": "UGSU01-45",
     "parent_summary": "630 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2026-01-30",
     "start_date": "2026-01-12"
   },
   {
@@ -1181,7 +1181,7 @@
     "parent_key": "UGSU01-45",
     "parent_summary": "630 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2026-01-16",
     "start_date": "2025-12-03"
   },
   {
@@ -1196,7 +1196,7 @@
     "parent_key": "UGSU01-45",
     "parent_summary": "630 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2025-12-03",
     "start_date": "2025-12-02"
   },
   {
@@ -1301,7 +1301,7 @@
     "parent_key": "UGSU01-40",
     "parent_summary": "629 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2026-01-16",
     "start_date": "2025-12-03"
   },
   {
@@ -1421,7 +1421,7 @@
     "parent_key": "UGSU01-35",
     "parent_summary": "628 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2026-01-16",
     "start_date": "2025-12-02"
   },
   {
@@ -1436,7 +1436,7 @@
     "parent_key": "UGSU01-35",
     "parent_summary": "628 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2025-12-02",
     "start_date": "2025-12-01"
   },
   {
@@ -1496,7 +1496,7 @@
     "parent_key": "UGSU01-30",
     "parent_summary": "520 G ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2025-12-12",
     "start_date": "2025-12-08"
   },
   {
@@ -1511,7 +1511,7 @@
     "parent_key": "UGSU01-30",
     "parent_summary": "520 G ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2025-12-12",
     "start_date": "2025-12-08"
   },
   {
@@ -1526,7 +1526,7 @@
     "parent_key": "UGSU01-30",
     "parent_summary": "520 G ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2025-12-12",
     "start_date": "2025-12-04"
   },
   {
@@ -1541,7 +1541,7 @@
     "parent_key": "UGSU01-30",
     "parent_summary": "520 G ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2025-12-03",
     "start_date": "2025-12-02"
   },
   {
@@ -1661,7 +1661,7 @@
     "parent_key": "UGSU01-22",
     "parent_summary": "520 H EPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2025-12-03",
     "start_date": "2025-12-02"
   },
   {
@@ -1691,7 +1691,7 @@
     "parent_key": "UGSU01-4",
     "parent_summary": "520 F EPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2025-12-16",
     "start_date": "2025-12-01"
   },
   {
@@ -1706,7 +1706,7 @@
     "parent_key": "UGSU01-49",
     "parent_summary": "609 Sensores de vapeo y agresiones para baños de campus Las Torres",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-02-06",
     "start_date": "2026-01-19"
   },
   {
@@ -1721,7 +1721,7 @@
     "parent_key": "UGSU01-49",
     "parent_summary": "609 Sensores de vapeo y agresiones para baños de campus Las Torres",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-01-30",
     "start_date": "2025-09-22"
   },
   {
@@ -1736,7 +1736,7 @@
     "parent_key": "UGSU01-49",
     "parent_summary": "609 Sensores de vapeo y agresiones para baños de campus Las Torres",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2025-09-19",
     "start_date": "2025-09-01"
   },
   {
@@ -1751,7 +1751,7 @@
     "parent_key": "UGSU01-49",
     "parent_summary": "609 Sensores de vapeo y agresiones para baños de campus Las Torres",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-09-25",
     "start_date": "2025-08-25"
   },
   {
@@ -1762,11 +1762,11 @@
     "type": "Iniciativa",
     "assignee": "Jazz Novelo",
     "created": "2025-12-01",
-    "updated": "2026-03-30",
+    "updated": "2026-06-15",
     "parent_key": null,
     "parent_summary": null,
     "parent_type": null,
-    "due_date": null,
+    "due_date": "2026-08-31",
     "start_date": "2025-08-25"
   },
   {
@@ -1781,7 +1781,7 @@
     "parent_key": "UGSU01-44",
     "parent_summary": "630 Cámaras de seguridad Guadalajara",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-04-17",
     "start_date": "2026-03-23"
   },
   {
@@ -1796,7 +1796,7 @@
     "parent_key": "UGSU01-44",
     "parent_summary": "630 Cámaras de seguridad Guadalajara",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-04-24",
     "start_date": "2026-01-19"
   },
   {
@@ -1811,7 +1811,7 @@
     "parent_key": "UGSU01-44",
     "parent_summary": "630 Cámaras de seguridad Guadalajara",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-01-30",
     "start_date": "2026-01-05"
   },
   {
@@ -1826,7 +1826,7 @@
     "parent_key": "UGSU01-44",
     "parent_summary": "630 Cámaras de seguridad Guadalajara",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-01-30",
     "start_date": "2025-11-24"
   },
   {
@@ -1856,7 +1856,7 @@
     "parent_key": "UGSU01-39",
     "parent_summary": "629 Cámaras de seguridad Zapopan",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-04-17",
     "start_date": "2026-03-30"
   },
   {
@@ -1871,7 +1871,7 @@
     "parent_key": "UGSU01-39",
     "parent_summary": "629 Cámaras de seguridad Zapopan",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-04-10",
     "start_date": "2026-02-09"
   },
   {
@@ -1886,7 +1886,7 @@
     "parent_key": "UGSU01-39",
     "parent_summary": "629 Cámaras de seguridad Zapopan",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-02-06",
     "start_date": "2026-01-19"
   },
   {
@@ -1916,7 +1916,7 @@
     "parent_key": null,
     "parent_summary": null,
     "parent_type": null,
-    "due_date": null,
+    "due_date": "2026-04-30",
     "start_date": "2025-11-24"
   },
   {
@@ -1931,7 +1931,7 @@
     "parent_key": "UGSU01-34",
     "parent_summary": "628 Cámaras de seguridad San Luis",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-04-17",
     "start_date": "2026-03-30"
   },
   {
@@ -1946,7 +1946,7 @@
     "parent_key": "UGSU01-34",
     "parent_summary": "628 Cámaras de seguridad San Luis",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-04-24",
     "start_date": "2026-01-19"
   },
   {
@@ -1961,7 +1961,7 @@
     "parent_key": "UGSU01-34",
     "parent_summary": "628 Cámaras de seguridad San Luis",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-01-16",
     "start_date": "2025-12-29"
   },
   {
@@ -1976,7 +1976,7 @@
     "parent_key": "UGSU01-34",
     "parent_summary": "628 Cámaras de seguridad San Luis",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-01-22",
     "start_date": "2025-11-24"
   },
   {
@@ -1991,7 +1991,7 @@
     "parent_key": null,
     "parent_summary": null,
     "parent_type": null,
-    "due_date": null,
+    "due_date": "2026-02-13",
     "start_date": "2025-12-15"
   },
   {
@@ -2006,7 +2006,7 @@
     "parent_key": "UGSU01-29",
     "parent_summary": "520 G. Seguridad en campus II: Guadalupe",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-04-10",
     "start_date": "2026-03-30"
   },
   {
@@ -2021,7 +2021,7 @@
     "parent_key": "UGSU01-29",
     "parent_summary": "520 G. Seguridad en campus II: Guadalupe",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-04-03",
     "start_date": "2026-01-05"
   },
   {
@@ -2036,7 +2036,7 @@
     "parent_key": "UGSU01-29",
     "parent_summary": "520 G. Seguridad en campus II: Guadalupe",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-01-16",
     "start_date": "2025-12-22"
   },
   {
@@ -2051,7 +2051,7 @@
     "parent_key": "UGSU01-29",
     "parent_summary": "520 G. Seguridad en campus II: Guadalupe",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2025-12-19",
     "start_date": "2025-11-24"
   },
   {
@@ -2066,7 +2066,7 @@
     "parent_key": null,
     "parent_summary": null,
     "parent_type": null,
-    "due_date": null,
+    "due_date": "2025-12-31",
     "start_date": "2025-11-24"
   },
   {
@@ -2081,7 +2081,7 @@
     "parent_key": "UGSU01-20",
     "parent_summary": "520 H. Seguridad en campus II: Ciudad Juárez",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-03-13",
     "start_date": "2026-02-23"
   },
   {
@@ -2096,7 +2096,7 @@
     "parent_key": "UGSU01-20",
     "parent_summary": "520 H. Seguridad en campus II: Ciudad Juárez",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-04-30",
     "start_date": "2025-12-19"
   },
   {
@@ -2111,7 +2111,7 @@
     "parent_key": "UGSU01-20",
     "parent_summary": "520 H. Seguridad en campus II: Ciudad Juárez",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-04-30",
     "start_date": "2025-12-19"
   },
   {
@@ -2126,7 +2126,7 @@
     "parent_key": "UGSU01-20",
     "parent_summary": "520 H. Seguridad en campus II: Ciudad Juárez",
     "parent_type": "Iniciativa",
-    "due_date": null,
+    "due_date": "2026-04-10",
     "start_date": "2025-11-26"
   },
   {
@@ -2137,11 +2137,11 @@
     "type": "Iniciativa",
     "assignee": "Jazz Novelo",
     "created": "2025-11-28",
-    "updated": "2026-03-30",
+    "updated": "2026-06-15",
     "parent_key": null,
     "parent_summary": null,
     "parent_type": null,
-    "due_date": null,
+    "due_date": "2026-08-31",
     "start_date": "2025-11-24"
   },
   {
@@ -2186,7 +2186,7 @@
     "parent_key": "UGSU01-4",
     "parent_summary": "520 F EPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2025-12-12",
     "start_date": "2025-11-27"
   },
   {
@@ -2216,7 +2216,7 @@
     "parent_key": "UGSU01-4",
     "parent_summary": "520 F EPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
-    "due_date": null,
+    "due_date": "2025-12-12",
     "start_date": "2025-11-24"
   },
   {
@@ -2231,7 +2231,7 @@
     "parent_key": "UGSU01-3",
     "parent_summary": "520 F. Seguridad en campus II: San Nicolás",
     "parent_type": "Iniciativa",
-    "due_date": "2026-01-07",
+    "due_date": "2026-01-23",
     "start_date": "2025-12-08"
   },
   {
@@ -2246,7 +2246,7 @@
     "parent_key": "UGSU01-3",
     "parent_summary": "520 F. Seguridad en campus II: San Nicolás",
     "parent_type": "Iniciativa",
-    "due_date": "2025-12-31",
+    "due_date": "2025-12-26",
     "start_date": "2025-12-01"
   },
   {
@@ -2291,7 +2291,7 @@
     "parent_key": null,
     "parent_summary": null,
     "parent_type": null,
-    "due_date": null,
+    "due_date": "2025-12-31",
     "start_date": "2025-11-11"
   }
 ]
