@@ -75,7 +75,7 @@ Chart.defaults.font.family = "'DM Mono', monospace";
 Chart.defaults.font.size = 11;
 
 const COLORS = ['#00c9ff','#ff86a7','#ffa87c','#36d399','#fbbf24','#c084fc','#f97316','#ec4899'];
-const MONTH_COLORS = ['#ffd164','#a7c264','#36d399','#00ead7','#00dbf4','#00c9ff','#6c91ea','#c084fc','#ff7bd7','#ff86a7','#ffa87c','#ff9f43'];
+const MONTH_COLORS = ['#f97316','#ffa87c','#ffd164','#fbbf24','#a3e635','#36d399','#00c9ff','#4f7cff','#818cf8','#c084fc','#e879a0','#ff86a7'];
 
 const PRIORITY_COLORS = {
   'highest': '#ff6b6b',
@@ -414,7 +414,49 @@ async function init() {
       `;
     }
 
-    tbodyIn.innerHTML = iniciativasSorted.map((ini, idx) => rowIniciativa(ini, idx)).join('');
+    let activeStatusTab = 'in progress';
+
+    function renderIniciativasTab(list) {
+      const filtered = list.filter(i => {
+        const statusKey = i.status.toLowerCase();
+        const groupKey = STATUS_ORDER[statusKey] !== undefined ? statusKey : 'to do';
+        return groupKey === activeStatusTab;
+      });
+      tbodyIn.innerHTML = filtered.map((ini, idx) => rowIniciativa(ini, idx)).join('');
+    }
+
+    function updateTabCounts(list) {
+      document.querySelectorAll('.status-tab').forEach(btn => {
+        const key = btn.dataset.status;
+        const count = list.filter(i => {
+          const statusKey = i.status.toLowerCase();
+          const groupKey = STATUS_ORDER[statusKey] !== undefined ? statusKey : 'to do';
+          return groupKey === key;
+        }).length;
+        const label = key === 'in progress' ? 'In progress' : key === 'to do' ? 'To do' : 'Done';
+        btn.textContent = `${label} · ${count}`;
+      });
+    }
+
+    updateTabCounts(iniciativasSorted);
+    renderIniciativasTab(iniciativasSorted);
+
+    document.querySelectorAll('.status-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.status-tab').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeStatusTab = btn.dataset.status;
+        const q = $('search-iniciativas').value.toLowerCase();
+        const base = q
+          ? iniciativasSorted.filter(i =>
+              i.key.toLowerCase().includes(q) ||
+              i.summary.toLowerCase().includes(q) ||
+              i.assignee.toLowerCase().includes(q)
+            )
+          : iniciativasSorted;
+        renderIniciativasTab(base);
+      });
+    });
 
     $('search-iniciativas').addEventListener('input', e => {
       const q = e.target.value.toLowerCase();
@@ -423,7 +465,8 @@ async function init() {
         i.summary.toLowerCase().includes(q) ||
         i.assignee.toLowerCase().includes(q)
       );
-      tbodyIn.innerHTML = filtered.map((ini, idx) => rowIniciativa(ini, idx)).join('');
+      updateTabCounts(filtered);
+      renderIniciativasTab(filtered);
     });
 
     // Tabla actividad reciente
@@ -433,9 +476,8 @@ async function init() {
 
     //Nueva grafica por bimestre iniciativas cerrada
     // Chart cierres por bimestre
-    const bimestreLabels = ['Dic 25', 'Ene 26', 'Feb 26', 'Mar 26', 'Abr 26', 'May 26', 'Jun 26', 'Jul 26', 'Ago 26', 'Sep 26', 'Oct 26', 'Nov 26', 'Dic 26'];
+    const bimestreLabels = ['Ene 26', 'Feb 26', 'Mar 26', 'Abr 26', 'May 26', 'Jun 26', 'Jul 26', 'Ago 26', 'Sep 26', 'Oct 26', 'Nov 26', 'Dic 26'];
     const bimestreRanges = [
-      ['2025-12-01', '2025-12-31'],
       ['2026-01-01', '2026-01-31'],
       ['2026-02-01', '2026-02-28'],
       ['2026-03-01', '2026-03-31'],
