@@ -1,18 +1,18 @@
-// ── Mapeo de nombres a iniciales ──────────────────────────
+//  Mapeo de nombres a iniciales 
 const NAME_MAP = {
   'Jazz Novelo':       'JN',
   'Juan Manuel Garza': 'JM',
   'Eduardo Rodriguez': 'ER',
 };
 
-// ── Color fijo por persona ─────────────────────────────────
+// Color fijo por persona
 const ASSIGNEE_COLORS = {
   'JN': '#c084fc',
   'ER': '#00c9ff',
   'JM': '#ffa87c',
 };
 
-// ── Helpers ───────────────────────────────────────────────
+// Helpers
 const $ = id => document.getElementById(id);
 
 function statusBadge(s) {
@@ -69,14 +69,13 @@ function count(arr, key) {
   }, {});
 }
 
-// ── Chart defaults ────────────────────────────────────────
+//  Chart defaults
 Chart.defaults.color = '#6b7280';
 Chart.defaults.font.family = "'DM Mono', monospace";
 Chart.defaults.font.size = 11;
 
 const COLORS = ['#00c9ff','#ff86a7','#ffa87c','#36d399','#fbbf24','#c084fc','#f97316','#ec4899'];
-const MONTH_COLORS = ['#f97316','#ffa87c','#ffd164','#fbbf24','#a3e635','#36d399','#00c9ff','#4f7cff','#818cf8','#c084fc','#e879a0','#ff86a7'];
-
+const MONTH_COLORS = ['#ffd164','#a7c264','#36d399','#00ead7','#00dbf4','#00c9ff','#6c91ea','#c084fc','#ff7bd7','#ff86a7','#ffa87c','#ff9f43'];
 const PRIORITY_COLORS = {
   'highest': '#ff6b6b',
   'high':    '#ffa87c',
@@ -160,7 +159,7 @@ function line(id, labels, data) {
   });
 }
 
-// ── Tabla ─────────────────────────────────────────────────
+// Tabla
 let allIssues = [];
 let tableLimit = 10;
 
@@ -187,7 +186,7 @@ $('search').addEventListener('input', e => {
   ));
 });
 
-// ── Main ──────────────────────────────────────────────────
+//  Main 
 async function init() {
   try {
     const res = await fetch('data.json');
@@ -474,8 +473,7 @@ async function init() {
     allIssues = sorted;
     renderTable(sorted);
 
-    //Nueva grafica por bimestre iniciativas cerrada
-    // Chart cierres por bimestre
+    // Grafica por mes iniciativas cerrada
     const bimestreLabels = ['Ene 26', 'Feb 26', 'Mar 26', 'Abr 26', 'May 26', 'Jun 26', 'Jul 26', 'Ago 26', 'Sep 26', 'Oct 26', 'Nov 26', 'Dic 26'];
     const bimestreRanges = [
       ['2026-01-01', '2026-01-31'],
@@ -542,10 +540,6 @@ async function init() {
         }
       }]
     });
-
-    
-
-
 
     // Show
     $('loading').style.display  = 'none';
