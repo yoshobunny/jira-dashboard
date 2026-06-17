@@ -75,6 +75,7 @@ Chart.defaults.font.family = "'DM Mono', monospace";
 Chart.defaults.font.size = 11;
 
 const COLORS = ['#00c9ff','#ff86a7','#ffa87c','#36d399','#fbbf24','#c084fc','#f97316','#ec4899'];
+const MONTH_COLORS = ['#f97316','#ffa87c','#ffd164','#fbbf24','#a3e635','#36d399','#00c9ff','#4f7cff','#818cf8','#c084fc','#e879a0','#ff86a7'];
 
 const PRIORITY_COLORS = {
   'highest': '#ff6b6b',
@@ -432,15 +433,22 @@ async function init() {
 
     //Nueva grafica por bimestre iniciativas cerrada
     // Chart cierres por bimestre
-    const bimestreLabels = ['Nov–Dic 25', 'Ene–Feb 26', 'Mar–Abr 26', 'May–Jun 26', 'Jul–Ago 26', 'Sep–Oct 26', 'Nov–Dic 26'];
+    const bimestreLabels = ['Nov 25', 'Dic 25', 'Ene 26', 'Feb 26', 'Mar 26', 'Abr 26', 'May 26', 'Jun 26', 'Jul 26', 'Ago 26', 'Sep 26', 'Oct 26', 'Nov 26', 'Dic 26'];
     const bimestreRanges = [
-      ['2025-11-01', '2025-12-31'],
-      ['2026-01-01', '2026-02-28'],
-      ['2026-03-01', '2026-04-30'],
-      ['2026-05-01', '2026-06-30'],
-      ['2026-07-01', '2026-08-31'],
-      ['2026-09-01', '2026-10-31'],
-      ['2026-11-01', '2026-12-31'],
+      ['2025-11-01', '2025-11-30'],
+      ['2025-12-01', '2025-12-31'],
+      ['2026-01-01', '2026-01-31'],
+      ['2026-02-01', '2026-02-28'],
+      ['2026-03-01', '2026-03-31'],
+      ['2026-04-01', '2026-04-30'],
+      ['2026-05-01', '2026-05-31'],
+      ['2026-06-01', '2026-06-30'],
+      ['2026-07-01', '2026-07-31'],
+      ['2026-08-01', '2026-08-31'],
+      ['2026-09-01', '2026-09-30'],
+      ['2026-10-01', '2026-10-31'],
+      ['2026-11-01', '2026-11-30'],
+      ['2026-12-01', '2026-12-31'],
     ];
     const bimestreData = bimestreRanges.map(([start, end]) =>
       iniciativas.filter(i => {
@@ -455,7 +463,7 @@ async function init() {
         labels: bimestreLabels,
         datasets: [{
           data: bimestreData,
-          backgroundColor: ['#00c9ff', '#ff86a7', '#ffa87c', '#36d399'],
+          backgroundColor: bimestreLabels.map((_, i) => MONTH_COLORS[i % MONTH_COLORS.length]),
           borderRadius: 6,
           borderSkipped: false,
         }]
