@@ -37,7 +37,7 @@
       <div class="kpi-card total">
         <div class="kpi-label">Total de iniciativas</div>
         <div class="kpi-value" id="kpi-total">0</div>
-        <div class="kpi-sub">iniciativas activas</div>
+        <div class="kpi-sub">Iniciativas activas</div>
       </div>
       <div class="kpi-card done">
         <div class="kpi-label">Completados (Done)</div>
@@ -84,6 +84,13 @@
           </div>
         </div>
       </div>
+      <div class="chart-card full">
+        <div class="chart-title">Cierres por mes</div>
+        <div class="chart-wrap">
+          <canvas id="chartBimestre"></canvas>
+        </div>
+      </div>
+
       <div class="chart-card">
         <div class="chart-title">Iniciativas activas por responsable</div>
         <div class="chart-wrap">
@@ -96,18 +103,13 @@
           <canvas id="chartAssigneeTotal"></canvas>
         </div>
       </div>
-      <div class="chart-card full">
-        <div class="chart-title">Iniciativas cerradas por mes</div>
-        <div class="chart-wrap">
-          <canvas id="chartBimestre"></canvas>
-        </div>
-      </div>
+      
     </div>
 
     <!-- Listado de iniciativas -->
     <div class="table-card fade-in">
       <div class="table-header">
-        <div class="table-title">Listado de iniciativas: In Progress, To Do, Done</div>
+        <div class="table-title">Listado de iniciativas - In Progress, To Do, Done</div>
         <input class="search-input" id="search-iniciativas" type="text" placeholder="Buscar iniciativa...">
       </div>
       <table>
