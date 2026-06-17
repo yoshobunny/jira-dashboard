@@ -386,10 +386,11 @@ async function init() {
       }
     });
 
+    const STATUS_ORDER = { 'in progress': 0, 'to do': 1, 'done': 2 };
     const iniciativasSorted = [...iniciativas].sort((a,b) => {
-      const doneA = a.status.toLowerCase() === 'done' ? 1 : 0;
-      const doneB = b.status.toLowerCase() === 'done' ? 1 : 0;
-      if (doneA !== doneB) return doneA - doneB;
+      const orderA = STATUS_ORDER[a.status.toLowerCase()] ?? 1;
+      const orderB = STATUS_ORDER[b.status.toLowerCase()] ?? 1;
+      if (orderA !== orderB) return orderA - orderB;
       const numA = parseInt(a.summary) || 99999;
       const numB = parseInt(b.summary) || 99999;
       return numA - numB;
