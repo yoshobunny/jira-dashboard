@@ -433,9 +433,8 @@ async function init() {
 
     //Nueva grafica por bimestre iniciativas cerrada
     // Chart cierres por bimestre
-    const bimestreLabels = ['Nov 25', 'Dic 25', 'Ene 26', 'Feb 26', 'Mar 26', 'Abr 26', 'May 26', 'Jun 26', 'Jul 26', 'Ago 26', 'Sep 26', 'Oct 26', 'Nov 26', 'Dic 26'];
+    const bimestreLabels = ['Dic 25', 'Ene 26', 'Feb 26', 'Mar 26', 'Abr 26', 'May 26', 'Jun 26', 'Jul 26', 'Ago 26', 'Sep 26', 'Oct 26', 'Nov 26', 'Dic 26'];
     const bimestreRanges = [
-      ['2025-11-01', '2025-11-30'],
       ['2025-12-01', '2025-12-31'],
       ['2026-01-01', '2026-01-31'],
       ['2026-02-01', '2026-02-28'],
