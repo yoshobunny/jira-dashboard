@@ -387,6 +387,9 @@ async function init() {
     });
 
     const iniciativasSorted = [...iniciativas].sort((a,b) => {
+      const doneA = a.status.toLowerCase() === 'done' ? 1 : 0;
+      const doneB = b.status.toLowerCase() === 'done' ? 1 : 0;
+      if (doneA !== doneB) return doneA - doneB;
       const numA = parseInt(a.summary) || 99999;
       const numB = parseInt(b.summary) || 99999;
       return numA - numB;
