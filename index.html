@@ -109,8 +109,13 @@
     <!-- Listado de iniciativas -->
     <div class="table-card fade-in">
       <div class="table-header">
-        <div class="table-title">Listado de iniciativas - In Progress, To Do, Done</div>
+        <div class="table-title">Listado de iniciativas</div>
         <input class="search-input" id="search-iniciativas" type="text" placeholder="Buscar iniciativa...">
+      </div>
+      <div class="status-tabs" id="status-tabs">
+        <button class="status-tab active" data-status="in progress">In progress</button>
+        <button class="status-tab" data-status="to do">To do</button>
+        <button class="status-tab" data-status="done">Done</button>
       </div>
       <table>
         <thead>
