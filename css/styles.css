@@ -284,8 +284,24 @@ header {
 
 .status-tab.active {
   color: var(--text);
-  border-color: var(--accent);
-  background: rgba(192,132,252,0.08);
+}
+
+.status-tab[data-status="in progress"]:hover { border-color: var(--inprogress); }
+.status-tab[data-status="in progress"].active {
+  border-color: var(--inprogress);
+  background: rgba(0,201,255,0.08);
+}
+
+.status-tab[data-status="to do"]:hover { border-color: var(--accent4); }
+.status-tab[data-status="to do"].active {
+  border-color: var(--accent4);
+  background: rgba(255,209,100,0.08);
+}
+
+.status-tab[data-status="done"]:hover { border-color: var(--done); }
+.status-tab[data-status="done"].active {
+  border-color: var(--done);
+  background: rgba(54,211,153,0.08);
 }
 
 .search-input {
