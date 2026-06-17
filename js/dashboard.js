@@ -75,7 +75,7 @@ Chart.defaults.font.family = "'DM Mono', monospace";
 Chart.defaults.font.size = 11;
 
 const COLORS = ['#00c9ff','#ff86a7','#ffa87c','#36d399','#fbbf24','#c084fc','#f97316','#ec4899'];
-const MONTH_COLORS = ['#ffd164','#a7c264','#36d399','#00ead7','#00dbf4','#00c9ff','#6c91ea','#c084fc','#ff7bd7','#ff86a7','#ffa87c','#ff9f43'];
+const MONTH_COLORS = ['#a7c264','#36d399','#00ead7','#00dbf4','#00c9ff','#6c91ea','#c084fc','#ff7bd7','#ff86a7','#ffa87c','#ff9f43','#ffd164'];
 const PRIORITY_COLORS = {
   'highest': '#ff6b6b',
   'high':    '#ffa87c',
