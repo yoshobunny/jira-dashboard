@@ -75,7 +75,7 @@ Chart.defaults.font.family = "'DM Mono', monospace";
 Chart.defaults.font.size = 11;
 
 const COLORS = ['#00c9ff','#ff86a7','#ffa87c','#36d399','#fbbf24','#c084fc','#f97316','#ec4899'];
-const MONTH_COLORS = ['#a7c264','#36d399','#00ead7','#00dbf4','#00c9ff','#6c91ea','#c084fc','#ff7bd7','#ff86a7','#ffa87c','#ff9f43','#ffd164'];
+const MONTH_COLORS = ['#a7c264','#36d399','#00ead7','#00dbf4','#00c9ff','#6c91ea','#c084fc','#ff7bd7','#ff86a7','#ffa87c','#ff9f43','#ffd164',];
 const PRIORITY_COLORS = {
   'highest': '#ff6b6b',
   'high':    '#ffa87c',
@@ -303,12 +303,17 @@ async function init() {
     const prioColors = prioLabels.map(p => PRIORITY_COLORS[p.toLowerCase()] || '#6b7280');
 
     // Inyectar leyenda en el div #prio-legend
-    $('prio-legend').innerHTML = prioLabels.map((label, i) => `
+    const prioTotal = Object.values(byPriority).reduce((a, b) => a + b, 0);
+    $('prio-legend').innerHTML = prioLabels.map((label, i) => {
+      const val = byPriority[label];
+      const pct = prioTotal ? Math.round((val / prioTotal) * 100) : 0;
+      return `
       <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px">
         <div style="width:10px;height:10px;border-radius:50%;background:${prioColors[i]};flex-shrink:0"></div>
-        <span style="font-family:'DM Mono',monospace;font-size:0.68rem;color:#9ca3af;white-space:nowrap">${label}</span>
+        <span style="font-family:'DM Mono',monospace;font-size:0.68rem;color:#9ca3af;white-space:nowrap">${label} · ${val} (${pct}%)</span>
       </div>
-    `).join('');
+    `;
+    }).join('');
 
     new Chart($('chartPriority'), {
       type: 'doughnut',
