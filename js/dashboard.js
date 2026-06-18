@@ -308,9 +308,9 @@ async function init() {
       const val = byPriority[label];
       const pct = prioTotal ? Math.round((val / prioTotal) * 100) : 0;
       return `
-      <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px">
-        <div style="width:10px;height:10px;border-radius:50%;background:${prioColors[i]};flex-shrink:0"></div>
-        <span style="font-family:'DM Mono',monospace;font-size:0.68rem;color:#9ca3af;white-space:nowrap">${label} · ${val} (${pct}%)</span>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
+        <div style="width:14px;height:14px;border-radius:50%;background:${prioColors[i]};flex-shrink:0"></div>
+        <span style="font-family:'DM Mono',monospace;font-size:0.85rem;color:#9ca3af;white-space:nowrap">${label} · ${val} (${pct}%)</span>
       </div>
     `;
     }).join('');
