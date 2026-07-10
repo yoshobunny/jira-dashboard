@@ -1,5 +1,20 @@
 [
   {
+    "key": "UGSU01-190",
+    "summary": "Reunión de Entendimiento",
+    "status": "In Progress",
+    "priority": "Medium",
+    "type": "Epic",
+    "assignee": "Sin asignar",
+    "created": "2026-07-09",
+    "updated": "2026-07-09",
+    "parent_key": "UGSU01-189",
+    "parent_summary": "671 Instalación de AP Aula 3105",
+    "parent_type": "Iniciativa",
+    "due_date": null,
+    "start_date": "2026-06-22"
+  },
+  {
     "key": "UGSU01-189",
     "summary": "671 Instalación de AP Aula 3105",
     "status": "In Progress",
@@ -7,11 +22,11 @@
     "type": "Iniciativa",
     "assignee": "Jazz Novelo",
     "created": "2026-06-15",
-    "updated": "2026-06-17",
+    "updated": "2026-07-09",
     "parent_key": "LDP-226",
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
-    "due_date": "2026-08-28",
+    "due_date": "2026-10-30",
     "start_date": "2026-06-10"
   },
   {
@@ -337,11 +352,11 @@
     "type": "Iniciativa",
     "assignee": "Juan Manuel Garza",
     "created": "2026-03-20",
-    "updated": "2026-06-26",
+    "updated": "2026-07-09",
     "parent_key": "LDP-226",
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
-    "due_date": "2026-02-27",
+    "due_date": "2026-11-30",
     "start_date": "2026-02-23"
   },
   {
@@ -1832,12 +1847,12 @@
   {
     "key": "UGSU01-44",
     "summary": "630 Cámaras de seguridad Guadalajara",
-    "status": "In Progress",
+    "status": "Done",
     "priority": "Medium",
     "type": "Iniciativa",
     "assignee": "Jazz Novelo",
     "created": "2025-12-01",
-    "updated": "2026-07-01",
+    "updated": "2026-07-08",
     "parent_key": null,
     "parent_summary": null,
     "parent_type": null,
