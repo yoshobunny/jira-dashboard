@@ -409,7 +409,7 @@ function ordenarPorClave(arr) {
       return arr.slice().sort((a, b) => a.key.localeCompare(b.key, undefined, { numeric: true }));
     }
 
-    function renderIniciativaDetail(ini) {
+function renderIniciativaDetail(ini) {
       const epics = ordenarPorClave(epicsByIniciativaList[ini.key] || []);
       if (epics.length === 0) {
         return `<div class="detail-empty">Esta iniciativa no tiene épicas.</div>`;
@@ -420,8 +420,9 @@ function ordenarPorClave(arr) {
           <div class="detail-row-story">
             <span class="issue-key">${st.key}</span>
             <span class="detail-summary">${st.summary}</span>
-            ${calidadDot(st.has_description, 'Description')}
-            ${calidadDot(st.has_acceptance_criteria, 'CriterioAcep')}
+            ${calidadDot(st.has_description, 'Desc')}
+            ${calidadDot(st.has_acceptance_criteria, 'CA')}
+            ${calidadDot(st.has_story_points, 'SP')}
           </div>
         `).join('');
         return `
@@ -430,8 +431,8 @@ function ordenarPorClave(arr) {
               <span class="expand-chevron-sm">▸</span>
               <span class="issue-key">${epic.key}</span>
               <span class="detail-summary">${epic.summary}</span>
-              ${calidadDot(epic.has_description, 'Description')}
-              ${calidadDot(epic.has_acceptance_criteria, 'CriterioAcep')}
+              ${calidadDot(epic.has_description, 'Desc')}
+              ${calidadDot(epic.has_story_points, 'SP')}
             </div>
             <div class="detail-stories" style="display:none">
               ${storiesHtml || '<div class="detail-empty">Sin storys</div>'}
