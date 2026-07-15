@@ -383,23 +383,33 @@ async function init() {
     const issuesCountByIniciativa = {};
     const epicsByIniciativaList = {};
     const storiesByEpicList = {};
+    const epicToIniciativa = {};
 
+    // Primera pasada: registrar épicas y a qué iniciativa pertenecen
     issues.forEach(i => {
-      if (i.parent_type === 'Iniciativa' && i.parent_key) {
-        if (i.type === 'Epic') {
-          epicasByIniciativa[i.parent_key] = (epicasByIniciativa[i.parent_key] || 0) + 1;
-          epicsByIniciativaList[i.parent_key] = epicsByIniciativaList[i.parent_key] || [];
-          epicsByIniciativaList[i.parent_key].push(i);
-        }
-        issuesCountByIniciativa[i.parent_key] = (issuesCountByIniciativa[i.parent_key] || 0) + 1;
-      }
-      if (i.type === 'Story' && i.parent_type === 'Epic' && i.parent_key) {
-        storiesByEpicList[i.parent_key] = storiesByEpicList[i.parent_key] || [];
-        storiesByEpicList[i.parent_key].push(i);
+      if (i.type === 'Epic' && i.parent_type === 'Iniciativa' && i.parent_key) {
+        epicasByIniciativa[i.parent_key] = (epicasByIniciativa[i.parent_key] || 0) + 1;
+        epicsByIniciativaList[i.parent_key] = epicsByIniciativaList[i.parent_key] || [];
+        epicsByIniciativaList[i.parent_key].push(i);
+        epicToIniciativa[i.key] = i.parent_key;
       }
     });
 
-    function calidadDot(hasIt, label) {
+    // Segunda pasada: contar Storys/Tasks reales, agrupadas por su épica y
+    // sumadas hacia la iniciativa correspondiente
+    issues.forEach(i => {
+      if ((i.type === 'Story' || i.type === 'Task') && i.parent_type === 'Epic' && i.parent_key) {
+        storiesByEpicList[i.parent_key] = storiesByEpicList[i.parent_key] || [];
+        storiesByEpicList[i.parent_key].push(i);
+
+        const iniKey = epicToIniciativa[i.parent_key];
+        if (iniKey) {
+          issuesCountByIniciativa[iniKey] = (issuesCountByIniciativa[iniKey] || 0) + 1;
+        }
+      }
+    });
+
+function calidadDot(hasIt, label) {
       const cls = hasIt ? 'ok' : 'bad';
       const symbol = hasIt ? '✓' : '✗';
       return `<span class="calidad-dot ${cls}">${symbol} ${label}</span>`;
