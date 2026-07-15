@@ -1,5 +1,41 @@
 [
   {
+    "key": "UGSU01-239",
+    "summary": "Reunión de entendimiento",
+    "status": "Done",
+    "priority": "Low",
+    "type": "Story",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-14",
+    "updated": "2026-07-14",
+    "parent_key": "UGSU01-190",
+    "parent_summary": "ÉPICA 1: Reunión de Entendimiento",
+    "parent_type": "Epic",
+    "due_date": "2026-07-03",
+    "start_date": "2026-06-29",
+    "has_description": true,
+    "has_acceptance_criteria": true,
+    "has_story_points": true
+  },
+  {
+    "key": "UGSU01-238",
+    "summary": "ÉPICA 2: Adquisición y Logística",
+    "status": "Congelación",
+    "priority": "High",
+    "type": "Epic",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-14",
+    "updated": "2026-07-14",
+    "parent_key": "UGSU01-189",
+    "parent_summary": "671 Instalación de AP Aula 3105",
+    "parent_type": "Iniciativa",
+    "due_date": null,
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": false,
+    "has_story_points": false
+  },
+  {
     "key": "UGSU01-237",
     "summary": "Estabilización en producción",
     "status": "To Do",
@@ -14,7 +50,8 @@
     "due_date": "2026-08-14",
     "start_date": "2026-08-05",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-236",
@@ -31,7 +68,8 @@
     "due_date": "2026-07-30",
     "start_date": "2026-06-19",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-235",
@@ -48,7 +86,8 @@
     "due_date": "2026-07-09",
     "start_date": "2026-06-26",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-234",
@@ -65,7 +104,8 @@
     "due_date": "2026-06-25",
     "start_date": "2026-05-29",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-233",
@@ -82,7 +122,8 @@
     "due_date": "2026-06-05",
     "start_date": "2026-05-22",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-232",
@@ -99,7 +140,8 @@
     "due_date": "2026-05-29",
     "start_date": "2026-04-16",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-231",
@@ -116,7 +158,8 @@
     "due_date": "2026-05-13",
     "start_date": "2026-03-02",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-230",
@@ -133,7 +176,8 @@
     "due_date": "2026-06-26",
     "start_date": "2026-05-29",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-229",
@@ -150,7 +194,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-228",
@@ -167,7 +212,8 @@
     "due_date": "2026-08-14",
     "start_date": "2026-08-05",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-227",
@@ -184,7 +230,8 @@
     "due_date": null,
     "start_date": "2026-07-31",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-226",
@@ -201,7 +248,8 @@
     "due_date": "2026-06-26",
     "start_date": "2026-05-29",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-225",
@@ -218,7 +266,8 @@
     "due_date": "2026-07-10",
     "start_date": "2026-04-16",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-224",
@@ -235,7 +284,8 @@
     "due_date": "2026-05-13",
     "start_date": "2026-03-02",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-222",
@@ -252,7 +302,8 @@
     "due_date": "2026-03-20",
     "start_date": "2026-03-13",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-221",
@@ -269,7 +320,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": false,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-220",
@@ -286,7 +338,8 @@
     "due_date": "2026-02-27",
     "start_date": "2026-01-19",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-219",
@@ -303,7 +356,8 @@
     "due_date": "2026-02-26",
     "start_date": "2026-01-19",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-218",
@@ -320,7 +374,8 @@
     "due_date": "2026-04-16",
     "start_date": "2026-01-05",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-217",
@@ -337,7 +392,8 @@
     "due_date": "2026-05-19",
     "start_date": "2026-01-05",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-216",
@@ -354,7 +410,8 @@
     "due_date": null,
     "start_date": "2026-01-05",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-215",
@@ -371,7 +428,8 @@
     "due_date": "2026-03-19",
     "start_date": "2026-01-05",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-214",
@@ -388,7 +446,8 @@
     "due_date": "2026-03-20",
     "start_date": "2026-03-11",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-213",
@@ -405,7 +464,8 @@
     "due_date": "2026-03-13",
     "start_date": "2026-03-02",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-212",
@@ -422,7 +482,8 @@
     "due_date": "2026-02-27",
     "start_date": "2026-01-19",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-211",
@@ -439,7 +500,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-210",
@@ -456,7 +518,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-209",
@@ -473,7 +536,8 @@
     "due_date": "2026-06-01",
     "start_date": "2026-05-18",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-208",
@@ -490,7 +554,8 @@
     "due_date": "2026-07-15",
     "start_date": "2026-04-30",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-207",
@@ -507,7 +572,8 @@
     "due_date": "2026-04-30",
     "start_date": "2026-04-20",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-206",
@@ -524,7 +590,8 @@
     "due_date": "2026-04-30",
     "start_date": "2026-04-20",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-205",
@@ -541,7 +608,8 @@
     "due_date": "2026-05-08",
     "start_date": "2026-04-14",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-204",
@@ -558,7 +626,8 @@
     "due_date": "2026-04-13",
     "start_date": "2026-04-06",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-203",
@@ -575,7 +644,8 @@
     "due_date": "2026-09-30",
     "start_date": "2026-08-24",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-202",
@@ -592,7 +662,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-201",
@@ -609,7 +680,8 @@
     "due_date": "2026-09-29",
     "start_date": "2026-04-13",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-200",
@@ -619,14 +691,15 @@
     "type": "Epic",
     "assignee": "Jazz Novelo",
     "created": "2026-07-13",
-    "updated": "2026-07-13",
+    "updated": "2026-07-14",
     "parent_key": "UGSU01-145",
     "parent_summary": "638 Biblioteca exterior en campus Ferrería",
     "parent_type": "Iniciativa",
     "due_date": "2026-04-10",
     "start_date": "2026-04-06",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-199",
@@ -643,7 +716,8 @@
     "due_date": "2026-05-28",
     "start_date": "2026-05-18",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-198",
@@ -660,7 +734,8 @@
     "due_date": "2026-05-11",
     "start_date": "2026-05-04",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-197",
@@ -677,7 +752,8 @@
     "due_date": "2026-06-01",
     "start_date": "2026-05-04",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-196",
@@ -694,7 +770,8 @@
     "due_date": "2026-06-30",
     "start_date": "2026-05-15",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-195",
@@ -711,7 +788,8 @@
     "due_date": "2026-05-15",
     "start_date": "2026-04-30",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-194",
@@ -728,7 +806,8 @@
     "due_date": "2026-05-04",
     "start_date": "2026-04-20",
     "has_description": false,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-193",
@@ -745,7 +824,8 @@
     "due_date": "2026-05-29",
     "start_date": "2026-04-13",
     "has_description": false,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-192",
@@ -762,7 +842,8 @@
     "due_date": "2026-05-28",
     "start_date": "2026-05-04",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-191",
@@ -779,13 +860,14 @@
     "due_date": "2026-05-29",
     "start_date": "2026-04-20",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-190",
-    "summary": "Reunión de Entendimiento",
+    "summary": "ÉPICA 1: Reunión de Entendimiento",
     "status": "Done",
-    "priority": "Medium",
+    "priority": "Low",
     "type": "Epic",
     "assignee": "Jazz Novelo",
     "created": "2026-07-09",
@@ -795,8 +877,9 @@
     "parent_type": "Iniciativa",
     "due_date": null,
     "start_date": "2026-06-22",
-    "has_description": false,
-    "has_acceptance_criteria": false
+    "has_description": true,
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-189",
@@ -806,14 +889,15 @@
     "type": "Iniciativa",
     "assignee": "Jazz Novelo",
     "created": "2026-06-15",
-    "updated": "2026-07-09",
+    "updated": "2026-07-14",
     "parent_key": "LDP-226",
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
     "due_date": "2026-10-30",
     "start_date": "2026-06-10",
-    "has_description": false,
-    "has_acceptance_criteria": false
+    "has_description": true,
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-187",
@@ -830,7 +914,8 @@
     "due_date": null,
     "start_date": "2026-06-08",
     "has_description": false,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-185",
@@ -847,7 +932,8 @@
     "due_date": null,
     "start_date": "2026-06-01",
     "has_description": false,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-183",
@@ -864,7 +950,8 @@
     "due_date": null,
     "start_date": "2026-06-01",
     "has_description": false,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-181",
@@ -881,7 +968,8 @@
     "due_date": null,
     "start_date": "2026-05-18",
     "has_description": false,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-179",
@@ -898,7 +986,8 @@
     "due_date": null,
     "start_date": "2026-05-07",
     "has_description": false,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-177",
@@ -915,7 +1004,8 @@
     "due_date": null,
     "start_date": "2026-05-07",
     "has_description": false,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-175",
@@ -932,7 +1022,8 @@
     "due_date": null,
     "start_date": "2026-06-08",
     "has_description": false,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-173",
@@ -949,7 +1040,8 @@
     "due_date": null,
     "start_date": "2026-04-27",
     "has_description": false,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-171",
@@ -966,7 +1058,8 @@
     "due_date": null,
     "start_date": "2026-04-16",
     "has_description": false,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-169",
@@ -983,7 +1076,8 @@
     "due_date": null,
     "start_date": "2026-02-02",
     "has_description": false,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-167",
@@ -1000,7 +1094,8 @@
     "due_date": "2026-09-30",
     "start_date": "2026-06-08",
     "has_description": false,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-165",
@@ -1017,7 +1112,8 @@
     "due_date": null,
     "start_date": "2026-04-15",
     "has_description": false,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-163",
@@ -1034,7 +1130,8 @@
     "due_date": null,
     "start_date": "2026-04-15",
     "has_description": false,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-161",
@@ -1051,7 +1148,8 @@
     "due_date": null,
     "start_date": "2026-04-13",
     "has_description": false,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-159",
@@ -1068,7 +1166,8 @@
     "due_date": null,
     "start_date": "2026-05-11",
     "has_description": false,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-157",
@@ -1085,7 +1184,8 @@
     "due_date": null,
     "start_date": "2026-03-20",
     "has_description": false,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-155",
@@ -1102,7 +1202,8 @@
     "due_date": "2026-07-07",
     "start_date": "2026-04-20",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-153",
@@ -1119,7 +1220,8 @@
     "due_date": null,
     "start_date": "2026-05-28",
     "has_description": false,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-151",
@@ -1136,7 +1238,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": false,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-149",
@@ -1153,7 +1256,8 @@
     "due_date": "2026-02-27",
     "start_date": "2026-02-23",
     "has_description": false,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-148",
@@ -1170,7 +1274,8 @@
     "due_date": "2026-02-27",
     "start_date": "2026-02-23",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-147",
@@ -1187,7 +1292,8 @@
     "due_date": "2026-11-30",
     "start_date": "2026-02-23",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-145",
@@ -1197,14 +1303,15 @@
     "type": "Iniciativa",
     "assignee": "Jazz Novelo",
     "created": "2026-01-29",
-    "updated": "2026-07-13",
+    "updated": "2026-07-14",
     "parent_key": null,
     "parent_summary": null,
     "parent_type": null,
     "due_date": "2026-09-30",
     "start_date": "2026-03-02",
-    "has_description": false,
-    "has_acceptance_criteria": false
+    "has_description": true,
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-144",
@@ -1221,7 +1328,8 @@
     "due_date": "2026-03-20",
     "start_date": "2026-01-05",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-143",
@@ -1238,7 +1346,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-142",
@@ -1255,7 +1364,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-141",
@@ -1272,7 +1382,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-140",
@@ -1289,7 +1400,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-139",
@@ -1306,7 +1418,8 @@
     "due_date": "2026-02-06",
     "start_date": "2026-01-26",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-138",
@@ -1323,7 +1436,8 @@
     "due_date": "2026-02-06",
     "start_date": "2026-01-26",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-137",
@@ -1340,7 +1454,8 @@
     "due_date": "2026-01-30",
     "start_date": "2026-01-12",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-136",
@@ -1357,7 +1472,8 @@
     "due_date": "2025-12-22",
     "start_date": "2025-12-19",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-135",
@@ -1374,7 +1490,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-134",
@@ -1391,7 +1508,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-133",
@@ -1408,7 +1526,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-132",
@@ -1425,7 +1544,8 @@
     "due_date": "2026-01-23",
     "start_date": "2025-12-19",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-131",
@@ -1442,7 +1562,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-130",
@@ -1459,7 +1580,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-129",
@@ -1476,7 +1598,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-128",
@@ -1493,7 +1616,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-127",
@@ -1510,7 +1634,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-126",
@@ -1527,7 +1652,8 @@
     "due_date": "2026-02-06",
     "start_date": "2026-01-26",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-125",
@@ -1544,7 +1670,8 @@
     "due_date": "2026-01-30",
     "start_date": "2026-01-12",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-124",
@@ -1561,7 +1688,8 @@
     "due_date": "2025-12-08",
     "start_date": "2025-12-05",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-123",
@@ -1578,7 +1706,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-122",
@@ -1595,7 +1724,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-121",
@@ -1612,7 +1742,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-120",
@@ -1629,7 +1760,8 @@
     "due_date": "2026-01-30",
     "start_date": "2025-12-05",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-119",
@@ -1646,7 +1778,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-118",
@@ -1663,7 +1796,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-117",
@@ -1680,7 +1814,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-116",
@@ -1697,7 +1832,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-115",
@@ -1714,7 +1850,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-114",
@@ -1731,7 +1868,8 @@
     "due_date": "2026-01-30",
     "start_date": "2026-01-19",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-113",
@@ -1748,7 +1886,8 @@
     "due_date": "2026-01-23",
     "start_date": "2025-12-23",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-112",
@@ -1765,7 +1904,8 @@
     "due_date": "2025-12-23",
     "start_date": "2025-12-19",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-111",
@@ -1782,7 +1922,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-110",
@@ -1799,7 +1940,8 @@
     "due_date": "2026-02-20",
     "start_date": "2026-01-26",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-109",
@@ -1816,7 +1958,8 @@
     "due_date": "2026-01-23",
     "start_date": "2025-12-22",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-108",
@@ -1833,7 +1976,8 @@
     "due_date": "2026-04-30",
     "start_date": "2025-12-19",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-107",
@@ -1850,7 +1994,8 @@
     "due_date": "2026-08-31",
     "start_date": "2026-01-07",
     "has_description": false,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-106",
@@ -1867,7 +2012,8 @@
     "due_date": "2026-05-01",
     "start_date": "2025-12-08",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-105",
@@ -1884,7 +2030,8 @@
     "due_date": "2026-03-31",
     "start_date": "2026-01-05",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-104",
@@ -1901,7 +2048,8 @@
     "due_date": "2026-01-23",
     "start_date": "2025-11-24",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-103",
@@ -1918,7 +2066,8 @@
     "due_date": "2026-02-06",
     "start_date": "2025-12-01",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-102",
@@ -1935,7 +2084,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-101",
@@ -1952,7 +2102,8 @@
     "due_date": null,
     "start_date": "2025-11-03",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-100",
@@ -1969,7 +2120,8 @@
     "due_date": "2025-10-10",
     "start_date": "2025-10-06",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-99",
@@ -1986,7 +2138,8 @@
     "due_date": "2026-01-02",
     "start_date": "2025-09-17",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-98",
@@ -2003,7 +2156,8 @@
     "due_date": "2026-01-02",
     "start_date": "2025-09-17",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-97",
@@ -2020,7 +2174,8 @@
     "due_date": "2025-09-16",
     "start_date": "2025-09-16",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-96",
@@ -2037,7 +2192,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-95",
@@ -2054,7 +2210,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-94",
@@ -2071,7 +2228,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-93",
@@ -2088,7 +2246,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-92",
@@ -2105,7 +2264,8 @@
     "due_date": "2026-01-30",
     "start_date": "2026-01-12",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-91",
@@ -2122,7 +2282,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-90",
@@ -2139,7 +2300,8 @@
     "due_date": "2026-01-16",
     "start_date": "2025-12-03",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-89",
@@ -2156,7 +2318,8 @@
     "due_date": "2025-12-03",
     "start_date": "2025-12-02",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-88",
@@ -2173,7 +2336,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-87",
@@ -2190,7 +2354,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-86",
@@ -2207,7 +2372,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-85",
@@ -2224,7 +2390,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-84",
@@ -2241,7 +2408,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-83",
@@ -2258,7 +2426,8 @@
     "due_date": null,
     "start_date": "2027-01-11",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-82",
@@ -2275,7 +2444,8 @@
     "due_date": "2026-01-16",
     "start_date": "2025-12-03",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-81",
@@ -2292,7 +2462,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-80",
@@ -2309,7 +2480,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-79",
@@ -2326,7 +2498,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-78",
@@ -2343,7 +2516,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-77",
@@ -2360,7 +2534,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-76",
@@ -2377,7 +2552,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-75",
@@ -2394,7 +2570,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-74",
@@ -2411,7 +2588,8 @@
     "due_date": "2026-01-16",
     "start_date": "2025-12-02",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-73",
@@ -2428,7 +2606,8 @@
     "due_date": "2025-12-02",
     "start_date": "2025-12-01",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-72",
@@ -2445,7 +2624,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-71",
@@ -2462,7 +2642,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-70",
@@ -2479,7 +2660,8 @@
     "due_date": null,
     "start_date": "2025-12-15",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-69",
@@ -2496,7 +2678,8 @@
     "due_date": "2025-12-12",
     "start_date": "2025-12-08",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-68",
@@ -2513,7 +2696,8 @@
     "due_date": "2025-12-12",
     "start_date": "2025-12-08",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-67",
@@ -2530,7 +2714,8 @@
     "due_date": "2025-12-12",
     "start_date": "2025-12-04",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-66",
@@ -2547,7 +2732,8 @@
     "due_date": "2025-12-03",
     "start_date": "2025-12-02",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-65",
@@ -2564,7 +2750,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-64",
@@ -2581,7 +2768,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-63",
@@ -2598,7 +2786,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-62",
@@ -2615,7 +2804,8 @@
     "due_date": null,
     "start_date": "2025-12-29",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-60",
@@ -2632,7 +2822,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-59",
@@ -2649,7 +2840,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-58",
@@ -2666,7 +2858,8 @@
     "due_date": null,
     "start_date": "2025-12-08",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-57",
@@ -2683,7 +2876,8 @@
     "due_date": "2025-12-03",
     "start_date": "2025-12-02",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-56",
@@ -2700,7 +2894,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-55",
@@ -2717,7 +2912,8 @@
     "due_date": "2025-12-16",
     "start_date": "2025-12-01",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-53",
@@ -2734,7 +2930,8 @@
     "due_date": "2026-02-06",
     "start_date": "2026-01-19",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-52",
@@ -2751,7 +2948,8 @@
     "due_date": "2026-01-30",
     "start_date": "2025-09-22",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-51",
@@ -2768,7 +2966,8 @@
     "due_date": "2025-09-19",
     "start_date": "2025-09-01",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-50",
@@ -2785,7 +2984,8 @@
     "due_date": "2026-09-25",
     "start_date": "2025-08-25",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-49",
@@ -2802,7 +3002,8 @@
     "due_date": "2026-09-30",
     "start_date": "2025-08-25",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-48",
@@ -2819,7 +3020,8 @@
     "due_date": "2026-04-17",
     "start_date": "2026-03-23",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-47",
@@ -2836,7 +3038,8 @@
     "due_date": "2026-04-24",
     "start_date": "2026-01-19",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-46",
@@ -2853,7 +3056,8 @@
     "due_date": "2026-01-30",
     "start_date": "2026-01-05",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-45",
@@ -2870,7 +3074,8 @@
     "due_date": "2026-01-30",
     "start_date": "2025-11-24",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-44",
@@ -2887,7 +3092,8 @@
     "due_date": "2026-07-07",
     "start_date": "2025-11-24",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-43",
@@ -2904,7 +3110,8 @@
     "due_date": "2026-04-17",
     "start_date": "2026-03-30",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-42",
@@ -2921,7 +3128,8 @@
     "due_date": "2026-04-10",
     "start_date": "2026-02-09",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-41",
@@ -2938,7 +3146,8 @@
     "due_date": "2026-02-06",
     "start_date": "2026-01-19",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-40",
@@ -2955,7 +3164,8 @@
     "due_date": null,
     "start_date": null,
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-39",
@@ -2972,7 +3182,8 @@
     "due_date": "2026-04-30",
     "start_date": "2025-11-24",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-38",
@@ -2989,7 +3200,8 @@
     "due_date": "2026-04-17",
     "start_date": "2026-03-30",
     "has_description": false,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-37",
@@ -3006,7 +3218,8 @@
     "due_date": "2026-04-24",
     "start_date": "2026-01-19",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-36",
@@ -3023,7 +3236,8 @@
     "due_date": "2026-01-16",
     "start_date": "2025-12-29",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-35",
@@ -3040,7 +3254,8 @@
     "due_date": "2026-01-22",
     "start_date": "2025-11-24",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-34",
@@ -3057,7 +3272,8 @@
     "due_date": "2026-02-13",
     "start_date": "2025-12-15",
     "has_description": false,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-33",
@@ -3074,7 +3290,8 @@
     "due_date": "2026-04-10",
     "start_date": "2026-03-30",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-32",
@@ -3091,7 +3308,8 @@
     "due_date": "2026-04-03",
     "start_date": "2026-01-05",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-31",
@@ -3108,7 +3326,8 @@
     "due_date": "2026-01-16",
     "start_date": "2025-12-22",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-30",
@@ -3125,7 +3344,8 @@
     "due_date": "2025-12-19",
     "start_date": "2025-11-24",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-29",
@@ -3142,7 +3362,8 @@
     "due_date": "2025-12-31",
     "start_date": "2025-11-24",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-28",
@@ -3159,7 +3380,8 @@
     "due_date": "2026-03-13",
     "start_date": "2026-02-23",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-26",
@@ -3176,7 +3398,8 @@
     "due_date": "2026-04-30",
     "start_date": "2025-12-19",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-24",
@@ -3193,7 +3416,8 @@
     "due_date": "2026-04-30",
     "start_date": "2025-12-19",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-22",
@@ -3210,7 +3434,8 @@
     "due_date": "2026-04-10",
     "start_date": "2025-11-26",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-20",
@@ -3227,7 +3452,8 @@
     "due_date": "2026-06-29",
     "start_date": "2025-11-24",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": false
   },
   {
     "key": "UGSU01-17",
@@ -3244,7 +3470,8 @@
     "due_date": null,
     "start_date": "2025-12-15",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-15",
@@ -3261,7 +3488,8 @@
     "due_date": null,
     "start_date": "2025-12-01",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-13",
@@ -3278,7 +3506,8 @@
     "due_date": "2025-12-12",
     "start_date": "2025-11-27",
     "has_description": false,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-11",
@@ -3295,7 +3524,8 @@
     "due_date": null,
     "start_date": "2025-11-27",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-9",
@@ -3312,7 +3542,8 @@
     "due_date": "2025-12-12",
     "start_date": "2025-11-24",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-7",
@@ -3329,7 +3560,8 @@
     "due_date": "2026-01-23",
     "start_date": "2025-12-08",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-6",
@@ -3346,7 +3578,8 @@
     "due_date": "2025-12-26",
     "start_date": "2025-12-01",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-5",
@@ -3363,7 +3596,8 @@
     "due_date": "2025-12-27",
     "start_date": "2025-11-27",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-4",
@@ -3380,7 +3614,8 @@
     "due_date": "2026-01-09",
     "start_date": "2025-11-27",
     "has_description": true,
-    "has_acceptance_criteria": false
+    "has_acceptance_criteria": false,
+    "has_story_points": true
   },
   {
     "key": "UGSU01-3",
@@ -3397,6 +3632,7 @@
     "due_date": "2025-12-31",
     "start_date": "2025-11-11",
     "has_description": true,
-    "has_acceptance_criteria": true
+    "has_acceptance_criteria": true,
+    "has_story_points": false
   }
 ]
