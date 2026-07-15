@@ -550,3 +550,62 @@ tr:hover td { background: rgba(79,124,255,0.04); }
     text-overflow: ellipsis;
   }
 }
+
+/* Es el codigo para ele xpansor que abre el desglose de epicas e storys */
+.ini-row { cursor: pointer; }
+.ini-row:hover { background: rgba(255,255,255,0.03); }
+
+.expand-chevron, .expand-chevron-sm {
+  display: inline-block;
+  transition: transform 0.15s;
+  color: var(--muted);
+  margin-right: 4px;
+}
+.expand-chevron.open, .expand-chevron-sm.open { transform: rotate(90deg); }
+
+.ini-detail td { padding: 0; border-top: none; }
+
+.detail-epic-block { border-top: 1px dashed rgba(255,255,255,0.08); }
+.detail-row-epic {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px 8px 32px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+.detail-row-epic:hover { background: rgba(255,255,255,0.03); }
+
+.detail-stories { padding-left: 24px; }
+.detail-row-story {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 16px 6px 56px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.detail-summary {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.detail-empty {
+  padding: 10px 16px 10px 32px;
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.calidad-dot {
+  font-size: 0.72rem;
+  white-space: nowrap;
+  min-width: 46px;
+  text-align: right;
+}
+.calidad-dot.ok { color: var(--accent3); }
+.calidad-dot.bad { color: var(--accent2); }
+.ini-table { table-layout: fixed; }
