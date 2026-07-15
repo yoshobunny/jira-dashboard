@@ -381,15 +381,65 @@ async function init() {
     // Tabla de iniciativas
     const epicasByIniciativa = {};
     const issuesCountByIniciativa = {};
+    const epicsByIniciativaList = {};
+    const storiesByEpicList = {};
 
     issues.forEach(i => {
       if (i.parent_type === 'Iniciativa' && i.parent_key) {
         if (i.type === 'Epic') {
           epicasByIniciativa[i.parent_key] = (epicasByIniciativa[i.parent_key] || 0) + 1;
+          epicsByIniciativaList[i.parent_key] = epicsByIniciativaList[i.parent_key] || [];
+          epicsByIniciativaList[i.parent_key].push(i);
         }
         issuesCountByIniciativa[i.parent_key] = (issuesCountByIniciativa[i.parent_key] || 0) + 1;
       }
+      if (i.type === 'Story' && i.parent_type === 'Epic' && i.parent_key) {
+        storiesByEpicList[i.parent_key] = storiesByEpicList[i.parent_key] || [];
+        storiesByEpicList[i.parent_key].push(i);
+      }
     });
+
+    function calidadDot(hasIt, label) {
+      const cls = hasIt ? 'ok' : 'bad';
+      const symbol = hasIt ? '✓' : '✗';
+      return `<span class="calidad-dot ${cls}">${symbol} ${label}</span>`;
+    }
+
+function ordenarPorClave(arr) {
+      return arr.slice().sort((a, b) => a.key.localeCompare(b.key, undefined, { numeric: true }));
+    }
+
+    function renderIniciativaDetail(ini) {
+      const epics = ordenarPorClave(epicsByIniciativaList[ini.key] || []);
+      if (epics.length === 0) {
+        return `<div class="detail-empty">Esta iniciativa no tiene épicas.</div>`;
+      }
+      return epics.map(epic => {
+        const stories = ordenarPorClave(storiesByEpicList[epic.key] || []);
+        const storiesHtml = stories.map(st => `
+          <div class="detail-row-story">
+            <span class="issue-key">${st.key}</span>
+            <span class="detail-summary">${st.summary}</span>
+            ${calidadDot(st.has_description, 'Description')}
+            ${calidadDot(st.has_acceptance_criteria, 'CriterioAcep')}
+          </div>
+        `).join('');
+        return `
+          <div class="detail-epic-block">
+            <div class="detail-row-epic">
+              <span class="expand-chevron-sm">▸</span>
+              <span class="issue-key">${epic.key}</span>
+              <span class="detail-summary">${epic.summary}</span>
+              ${calidadDot(epic.has_description, 'Description')}
+              ${calidadDot(epic.has_acceptance_criteria, 'CriterioAcep')}
+            </div>
+            <div class="detail-stories" style="display:none">
+              ${storiesHtml || '<div class="detail-empty">Sin storys</div>'}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
 
     const STATUS_ORDER = { 'in progress': 0, 'to do': 1, 'done': 2 };
     const iniciativasSorted = [...iniciativas].sort((a,b) => {
@@ -402,11 +452,31 @@ async function init() {
     });
 
     const tbodyIn = $('iniciativas-table');
+    tbodyIn.addEventListener('click', (e) => {
+      const iniRow = e.target.closest('.ini-row');
+      if (iniRow) {
+        const key = iniRow.dataset.iniKey;
+        const detail = tbodyIn.querySelector(`.ini-detail[data-ini-key="${key}"]`);
+        const chevron = iniRow.querySelector('.expand-chevron');
+        const isOpen = detail.style.display === 'block';
+        detail.style.display = isOpen ? 'none' : 'block';
+        chevron.classList.toggle('open', !isOpen);
+        return;
+      }
+      const epicRow = e.target.closest('.detail-row-epic');
+      if (epicRow) {
+        const stories = epicRow.nextElementSibling;
+        const chevron = epicRow.querySelector('.expand-chevron-sm');
+        const isOpen = stories.style.display === 'block';
+        stories.style.display = isOpen ? 'none' : 'block';
+        chevron.classList.toggle('open', !isOpen);
+      }
+    });
 
     function rowIniciativa(ini, idx) {
       return `
-        <tr>
-          <td style="font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--muted)">${idx + 1}</td>
+        <tr class="ini-row" data-ini-key="${ini.key}">
+          <td style="font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--muted)"><span class="expand-chevron">▸</span> ${idx + 1}</td>
           <td><span class="issue-key">${ini.key}</span></td>
           <td style="max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${ini.summary}</td>
           <td>${statusBadge(ini.status)}</td>
@@ -414,6 +484,9 @@ async function init() {
           <td style="font-family:'DM Mono',monospace;font-size:0.72rem;text-align:center;color:var(--muted)">${NAME_MAP[ini.assignee] || ini.assignee || '—'}</td>
           <td style="font-family:'DM Mono',monospace;font-size:0.75rem;text-align:center;color:var(--accent)">${epicasByIniciativa[ini.key] || 0}</td>
           <td style="font-family:'DM Mono',monospace;font-size:0.75rem;text-align:center;color:var(--accent3)">${issuesCountByIniciativa[ini.key] || 0}</td>
+        </tr>
+        <tr class="ini-detail" data-ini-key="${ini.key}" style="display:none">
+          <td colspan="8">${renderIniciativaDetail(ini)}</td>
         </tr>
       `;
     }
