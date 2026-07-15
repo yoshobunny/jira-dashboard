@@ -16,6 +16,7 @@ headers = {
     "Content-Type": "application/json"
 }
 
+
 def get_issues():
     """Trae todos los issues del proyecto con paginación"""
     all_issues = []
@@ -26,8 +27,10 @@ def get_issues():
         params = {
             "jql": f"project = {PROJECT_KEY} ORDER BY created DESC",
             "maxResults": 100,
-            "fields": "summary,status,assignee,priority,issuetype,created,updated,parent,duedate,customfield_10015,customfield_10200"
-        }
+            #"fields": "summary,status,assignee,priority,issuetype,created,updated,parent,duedate,customfield_10015,customfield_10200"
+            #"fields": "summary,status,assignee,priority,issuetype,created,updated,parent,duedate,customfield_10015,customfield_10200,description,customfield_10066"
+            "fields": "summary,status,assignee,priority,issuetype,created,updated,parent,duedate,customfield_10015,customfield_10200,description,customfield_10066,customfield_10028"
+        }   
 
         if next_token:
             params["nextPageToken"] = next_token
@@ -77,11 +80,26 @@ def process_issues(issues):
                 "parent_type":    parent_type,
                 "due_date": fields.get("customfield_10200") or fields.get("duedate"),
                 "start_date":     fields.get("customfield_10015"),
+                #"description":          fields.get("description"), #campo description 
+                #"acceptance_criteria":  fields.get("customfield_10066"), #Campo criterios
+                "has_description":         tiene_contenido(fields.get("description")), #convertir a si y no
+                "has_acceptance_criteria":  tiene_contenido(fields.get("customfield_10066")),
+                "has_story_points": fields.get("customfield_10028") is not None,
             })
         except Exception as e:
             print(f"ERROR en {issue['key']}: {e}")
             continue
     return processed
+#funcion para validar si tienen description y criterios las epicas e storys
+def tiene_contenido(adf_field):
+    """Revisa si un campo ADF (description o acceptance criteria) tiene texto real"""
+    if not adf_field:
+        return False
+    content = adf_field.get("content", [])
+    for block in content:
+        if block.get("content"):
+            return True
+    return False
 
 def main():
     print(f"Conectando a Jira — proyecto {PROJECT_KEY}...")
