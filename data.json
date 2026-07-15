@@ -1,18 +1,802 @@
 [
   {
-    "key": "UGSU01-190",
-    "summary": "Reunión de Entendimiento",
+    "key": "UGSU01-237",
+    "summary": "Estabilización en producción",
+    "status": "To Do",
+    "priority": "Medium",
+    "type": "Story",
+    "assignee": "Juan Manuel Garza",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-228",
+    "parent_summary": "Épica 6: Estabilización",
+    "parent_type": "Epic",
+    "due_date": "2026-08-14",
+    "start_date": "2026-08-05",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-236",
+    "summary": "Entrega a Soporte y Documentación",
     "status": "In Progress",
     "priority": "Medium",
+    "type": "Story",
+    "assignee": "Juan Manuel Garza",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-227",
+    "parent_summary": "Épica 5: M2S",
+    "parent_type": "Epic",
+    "due_date": "2026-07-30",
+    "start_date": "2026-06-19",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-235",
+    "summary": "Pruebas UAT",
+    "status": "Done",
+    "priority": "Medium",
+    "type": "Story",
+    "assignee": "Juan Manuel Garza",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-225",
+    "parent_summary": "Épica 3: Pruebas",
+    "parent_type": "Epic",
+    "due_date": "2026-07-09",
+    "start_date": "2026-06-26",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-234",
+    "summary": "Pruebas QA",
+    "status": "Done",
+    "priority": "Low",
+    "type": "Story",
+    "assignee": "Juan Manuel Garza",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-225",
+    "parent_summary": "Épica 3: Pruebas",
+    "parent_type": "Epic",
+    "due_date": "2026-06-25",
+    "start_date": "2026-05-29",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-233",
+    "summary": "Pruebas Integrales extendidas",
+    "status": "Done",
+    "priority": "Low",
+    "type": "Story",
+    "assignee": "Juan Manuel Garza",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-225",
+    "parent_summary": "Épica 3: Pruebas",
+    "parent_type": "Epic",
+    "due_date": "2026-06-05",
+    "start_date": "2026-05-22",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-232",
+    "summary": "Pruebas Unitarias",
+    "status": "Done",
+    "priority": "Low",
+    "type": "Story",
+    "assignee": "Juan Manuel Garza",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-225",
+    "parent_summary": "Épica 3: Pruebas",
+    "parent_type": "Epic",
+    "due_date": "2026-05-29",
+    "start_date": "2026-04-16",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-231",
+    "summary": "Desarrollo de integraciones",
+    "status": "Done",
+    "priority": "Medium",
+    "type": "Story",
+    "assignee": "Juan Manuel Garza",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-224",
+    "parent_summary": "Épica 2: Ejecución y Desarrollo",
+    "parent_type": "Epic",
+    "due_date": "2026-05-13",
+    "start_date": "2026-03-02",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-230",
+    "summary": "Auditoría Banner Tecmi vs MDM",
+    "status": "Done",
+    "priority": "Low",
+    "type": "Story",
+    "assignee": "Juan Manuel Garza",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-226",
+    "parent_summary": "Épica 4: Análisis y depuración de información",
+    "parent_type": "Epic",
+    "due_date": "2026-06-26",
+    "start_date": "2026-05-29",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-229",
+    "summary": "Épica 7: Cierre",
+    "status": "To Do",
+    "priority": "High",
     "type": "Epic",
-    "assignee": "Sin asignar",
+    "assignee": "Juan Manuel Garza",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-147",
+    "parent_summary": "One MDM",
+    "parent_type": "Iniciativa",
+    "due_date": null,
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": false
+  },
+  {
+    "key": "UGSU01-228",
+    "summary": "Épica 6: Estabilización",
+    "status": "To Do",
+    "priority": "Low",
+    "type": "Epic",
+    "assignee": "Juan Manuel Garza",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-147",
+    "parent_summary": "One MDM",
+    "parent_type": "Iniciativa",
+    "due_date": "2026-08-14",
+    "start_date": "2026-08-05",
+    "has_description": true,
+    "has_acceptance_criteria": false
+  },
+  {
+    "key": "UGSU01-227",
+    "summary": "Épica 5: M2S",
+    "status": "In Progress",
+    "priority": "Low",
+    "type": "Epic",
+    "assignee": "Juan Manuel Garza",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-147",
+    "parent_summary": "One MDM",
+    "parent_type": "Iniciativa",
+    "due_date": null,
+    "start_date": "2026-07-31",
+    "has_description": true,
+    "has_acceptance_criteria": false
+  },
+  {
+    "key": "UGSU01-226",
+    "summary": "Épica 4: Análisis y depuración de información",
+    "status": "Done",
+    "priority": "High",
+    "type": "Epic",
+    "assignee": "Juan Manuel Garza",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-147",
+    "parent_summary": "One MDM",
+    "parent_type": "Iniciativa",
+    "due_date": "2026-06-26",
+    "start_date": "2026-05-29",
+    "has_description": true,
+    "has_acceptance_criteria": false
+  },
+  {
+    "key": "UGSU01-225",
+    "summary": "Épica 3: Pruebas",
+    "status": "Done",
+    "priority": "High",
+    "type": "Epic",
+    "assignee": "Juan Manuel Garza",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-147",
+    "parent_summary": "One MDM",
+    "parent_type": "Iniciativa",
+    "due_date": "2026-07-10",
+    "start_date": "2026-04-16",
+    "has_description": true,
+    "has_acceptance_criteria": false
+  },
+  {
+    "key": "UGSU01-224",
+    "summary": "Épica 2: Ejecución y Desarrollo",
+    "status": "Done",
+    "priority": "Highest",
+    "type": "Epic",
+    "assignee": "Juan Manuel Garza",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-147",
+    "parent_summary": "One MDM",
+    "parent_type": "Iniciativa",
+    "due_date": "2026-05-13",
+    "start_date": "2026-03-02",
+    "has_description": true,
+    "has_acceptance_criteria": false
+  },
+  {
+    "key": "UGSU01-222",
+    "summary": "Documentación \"Carta cierre\" y cierre de la iniciativa",
+    "status": "In Progress",
+    "priority": "Medium",
+    "type": "Story",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-214",
+    "parent_summary": "ÉPICA 4: Cierre y Documentación",
+    "parent_type": "Epic",
+    "due_date": "2026-03-20",
+    "start_date": "2026-03-13",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-221",
+    "summary": "Instalación o configuración (equipos, nodos, IPs)",
+    "status": "Done",
+    "priority": "Medium",
+    "type": "Story",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-213",
+    "parent_summary": "ÉPICA 3: Implementación Técnica",
+    "parent_type": "Epic",
+    "due_date": null,
+    "start_date": null,
+    "has_description": false,
+    "has_acceptance_criteria": false
+  },
+  {
+    "key": "UGSU01-220",
+    "summary": "Seguimiento y entrega de equipos",
+    "status": "Done",
+    "priority": "Low",
+    "type": "Story",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-212",
+    "parent_summary": "ÉPICA 2: Adquisición y Logística",
+    "parent_type": "Epic",
+    "due_date": "2026-02-27",
+    "start_date": "2026-01-19",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-219",
+    "summary": "Generación de Orden de Compra con Redes",
+    "status": "Done",
+    "priority": "High",
+    "type": "Story",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-212",
+    "parent_summary": "ÉPICA 2: Adquisición y Logística",
+    "parent_type": "Epic",
+    "due_date": "2026-02-26",
+    "start_date": "2026-01-19",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-218",
+    "summary": "Gestión de Firmas de Autorización Requerimiento",
+    "status": "Done",
+    "priority": "Low",
+    "type": "Story",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-144",
+    "parent_summary": "ÉPICA 1: Planeación, Estimación y Aprobación",
+    "parent_type": "Epic",
+    "due_date": "2026-04-16",
+    "start_date": "2026-01-05",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-217",
+    "summary": "Elaboración de Estimaciones Técnicas (Requerimiento)",
+    "status": "Done",
+    "priority": "High",
+    "type": "Story",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-144",
+    "parent_summary": "ÉPICA 1: Planeación, Estimación y Aprobación",
+    "parent_type": "Epic",
+    "due_date": "2026-05-19",
+    "start_date": "2026-01-05",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-216",
+    "summary": "Estudio de factibilidad de red",
+    "status": "Done",
+    "priority": "High",
+    "type": "Story",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-144",
+    "parent_summary": "ÉPICA 1: Planeación, Estimación y Aprobación",
+    "parent_type": "Epic",
+    "due_date": null,
+    "start_date": "2026-01-05",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-215",
+    "summary": "Reunión de Entendimiento",
+    "status": "Done",
+    "priority": "Low",
+    "type": "Story",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-144",
+    "parent_summary": "ÉPICA 1: Planeación, Estimación y Aprobación",
+    "parent_type": "Epic",
+    "due_date": "2026-03-19",
+    "start_date": "2026-01-05",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-214",
+    "summary": "ÉPICA 4: Cierre y Documentación",
+    "status": "Done",
+    "priority": "Low",
+    "type": "Epic",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-105",
+    "parent_summary": "636 Cámaras de seguridad Ferrería",
+    "parent_type": "Iniciativa",
+    "due_date": "2026-03-20",
+    "start_date": "2026-03-11",
+    "has_description": true,
+    "has_acceptance_criteria": false
+  },
+  {
+    "key": "UGSU01-213",
+    "summary": "ÉPICA 3: Implementación Técnica",
+    "status": "Done",
+    "priority": "Low",
+    "type": "Epic",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-105",
+    "parent_summary": "636 Cámaras de seguridad Ferrería",
+    "parent_type": "Iniciativa",
+    "due_date": "2026-03-13",
+    "start_date": "2026-03-02",
+    "has_description": true,
+    "has_acceptance_criteria": false
+  },
+  {
+    "key": "UGSU01-212",
+    "summary": "ÉPICA 2: Adquisición y Logística",
+    "status": "Done",
+    "priority": "High",
+    "type": "Epic",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-105",
+    "parent_summary": "636 Cámaras de seguridad Ferrería",
+    "parent_type": "Iniciativa",
+    "due_date": "2026-02-27",
+    "start_date": "2026-01-19",
+    "has_description": true,
+    "has_acceptance_criteria": false
+  },
+  {
+    "key": "UGSU01-211",
+    "summary": "Documentación \"Carta cierre\" y cierre formal de la iniciativa",
+    "status": "To Do",
+    "priority": "Low",
+    "type": "Story",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-203",
+    "parent_summary": "ÉPICA 4: Cierre y Documentación",
+    "parent_type": "Epic",
+    "due_date": null,
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-210",
+    "summary": "Instalación o configuración (equipos, nodos, IPs)",
+    "status": "To Do",
+    "priority": "Low",
+    "type": "Story",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-202",
+    "parent_summary": "ÉPICA 3: Implementación Técnica",
+    "parent_type": "Epic",
+    "due_date": null,
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-209",
+    "summary": "Seguimiento y entrega de equipos",
+    "status": "Done",
+    "priority": "Low",
+    "type": "Story",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-201",
+    "parent_summary": "ÉPICA 2: Adquisición y Logística",
+    "parent_type": "Epic",
+    "due_date": "2026-06-01",
+    "start_date": "2026-05-18",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-208",
+    "summary": "Generación de Orden de Compra con Redes",
+    "status": "Done",
+    "priority": "Low",
+    "type": "Story",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-201",
+    "parent_summary": "ÉPICA 2: Adquisición y Logística",
+    "parent_type": "Epic",
+    "due_date": "2026-07-15",
+    "start_date": "2026-04-30",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-207",
+    "summary": "Gestión de Firmas de Autorización Requerimiento",
+    "status": "Done",
+    "priority": "High",
+    "type": "Story",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-200",
+    "parent_summary": "ÉPICA 1: Planeación, Estimación y Aprobación",
+    "parent_type": "Epic",
+    "due_date": "2026-04-30",
+    "start_date": "2026-04-20",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-206",
+    "summary": "Elaboración de Estimaciones Técnicas (Requerimiento)",
+    "status": "Done",
+    "priority": "High",
+    "type": "Story",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-200",
+    "parent_summary": "ÉPICA 1: Planeación, Estimación y Aprobación",
+    "parent_type": "Epic",
+    "due_date": "2026-04-30",
+    "start_date": "2026-04-20",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-205",
+    "summary": "Estudio de factibilidad de red",
+    "status": "Done",
+    "priority": "High",
+    "type": "Story",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-200",
+    "parent_summary": "ÉPICA 1: Planeación, Estimación y Aprobación",
+    "parent_type": "Epic",
+    "due_date": "2026-05-08",
+    "start_date": "2026-04-14",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-204",
+    "summary": "Reunión de Entendimiento",
+    "status": "Done",
+    "priority": "Low",
+    "type": "Story",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-200",
+    "parent_summary": "ÉPICA 1: Planeación, Estimación y Aprobación",
+    "parent_type": "Epic",
+    "due_date": "2026-04-13",
+    "start_date": "2026-04-06",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-203",
+    "summary": "ÉPICA 4: Cierre y Documentación",
+    "status": "Congelación",
+    "priority": "Low",
+    "type": "Epic",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-145",
+    "parent_summary": "638 Biblioteca exterior en campus Ferrería",
+    "parent_type": "Iniciativa",
+    "due_date": "2026-09-30",
+    "start_date": "2026-08-24",
+    "has_description": true,
+    "has_acceptance_criteria": false
+  },
+  {
+    "key": "UGSU01-202",
+    "summary": "ÉPICA 3: Implementación Técnica",
+    "status": "Congelación",
+    "priority": "High",
+    "type": "Epic",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-145",
+    "parent_summary": "638 Biblioteca exterior en campus Ferrería",
+    "parent_type": "Iniciativa",
+    "due_date": null,
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": false
+  },
+  {
+    "key": "UGSU01-201",
+    "summary": "ÉPICA 2: Adquisición y Logística",
+    "status": "Done",
+    "priority": "Low",
+    "type": "Epic",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-145",
+    "parent_summary": "638 Biblioteca exterior en campus Ferrería",
+    "parent_type": "Iniciativa",
+    "due_date": "2026-09-29",
+    "start_date": "2026-04-13",
+    "has_description": true,
+    "has_acceptance_criteria": false
+  },
+  {
+    "key": "UGSU01-200",
+    "summary": "ÉPICA 1: Planeación, Estimación y Aprobación",
+    "status": "Done",
+    "priority": "Low",
+    "type": "Epic",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-145",
+    "parent_summary": "638 Biblioteca exterior en campus Ferrería",
+    "parent_type": "Iniciativa",
+    "due_date": "2026-04-10",
+    "start_date": "2026-04-06",
+    "has_description": true,
+    "has_acceptance_criteria": false
+  },
+  {
+    "key": "UGSU01-199",
+    "summary": "Documentación \"Carta cierre\" y cierre de la iniciativa",
+    "status": "Done",
+    "priority": "Medium",
+    "type": "Story",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-197",
+    "parent_summary": "ÉPICA 3: Documentación \"Carta cierre\" y cierre de la iniciativa",
+    "parent_type": "Epic",
+    "due_date": "2026-05-28",
+    "start_date": "2026-05-18",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-198",
+    "summary": "Instalación o configuración (equipos, nodos, IPs)",
+    "status": "Done",
+    "priority": "High",
+    "type": "Story",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-196",
+    "parent_summary": "ÉPICA 2: Implementación Técnica",
+    "parent_type": "Epic",
+    "due_date": "2026-05-11",
+    "start_date": "2026-05-04",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-197",
+    "summary": "ÉPICA 3: Documentación \"Carta cierre\" y cierre de la iniciativa",
+    "status": "Done",
+    "priority": "Low",
+    "type": "Epic",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-155",
+    "parent_summary": "646 Solicitud de IPs Laboratorios Ed 1 Las Torres",
+    "parent_type": "Iniciativa",
+    "due_date": "2026-06-01",
+    "start_date": "2026-05-04",
+    "has_description": true,
+    "has_acceptance_criteria": false
+  },
+  {
+    "key": "UGSU01-196",
+    "summary": "ÉPICA 2: Implementación Técnica",
+    "status": "Done",
+    "priority": "High",
+    "type": "Epic",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-155",
+    "parent_summary": "646 Solicitud de IPs Laboratorios Ed 1 Las Torres",
+    "parent_type": "Iniciativa",
+    "due_date": "2026-06-30",
+    "start_date": "2026-05-15",
+    "has_description": true,
+    "has_acceptance_criteria": false
+  },
+  {
+    "key": "UGSU01-195",
+    "summary": "Gestión de Firmas de Autorización Requerimiento",
+    "status": "Done",
+    "priority": "Medium",
+    "type": "Story",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-191",
+    "parent_summary": "ÉPICA 1: Planeación, Estimación y Aprobación",
+    "parent_type": "Epic",
+    "due_date": "2026-05-15",
+    "start_date": "2026-04-30",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-194",
+    "summary": "Elaboración de Estimaciones Técnicas (Requerimiento)",
+    "status": "Done",
+    "priority": "High",
+    "type": "Story",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-191",
+    "parent_summary": "ÉPICA 1: Planeación, Estimación y Aprobación",
+    "parent_type": "Epic",
+    "due_date": "2026-05-04",
+    "start_date": "2026-04-20",
+    "has_description": false,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-193",
+    "summary": "Estudio de factibilidad de red",
+    "status": "Done",
+    "priority": "Medium",
+    "type": "Story",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-191",
+    "parent_summary": "ÉPICA 1: Planeación, Estimación y Aprobación",
+    "parent_type": "Epic",
+    "due_date": "2026-05-29",
+    "start_date": "2026-04-13",
+    "has_description": false,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-192",
+    "summary": "Reunión de entendimiento",
+    "status": "Done",
+    "priority": "Low",
+    "type": "Story",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-191",
+    "parent_summary": "ÉPICA 1: Planeación, Estimación y Aprobación",
+    "parent_type": "Epic",
+    "due_date": "2026-05-28",
+    "start_date": "2026-05-04",
+    "has_description": true,
+    "has_acceptance_criteria": true
+  },
+  {
+    "key": "UGSU01-191",
+    "summary": "ÉPICA 1: Planeación, Estimación y Aprobación",
+    "status": "Done",
+    "priority": "Low",
+    "type": "Epic",
+    "assignee": "Jazz Novelo",
+    "created": "2026-07-13",
+    "updated": "2026-07-13",
+    "parent_key": "UGSU01-155",
+    "parent_summary": "646 Solicitud de IPs Laboratorios Ed 1 Las Torres",
+    "parent_type": "Iniciativa",
+    "due_date": "2026-05-29",
+    "start_date": "2026-04-20",
+    "has_description": true,
+    "has_acceptance_criteria": false
+  },
+  {
+    "key": "UGSU01-190",
+    "summary": "Reunión de Entendimiento",
+    "status": "Done",
+    "priority": "Medium",
+    "type": "Epic",
+    "assignee": "Jazz Novelo",
     "created": "2026-07-09",
-    "updated": "2026-07-09",
+    "updated": "2026-07-14",
     "parent_key": "UGSU01-189",
     "parent_summary": "671 Instalación de AP Aula 3105",
     "parent_type": "Iniciativa",
     "due_date": null,
-    "start_date": "2026-06-22"
+    "start_date": "2026-06-22",
+    "has_description": false,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-189",
@@ -27,7 +811,9 @@
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
     "due_date": "2026-10-30",
-    "start_date": "2026-06-10"
+    "start_date": "2026-06-10",
+    "has_description": false,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-187",
@@ -42,7 +828,9 @@
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
     "due_date": null,
-    "start_date": "2026-06-08"
+    "start_date": "2026-06-08",
+    "has_description": false,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-185",
@@ -57,7 +845,9 @@
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
     "due_date": null,
-    "start_date": "2026-06-01"
+    "start_date": "2026-06-01",
+    "has_description": false,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-183",
@@ -72,7 +862,9 @@
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
     "due_date": null,
-    "start_date": "2026-06-01"
+    "start_date": "2026-06-01",
+    "has_description": false,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-181",
@@ -87,7 +879,9 @@
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
     "due_date": null,
-    "start_date": "2026-05-18"
+    "start_date": "2026-05-18",
+    "has_description": false,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-179",
@@ -102,7 +896,9 @@
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
     "due_date": null,
-    "start_date": "2026-05-07"
+    "start_date": "2026-05-07",
+    "has_description": false,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-177",
@@ -117,7 +913,9 @@
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
     "due_date": null,
-    "start_date": "2026-05-07"
+    "start_date": "2026-05-07",
+    "has_description": false,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-175",
@@ -132,7 +930,9 @@
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
     "due_date": null,
-    "start_date": "2026-06-08"
+    "start_date": "2026-06-08",
+    "has_description": false,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-173",
@@ -147,7 +947,9 @@
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
     "due_date": null,
-    "start_date": "2026-04-27"
+    "start_date": "2026-04-27",
+    "has_description": false,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-171",
@@ -162,7 +964,9 @@
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
     "due_date": null,
-    "start_date": "2026-04-16"
+    "start_date": "2026-04-16",
+    "has_description": false,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-169",
@@ -177,7 +981,9 @@
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
     "due_date": null,
-    "start_date": "2026-02-02"
+    "start_date": "2026-02-02",
+    "has_description": false,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-167",
@@ -192,7 +998,9 @@
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
     "due_date": "2026-09-30",
-    "start_date": "2026-06-08"
+    "start_date": "2026-06-08",
+    "has_description": false,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-165",
@@ -207,7 +1015,9 @@
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
     "due_date": null,
-    "start_date": "2026-04-15"
+    "start_date": "2026-04-15",
+    "has_description": false,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-163",
@@ -222,7 +1032,9 @@
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
     "due_date": null,
-    "start_date": "2026-04-15"
+    "start_date": "2026-04-15",
+    "has_description": false,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-161",
@@ -237,7 +1049,9 @@
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
     "due_date": null,
-    "start_date": "2026-04-13"
+    "start_date": "2026-04-13",
+    "has_description": false,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-159",
@@ -252,7 +1066,9 @@
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
     "due_date": null,
-    "start_date": "2026-05-11"
+    "start_date": "2026-05-11",
+    "has_description": false,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-157",
@@ -267,7 +1083,9 @@
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
     "due_date": null,
-    "start_date": "2026-03-20"
+    "start_date": "2026-03-20",
+    "has_description": false,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-155",
@@ -277,12 +1095,14 @@
     "type": "Iniciativa",
     "assignee": "Jazz Novelo",
     "created": "2026-06-08",
-    "updated": "2026-07-01",
+    "updated": "2026-07-13",
     "parent_key": "LDP-226",
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
     "due_date": "2026-07-07",
-    "start_date": "2026-04-20"
+    "start_date": "2026-04-20",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-153",
@@ -297,7 +1117,9 @@
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
     "due_date": null,
-    "start_date": "2026-05-28"
+    "start_date": "2026-05-28",
+    "has_description": false,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-151",
@@ -312,37 +1134,43 @@
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": false,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-149",
-    "summary": "Análisis de le Petición y Requerimientos",
+    "summary": "Análisis de la Petición y Requerimientos",
     "status": "Done",
-    "priority": "Medium",
+    "priority": "Low",
     "type": "Task",
-    "assignee": "Sin asignar",
+    "assignee": "Juan Manuel Garza",
     "created": "2026-04-30",
-    "updated": "2026-06-25",
+    "updated": "2026-07-13",
     "parent_key": "UGSU01-148",
-    "parent_summary": "Análisis y Diseño de Solución",
+    "parent_summary": "Épica 1: Análisis y Diseño de Solución",
     "parent_type": "Epic",
-    "due_date": null,
-    "start_date": null
+    "due_date": "2026-02-27",
+    "start_date": "2026-02-23",
+    "has_description": false,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-148",
-    "summary": "Análisis y Diseño de Solución",
+    "summary": "Épica 1: Análisis y Diseño de Solución",
     "status": "Done",
-    "priority": "Medium",
+    "priority": "Low",
     "type": "Epic",
     "assignee": "Juan Manuel Garza",
     "created": "2026-03-20",
-    "updated": "2026-06-25",
+    "updated": "2026-07-13",
     "parent_key": "UGSU01-147",
     "parent_summary": "One MDM",
     "parent_type": "Iniciativa",
     "due_date": "2026-02-27",
-    "start_date": "2026-02-23"
+    "start_date": "2026-02-23",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-147",
@@ -357,7 +1185,9 @@
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
     "due_date": "2026-11-30",
-    "start_date": "2026-02-23"
+    "start_date": "2026-02-23",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-145",
@@ -367,27 +1197,31 @@
     "type": "Iniciativa",
     "assignee": "Jazz Novelo",
     "created": "2026-01-29",
-    "updated": "2026-06-09",
+    "updated": "2026-07-13",
     "parent_key": null,
     "parent_summary": null,
     "parent_type": null,
     "due_date": "2026-09-30",
-    "start_date": null
+    "start_date": "2026-03-02",
+    "has_description": false,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-144",
     "summary": "ÉPICA 1: Planeación, Estimación y Aprobación",
     "status": "Done",
-    "priority": "Medium",
+    "priority": "Highest",
     "type": "Epic",
     "assignee": "Jazz Novelo",
     "created": "2026-01-23",
-    "updated": "2026-06-05",
+    "updated": "2026-07-13",
     "parent_key": "UGSU01-105",
     "parent_summary": "636 Cámaras de seguridad Ferrería",
     "parent_type": "Iniciativa",
     "due_date": "2026-03-20",
-    "start_date": "2026-01-05"
+    "start_date": "2026-01-05",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-143",
@@ -402,7 +1236,9 @@
     "parent_summary": "609 ÉPICA 2: Adquisición y Logística",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-142",
@@ -417,7 +1253,9 @@
     "parent_summary": "635 ÉPICA 4: Cierre y Documentación",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-141",
@@ -432,7 +1270,9 @@
     "parent_summary": "635 ÉPICA 3: Implementación Técnica",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-140",
@@ -447,7 +1287,9 @@
     "parent_summary": "635 ÉPICA 2: Adquisición y Logística",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-139",
@@ -462,7 +1304,9 @@
     "parent_summary": "635 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2026-02-06",
-    "start_date": "2026-01-26"
+    "start_date": "2026-01-26",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-138",
@@ -477,7 +1321,9 @@
     "parent_summary": "635 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2026-02-06",
-    "start_date": "2026-01-26"
+    "start_date": "2026-01-26",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-137",
@@ -492,7 +1338,9 @@
     "parent_summary": "635 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2026-01-30",
-    "start_date": "2026-01-12"
+    "start_date": "2026-01-12",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-136",
@@ -507,7 +1355,9 @@
     "parent_summary": "635 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2025-12-22",
-    "start_date": "2025-12-19"
+    "start_date": "2025-12-19",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-135",
@@ -522,7 +1372,9 @@
     "parent_summary": "635 Cámaras de seguridad Durango",
     "parent_type": "Iniciativa",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-134",
@@ -537,7 +1389,9 @@
     "parent_summary": "635 Cámaras de seguridad Durango",
     "parent_type": "Iniciativa",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-133",
@@ -552,7 +1406,9 @@
     "parent_summary": "635 Cámaras de seguridad Durango",
     "parent_type": "Iniciativa",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-132",
@@ -567,7 +1423,9 @@
     "parent_summary": "635 Cámaras de seguridad Durango",
     "parent_type": "Iniciativa",
     "due_date": "2026-01-23",
-    "start_date": "2025-12-19"
+    "start_date": "2025-12-19",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-131",
@@ -582,7 +1440,9 @@
     "parent_summary": "627 ÉPICA 4: Cierre y Documentación",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-130",
@@ -597,7 +1457,9 @@
     "parent_summary": "627 ÉPICA 3: Implementación Técnica",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-129",
@@ -612,7 +1474,9 @@
     "parent_summary": "627 ÉPICA 2: Adquisición y Logística",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-128",
@@ -627,7 +1491,9 @@
     "parent_summary": "627 ÉPICA 2: Adquisición y Logística",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-127",
@@ -642,7 +1508,9 @@
     "parent_summary": "627 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-126",
@@ -657,7 +1525,9 @@
     "parent_summary": "627 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2026-02-06",
-    "start_date": "2026-01-26"
+    "start_date": "2026-01-26",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-125",
@@ -672,7 +1542,9 @@
     "parent_summary": "627 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2026-01-30",
-    "start_date": "2026-01-12"
+    "start_date": "2026-01-12",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-124",
@@ -687,7 +1559,9 @@
     "parent_summary": "627 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2025-12-08",
-    "start_date": "2025-12-05"
+    "start_date": "2025-12-05",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-123",
@@ -702,7 +1576,9 @@
     "parent_summary": "627 Laboratorio de Redes Industriales Querétaro",
     "parent_type": "Iniciativa",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-122",
@@ -717,7 +1593,9 @@
     "parent_summary": "627 Laboratorio de Redes Industriales Querétaro",
     "parent_type": "Iniciativa",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-121",
@@ -732,7 +1610,9 @@
     "parent_summary": "627 Laboratorio de Redes Industriales Querétaro",
     "parent_type": "Iniciativa",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-120",
@@ -747,7 +1627,9 @@
     "parent_summary": "627 Laboratorio de Redes Industriales Querétaro",
     "parent_type": "Iniciativa",
     "due_date": "2026-01-30",
-    "start_date": "2025-12-05"
+    "start_date": "2025-12-05",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-119",
@@ -762,7 +1644,9 @@
     "parent_summary": "634 ÉPICA 4: Cierre y Documentación",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-118",
@@ -777,7 +1661,9 @@
     "parent_summary": "634 ÉPICA 3: Implementación Técnica",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-117",
@@ -792,7 +1678,9 @@
     "parent_summary": "634 ÉPICA 2: Adquisición y Logística",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-116",
@@ -807,7 +1695,9 @@
     "parent_summary": "634 ÉPICA 2: Adquisición y Logística",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-115",
@@ -822,7 +1712,9 @@
     "parent_summary": "634 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-114",
@@ -837,7 +1729,9 @@
     "parent_summary": "634 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2026-01-30",
-    "start_date": "2026-01-19"
+    "start_date": "2026-01-19",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-113",
@@ -852,7 +1746,9 @@
     "parent_summary": "634 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2026-01-23",
-    "start_date": "2025-12-23"
+    "start_date": "2025-12-23",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-112",
@@ -867,7 +1763,9 @@
     "parent_summary": "634 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2025-12-23",
-    "start_date": "2025-12-19"
+    "start_date": "2025-12-19",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-111",
@@ -882,7 +1780,9 @@
     "parent_summary": "634 Cámaras de seguridad Mazatlán",
     "parent_type": "Iniciativa",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-110",
@@ -897,7 +1797,9 @@
     "parent_summary": "634 Cámaras de seguridad Mazatlán",
     "parent_type": "Iniciativa",
     "due_date": "2026-02-20",
-    "start_date": "2026-01-26"
+    "start_date": "2026-01-26",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-109",
@@ -912,7 +1814,9 @@
     "parent_summary": "634 Cámaras de seguridad Mazatlán",
     "parent_type": "Iniciativa",
     "due_date": "2026-01-23",
-    "start_date": "2025-12-22"
+    "start_date": "2025-12-22",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-108",
@@ -927,7 +1831,9 @@
     "parent_summary": "634 Cámaras de seguridad Mazatlán",
     "parent_type": "Iniciativa",
     "due_date": "2026-04-30",
-    "start_date": "2025-12-19"
+    "start_date": "2025-12-19",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-107",
@@ -942,67 +1848,77 @@
     "parent_summary": null,
     "parent_type": null,
     "due_date": "2026-08-31",
-    "start_date": "2026-01-07"
+    "start_date": "2026-01-07",
+    "has_description": false,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-106",
     "summary": "627 Laboratorio de Redes Industriales Querétaro",
     "status": "Done",
-    "priority": "Medium",
+    "priority": "Low",
     "type": "Iniciativa",
     "assignee": "Jazz Novelo",
     "created": "2025-12-22",
-    "updated": "2026-06-09",
+    "updated": "2026-07-13",
     "parent_key": null,
     "parent_summary": null,
     "parent_type": null,
     "due_date": "2026-05-01",
-    "start_date": "2025-12-08"
+    "start_date": "2025-12-08",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-105",
     "summary": "636 Cámaras de seguridad Ferrería",
     "status": "Done",
-    "priority": "Medium",
+    "priority": "High",
     "type": "Iniciativa",
     "assignee": "Jazz Novelo",
     "created": "2025-12-22",
-    "updated": "2026-06-05",
-    "parent_key": null,
-    "parent_summary": null,
-    "parent_type": null,
-    "due_date": "2026-03-20",
-    "start_date": "2026-01-05"
+    "updated": "2026-07-13",
+    "parent_key": "LDP-226",
+    "parent_summary": "UTM - Campus del Futuro",
+    "parent_type": "Producto / Componente",
+    "due_date": "2026-03-31",
+    "start_date": "2026-01-05",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-104",
     "summary": "635 Cámaras de seguridad Durango",
     "status": "Done",
-    "priority": "Medium",
+    "priority": "High",
     "type": "Iniciativa",
     "assignee": "Jazz Novelo",
     "created": "2025-12-22",
-    "updated": "2026-06-05",
-    "parent_key": null,
-    "parent_summary": null,
-    "parent_type": null,
+    "updated": "2026-07-13",
+    "parent_key": "LDP-226",
+    "parent_summary": "UTM - Campus del Futuro",
+    "parent_type": "Producto / Componente",
     "due_date": "2026-01-23",
-    "start_date": "2025-11-24"
+    "start_date": "2025-11-24",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-103",
     "summary": "634 Cámaras de seguridad Mazatlán",
     "status": "Done",
-    "priority": "Medium",
+    "priority": "High",
     "type": "Iniciativa",
     "assignee": "Jazz Novelo",
     "created": "2025-12-22",
-    "updated": "2026-06-08",
-    "parent_key": null,
-    "parent_summary": null,
-    "parent_type": null,
+    "updated": "2026-07-13",
+    "parent_key": "LDP-226",
+    "parent_summary": "UTM - Campus del Futuro",
+    "parent_type": "Producto / Componente",
     "due_date": "2026-02-06",
-    "start_date": "2025-12-01"
+    "start_date": "2025-12-01",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-102",
@@ -1017,7 +1933,9 @@
     "parent_summary": "ÉPICA 4: Cierre y Documentación",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-101",
@@ -1032,67 +1950,77 @@
     "parent_summary": "609 ÉPICA 3: Implementación Técnica",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": "2025-11-03"
+    "start_date": "2025-11-03",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-100",
     "summary": "Gestión de Firmas de Autorización Requerimiento",
     "status": "Done",
-    "priority": "Medium",
+    "priority": "Low",
     "type": "Story",
     "assignee": "Jazz Novelo",
     "created": "2025-12-19",
-    "updated": "2025-12-22",
+    "updated": "2026-07-13",
     "parent_key": "UGSU01-50",
     "parent_summary": "609 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2025-10-10",
-    "start_date": "2025-10-06"
+    "start_date": "2025-10-06",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-99",
     "summary": "Elaboración de Estimaciones Técnicas (Requerimiento)",
     "status": "Done",
-    "priority": "Medium",
+    "priority": "Low",
     "type": "Story",
     "assignee": "Jazz Novelo",
     "created": "2025-12-19",
-    "updated": "2025-12-22",
+    "updated": "2026-07-13",
     "parent_key": "UGSU01-50",
     "parent_summary": "609 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2026-01-02",
-    "start_date": "2025-09-17"
+    "start_date": "2025-09-17",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-98",
     "summary": "Estudio de factibilidad de red",
     "status": "Done",
-    "priority": "Medium",
+    "priority": "High",
     "type": "Story",
     "assignee": "Jazz Novelo",
     "created": "2025-12-19",
-    "updated": "2025-12-22",
+    "updated": "2026-07-13",
     "parent_key": "UGSU01-50",
     "parent_summary": "609 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2026-01-02",
-    "start_date": "2025-09-17"
+    "start_date": "2025-09-17",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-97",
     "summary": "Reunión de Entendimiento",
     "status": "Done",
-    "priority": "Medium",
+    "priority": "High",
     "type": "Story",
     "assignee": "Jazz Novelo",
     "created": "2025-12-19",
-    "updated": "2025-12-22",
+    "updated": "2026-07-13",
     "parent_key": "UGSU01-50",
     "parent_summary": "609 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2025-09-16",
-    "start_date": "2025-09-16"
+    "start_date": "2025-09-16",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-96",
@@ -1107,7 +2035,9 @@
     "parent_summary": "630 ÉPICA 4: Cierre y Documentación",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-95",
@@ -1122,7 +2052,9 @@
     "parent_summary": "630 ÉPICA 3: Implementación Técnica",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-94",
@@ -1137,7 +2069,9 @@
     "parent_summary": "630 ÉPICA 2: Adquisición y Logística",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-93",
@@ -1152,7 +2086,9 @@
     "parent_summary": "630 ÉPICA 2: Adquisición y Logística",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-92",
@@ -1167,7 +2103,9 @@
     "parent_summary": "630 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2026-01-30",
-    "start_date": "2026-01-12"
+    "start_date": "2026-01-12",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-91",
@@ -1182,7 +2120,9 @@
     "parent_summary": "630 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-90",
@@ -1197,7 +2137,9 @@
     "parent_summary": "630 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2026-01-16",
-    "start_date": "2025-12-03"
+    "start_date": "2025-12-03",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-89",
@@ -1205,14 +2147,16 @@
     "status": "Done",
     "priority": "Medium",
     "type": "Story",
-    "assignee": "Sin asignar",
+    "assignee": "Jazz Novelo",
     "created": "2025-12-18",
-    "updated": "2025-12-22",
+    "updated": "2026-07-13",
     "parent_key": "UGSU01-45",
     "parent_summary": "630 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2025-12-03",
-    "start_date": "2025-12-02"
+    "start_date": "2025-12-02",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-88",
@@ -1227,7 +2171,9 @@
     "parent_summary": "629 ÉPICA 4: Cierre y Documentación",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-87",
@@ -1242,7 +2188,9 @@
     "parent_summary": "629 ÉPICA 3: Implementación Técnica",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-86",
@@ -1257,7 +2205,9 @@
     "parent_summary": "629 ÉPICA 2: Adquisición y Logística",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-85",
@@ -1272,7 +2222,9 @@
     "parent_summary": "629 ÉPICA 2: Adquisición y Logística",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-84",
@@ -1287,7 +2239,9 @@
     "parent_summary": "629 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-83",
@@ -1302,7 +2256,9 @@
     "parent_summary": "629 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": "2027-01-11"
+    "start_date": "2027-01-11",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-82",
@@ -1317,7 +2273,9 @@
     "parent_summary": "629 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2026-01-16",
-    "start_date": "2025-12-03"
+    "start_date": "2025-12-03",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-81",
@@ -1332,7 +2290,9 @@
     "parent_summary": "629 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-80",
@@ -1347,7 +2307,9 @@
     "parent_summary": "628 ÉPICA 4: Cierre y Documentación",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-79",
@@ -1362,7 +2324,9 @@
     "parent_summary": "628 ÉPICA 3: Implementación Técnica",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-78",
@@ -1377,7 +2341,9 @@
     "parent_summary": "628 ÉPICA 2: Adquisición y Logística",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-77",
@@ -1392,7 +2358,9 @@
     "parent_summary": "628 ÉPICA 2: Adquisición y Logística",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-76",
@@ -1407,7 +2375,9 @@
     "parent_summary": "628 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-75",
@@ -1422,7 +2392,9 @@
     "parent_summary": "628 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-74",
@@ -1437,7 +2409,9 @@
     "parent_summary": "628 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2026-01-16",
-    "start_date": "2025-12-02"
+    "start_date": "2025-12-02",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-73",
@@ -1452,7 +2426,9 @@
     "parent_summary": "628 ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2025-12-02",
-    "start_date": "2025-12-01"
+    "start_date": "2025-12-01",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-72",
@@ -1467,7 +2443,9 @@
     "parent_summary": "520 G ÉPICA 4: Cierre y Documentación",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-71",
@@ -1482,7 +2460,9 @@
     "parent_summary": "520 G ÉPICA 3: Implementación Técnica",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-70",
@@ -1497,7 +2477,9 @@
     "parent_summary": "520 G ÉPICA 2: Adquisición y Logística",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": "2025-12-15"
+    "start_date": "2025-12-15",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-69",
@@ -1512,7 +2494,9 @@
     "parent_summary": "520 G ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2025-12-12",
-    "start_date": "2025-12-08"
+    "start_date": "2025-12-08",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-68",
@@ -1527,7 +2511,9 @@
     "parent_summary": "520 G ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2025-12-12",
-    "start_date": "2025-12-08"
+    "start_date": "2025-12-08",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-67",
@@ -1542,7 +2528,9 @@
     "parent_summary": "520 G ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2025-12-12",
-    "start_date": "2025-12-04"
+    "start_date": "2025-12-04",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-66",
@@ -1557,7 +2545,9 @@
     "parent_summary": "520 G ÉPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2025-12-03",
-    "start_date": "2025-12-02"
+    "start_date": "2025-12-02",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-65",
@@ -1572,7 +2562,9 @@
     "parent_summary": "520 H ÉPICA 2: Adquisición y Logística",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-64",
@@ -1587,7 +2579,9 @@
     "parent_summary": "520 H ÉPICA 4: Cierre y Documentación",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-63",
@@ -1602,7 +2596,9 @@
     "parent_summary": "520 H ÉPICA 3: Implementación Técnica",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-62",
@@ -1617,7 +2613,9 @@
     "parent_summary": "520 H ÉPICA 2: Adquisición y Logística",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": "2025-12-29"
+    "start_date": "2025-12-29",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-60",
@@ -1632,7 +2630,9 @@
     "parent_summary": "520 H EPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-59",
@@ -1647,7 +2647,9 @@
     "parent_summary": "520 H EPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-58",
@@ -1662,7 +2664,9 @@
     "parent_summary": "520 H EPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": "2025-12-08"
+    "start_date": "2025-12-08",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-57",
@@ -1677,7 +2681,9 @@
     "parent_summary": "520 H EPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2025-12-03",
-    "start_date": "2025-12-02"
+    "start_date": "2025-12-02",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-56",
@@ -1692,7 +2698,9 @@
     "parent_summary": "520 F EPICA 4: Cierre y Documentación",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-55",
@@ -1707,142 +2715,162 @@
     "parent_summary": "520 F EPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2025-12-16",
-    "start_date": "2025-12-01"
+    "start_date": "2025-12-01",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-53",
     "summary": "ÉPICA 4: Cierre y Documentación",
     "status": "To Do",
-    "priority": "Medium",
+    "priority": "High",
     "type": "Epic",
     "assignee": "Jazz Novelo",
     "created": "2025-12-01",
-    "updated": "2025-12-22",
+    "updated": "2026-07-13",
     "parent_key": "UGSU01-49",
     "parent_summary": "609 Sensores de vapeo y agresiones para baños de campus Las Torres",
     "parent_type": "Iniciativa",
     "due_date": "2026-02-06",
-    "start_date": "2026-01-19"
+    "start_date": "2026-01-19",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-52",
     "summary": "609 ÉPICA 3: Implementación Técnica",
-    "status": "In Progress",
-    "priority": "Medium",
+    "status": "Congelación",
+    "priority": "High",
     "type": "Epic",
     "assignee": "Jazz Novelo",
     "created": "2025-12-01",
-    "updated": "2025-12-22",
+    "updated": "2026-07-13",
     "parent_key": "UGSU01-49",
     "parent_summary": "609 Sensores de vapeo y agresiones para baños de campus Las Torres",
     "parent_type": "Iniciativa",
     "due_date": "2026-01-30",
-    "start_date": "2025-09-22"
+    "start_date": "2025-09-22",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-51",
     "summary": "609 ÉPICA 2: Adquisición y Logística",
     "status": "Done",
-    "priority": "Medium",
+    "priority": "High",
     "type": "Epic",
     "assignee": "Jazz Novelo",
     "created": "2025-12-01",
-    "updated": "2025-12-22",
+    "updated": "2026-07-13",
     "parent_key": "UGSU01-49",
     "parent_summary": "609 Sensores de vapeo y agresiones para baños de campus Las Torres",
     "parent_type": "Iniciativa",
     "due_date": "2025-09-19",
-    "start_date": "2025-09-01"
+    "start_date": "2025-09-01",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-50",
     "summary": "609 ÉPICA 1: Planeación, Estimación y Aprobación",
     "status": "Done",
-    "priority": "Medium",
+    "priority": "High",
     "type": "Epic",
     "assignee": "Jazz Novelo",
     "created": "2025-12-01",
-    "updated": "2025-12-22",
+    "updated": "2026-07-13",
     "parent_key": "UGSU01-49",
     "parent_summary": "609 Sensores de vapeo y agresiones para baños de campus Las Torres",
     "parent_type": "Iniciativa",
     "due_date": "2026-09-25",
-    "start_date": "2025-08-25"
+    "start_date": "2025-08-25",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-49",
     "summary": "609 Sensores de vapeo y agresiones para baños de campus Las Torres",
-    "status": "In Progress",
+    "status": "Congelación",
     "priority": "Medium",
     "type": "Iniciativa",
     "assignee": "Jazz Novelo",
     "created": "2025-12-01",
-    "updated": "2026-06-15",
+    "updated": "2026-07-13",
     "parent_key": null,
     "parent_summary": null,
     "parent_type": null,
-    "due_date": "2026-08-31",
-    "start_date": "2025-08-25"
+    "due_date": "2026-09-30",
+    "start_date": "2025-08-25",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-48",
     "summary": "630 ÉPICA 4: Cierre y Documentación",
     "status": "Done",
-    "priority": "Medium",
+    "priority": "Low",
     "type": "Epic",
     "assignee": "Jazz Novelo",
     "created": "2025-12-01",
-    "updated": "2026-06-08",
+    "updated": "2026-07-13",
     "parent_key": "UGSU01-44",
     "parent_summary": "630 Cámaras de seguridad Guadalajara",
     "parent_type": "Iniciativa",
     "due_date": "2026-04-17",
-    "start_date": "2026-03-23"
+    "start_date": "2026-03-23",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-47",
     "summary": "630 ÉPICA 3: Implementación Técnica",
     "status": "Done",
-    "priority": "Medium",
+    "priority": "High",
     "type": "Epic",
     "assignee": "Jazz Novelo",
     "created": "2025-12-01",
-    "updated": "2026-06-08",
+    "updated": "2026-07-13",
     "parent_key": "UGSU01-44",
     "parent_summary": "630 Cámaras de seguridad Guadalajara",
     "parent_type": "Iniciativa",
     "due_date": "2026-04-24",
-    "start_date": "2026-01-19"
+    "start_date": "2026-01-19",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-46",
     "summary": "630 ÉPICA 2: Adquisición y Logística",
     "status": "Done",
-    "priority": "Medium",
+    "priority": "High",
     "type": "Epic",
     "assignee": "Jazz Novelo",
     "created": "2025-12-01",
-    "updated": "2025-12-22",
+    "updated": "2026-07-13",
     "parent_key": "UGSU01-44",
     "parent_summary": "630 Cámaras de seguridad Guadalajara",
     "parent_type": "Iniciativa",
     "due_date": "2026-01-30",
-    "start_date": "2026-01-05"
+    "start_date": "2026-01-05",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-45",
     "summary": "630 ÉPICA 1: Planeación, Estimación y Aprobación",
     "status": "Done",
-    "priority": "Medium",
+    "priority": "Low",
     "type": "Epic",
     "assignee": "Jazz Novelo",
     "created": "2025-12-01",
-    "updated": "2026-06-08",
+    "updated": "2026-07-13",
     "parent_key": "UGSU01-44",
     "parent_summary": "630 Cámaras de seguridad Guadalajara",
     "parent_type": "Iniciativa",
     "due_date": "2026-01-30",
-    "start_date": "2025-11-24"
+    "start_date": "2025-11-24",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-44",
@@ -1852,12 +2880,14 @@
     "type": "Iniciativa",
     "assignee": "Jazz Novelo",
     "created": "2025-12-01",
-    "updated": "2026-07-08",
+    "updated": "2026-07-13",
     "parent_key": null,
     "parent_summary": null,
     "parent_type": null,
     "due_date": "2026-07-07",
-    "start_date": "2025-11-24"
+    "start_date": "2025-11-24",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-43",
@@ -1872,7 +2902,9 @@
     "parent_summary": "629 Cámaras de seguridad Zapopan",
     "parent_type": "Iniciativa",
     "due_date": "2026-04-17",
-    "start_date": "2026-03-30"
+    "start_date": "2026-03-30",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-42",
@@ -1887,7 +2919,9 @@
     "parent_summary": "629 Cámaras de seguridad Zapopan",
     "parent_type": "Iniciativa",
     "due_date": "2026-04-10",
-    "start_date": "2026-02-09"
+    "start_date": "2026-02-09",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-41",
@@ -1902,7 +2936,9 @@
     "parent_summary": "629 Cámaras de seguridad Zapopan",
     "parent_type": "Iniciativa",
     "due_date": "2026-02-06",
-    "start_date": "2026-01-19"
+    "start_date": "2026-01-19",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-40",
@@ -1917,22 +2953,26 @@
     "parent_summary": "629 Cámaras de seguridad Zapopan",
     "parent_type": "Iniciativa",
     "due_date": null,
-    "start_date": null
+    "start_date": null,
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-39",
     "summary": "629 Cámaras de seguridad Zapopan",
     "status": "Done",
-    "priority": "Medium",
+    "priority": "High",
     "type": "Iniciativa",
     "assignee": "Jazz Novelo",
     "created": "2025-12-01",
-    "updated": "2026-06-09",
+    "updated": "2026-07-13",
     "parent_key": null,
     "parent_summary": null,
     "parent_type": null,
     "due_date": "2026-04-30",
-    "start_date": "2025-11-24"
+    "start_date": "2025-11-24",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-38",
@@ -1947,7 +2987,9 @@
     "parent_summary": "628 Cámaras de seguridad San Luis",
     "parent_type": "Iniciativa",
     "due_date": "2026-04-17",
-    "start_date": "2026-03-30"
+    "start_date": "2026-03-30",
+    "has_description": false,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-37",
@@ -1962,7 +3004,9 @@
     "parent_summary": "628 Cámaras de seguridad San Luis",
     "parent_type": "Iniciativa",
     "due_date": "2026-04-24",
-    "start_date": "2026-01-19"
+    "start_date": "2026-01-19",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-36",
@@ -1977,7 +3021,9 @@
     "parent_summary": "628 Cámaras de seguridad San Luis",
     "parent_type": "Iniciativa",
     "due_date": "2026-01-16",
-    "start_date": "2025-12-29"
+    "start_date": "2025-12-29",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-35",
@@ -1992,22 +3038,26 @@
     "parent_summary": "628 Cámaras de seguridad San Luis",
     "parent_type": "Iniciativa",
     "due_date": "2026-01-22",
-    "start_date": "2025-11-24"
+    "start_date": "2025-11-24",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-34",
     "summary": "628 Cámaras de seguridad San Luis",
     "status": "Done",
-    "priority": "Medium",
+    "priority": "High",
     "type": "Iniciativa",
     "assignee": "Jazz Novelo",
     "created": "2025-12-01",
-    "updated": "2026-06-09",
+    "updated": "2026-07-13",
     "parent_key": null,
     "parent_summary": null,
     "parent_type": null,
     "due_date": "2026-02-13",
-    "start_date": "2025-12-15"
+    "start_date": "2025-12-15",
+    "has_description": false,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-33",
@@ -2022,7 +3072,9 @@
     "parent_summary": "520 G. Seguridad en campus II: Guadalupe",
     "parent_type": "Iniciativa",
     "due_date": "2026-04-10",
-    "start_date": "2026-03-30"
+    "start_date": "2026-03-30",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-32",
@@ -2037,7 +3089,9 @@
     "parent_summary": "520 G. Seguridad en campus II: Guadalupe",
     "parent_type": "Iniciativa",
     "due_date": "2026-04-03",
-    "start_date": "2026-01-05"
+    "start_date": "2026-01-05",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-31",
@@ -2052,7 +3106,9 @@
     "parent_summary": "520 G. Seguridad en campus II: Guadalupe",
     "parent_type": "Iniciativa",
     "due_date": "2026-01-16",
-    "start_date": "2025-12-22"
+    "start_date": "2025-12-22",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-30",
@@ -2067,22 +3123,26 @@
     "parent_summary": "520 G. Seguridad en campus II: Guadalupe",
     "parent_type": "Iniciativa",
     "due_date": "2025-12-19",
-    "start_date": "2025-11-24"
+    "start_date": "2025-11-24",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-29",
     "summary": "520 G. Seguridad en campus II: Guadalupe",
     "status": "Done",
-    "priority": "Medium",
+    "priority": "Low",
     "type": "Iniciativa",
     "assignee": "Jazz Novelo",
     "created": "2025-11-29",
-    "updated": "2025-12-22",
+    "updated": "2026-07-13",
     "parent_key": null,
     "parent_summary": null,
     "parent_type": null,
     "due_date": "2025-12-31",
-    "start_date": "2025-11-24"
+    "start_date": "2025-11-24",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-28",
@@ -2097,7 +3157,9 @@
     "parent_summary": "520 H. Seguridad en campus II: Ciudad Juárez",
     "parent_type": "Iniciativa",
     "due_date": "2026-03-13",
-    "start_date": "2026-02-23"
+    "start_date": "2026-02-23",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-26",
@@ -2112,7 +3174,9 @@
     "parent_summary": "520 H. Seguridad en campus II: Ciudad Juárez",
     "parent_type": "Iniciativa",
     "due_date": "2026-04-30",
-    "start_date": "2025-12-19"
+    "start_date": "2025-12-19",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-24",
@@ -2127,7 +3191,9 @@
     "parent_summary": "520 H. Seguridad en campus II: Ciudad Juárez",
     "parent_type": "Iniciativa",
     "due_date": "2026-04-30",
-    "start_date": "2025-12-19"
+    "start_date": "2025-12-19",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-22",
@@ -2142,7 +3208,9 @@
     "parent_summary": "520 H. Seguridad en campus II: Ciudad Juárez",
     "parent_type": "Iniciativa",
     "due_date": "2026-04-10",
-    "start_date": "2025-11-26"
+    "start_date": "2025-11-26",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-20",
@@ -2157,7 +3225,9 @@
     "parent_summary": null,
     "parent_type": null,
     "due_date": "2026-06-29",
-    "start_date": "2025-11-24"
+    "start_date": "2025-11-24",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-17",
@@ -2172,7 +3242,9 @@
     "parent_summary": "520 F EPICA 3: Implementación Técnica",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": "2025-12-15"
+    "start_date": "2025-12-15",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-15",
@@ -2187,7 +3259,9 @@
     "parent_summary": "520 F EPICA 2: Adquisición y Logística",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": "2025-12-01"
+    "start_date": "2025-12-01",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-13",
@@ -2202,7 +3276,9 @@
     "parent_summary": "520 F EPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2025-12-12",
-    "start_date": "2025-11-27"
+    "start_date": "2025-11-27",
+    "has_description": false,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-11",
@@ -2217,7 +3293,9 @@
     "parent_summary": "520 F EPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": null,
-    "start_date": "2025-11-27"
+    "start_date": "2025-11-27",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-9",
@@ -2232,7 +3310,9 @@
     "parent_summary": "520 F EPICA 1: Planeación, Estimación y Aprobación",
     "parent_type": "Epic",
     "due_date": "2025-12-12",
-    "start_date": "2025-11-24"
+    "start_date": "2025-11-24",
+    "has_description": true,
+    "has_acceptance_criteria": true
   },
   {
     "key": "UGSU01-7",
@@ -2247,7 +3327,9 @@
     "parent_summary": "520 F. Seguridad en campus II: San Nicolás",
     "parent_type": "Iniciativa",
     "due_date": "2026-01-23",
-    "start_date": "2025-12-08"
+    "start_date": "2025-12-08",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-6",
@@ -2262,7 +3344,9 @@
     "parent_summary": "520 F. Seguridad en campus II: San Nicolás",
     "parent_type": "Iniciativa",
     "due_date": "2025-12-26",
-    "start_date": "2025-12-01"
+    "start_date": "2025-12-01",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-5",
@@ -2277,7 +3361,9 @@
     "parent_summary": "520 F. Seguridad en campus II: San Nicolás",
     "parent_type": "Iniciativa",
     "due_date": "2025-12-27",
-    "start_date": "2025-11-27"
+    "start_date": "2025-11-27",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-4",
@@ -2292,21 +3378,25 @@
     "parent_summary": "520 F. Seguridad en campus II: San Nicolás",
     "parent_type": "Iniciativa",
     "due_date": "2026-01-09",
-    "start_date": "2025-11-27"
+    "start_date": "2025-11-27",
+    "has_description": true,
+    "has_acceptance_criteria": false
   },
   {
     "key": "UGSU01-3",
     "summary": "520 F. Seguridad en campus II: San Nicolás",
     "status": "Done",
-    "priority": "Medium",
+    "priority": "Low",
     "type": "Iniciativa",
     "assignee": "Jazz Novelo",
     "created": "2025-11-27",
-    "updated": "2025-12-22",
+    "updated": "2026-07-13",
     "parent_key": null,
     "parent_summary": null,
     "parent_type": null,
     "due_date": "2025-12-31",
-    "start_date": "2025-11-11"
+    "start_date": "2025-11-11",
+    "has_description": true,
+    "has_acceptance_criteria": true
   }
 ]
