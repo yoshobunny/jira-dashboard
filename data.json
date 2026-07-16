@@ -1,5 +1,23 @@
 [
   {
+    "key": "UGSU01-264",
+    "summary": "674 Actualización tecnológica audio y video en aulas Laguna",
+    "status": "In Progress",
+    "priority": "Low",
+    "type": "Iniciativa",
+    "assignee": "Sin asignar",
+    "created": "2026-07-16",
+    "updated": "2026-07-16",
+    "parent_key": "LDP-226",
+    "parent_summary": "UTM - Campus del Futuro",
+    "parent_type": "Producto / Componente",
+    "due_date": null,
+    "start_date": "2026-06-22",
+    "has_description": true,
+    "has_acceptance_criteria": false,
+    "has_story_points": false
+  },
+  {
     "key": "UGSU01-261",
     "summary": "Documentación \"Carta cierre\" y cierre de la iniciativa",
     "status": "To Do",
