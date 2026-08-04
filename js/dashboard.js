@@ -1,9 +1,8 @@
 //  Mapeo de nombres a iniciales 
-//  Mapeo de nombres a iniciales 
 const NAME_MAP = {
+  'Eduardo Rodriguez':  'ER',
   'Jazz Novelo':        'JN',
   'Juan Manuel Garza':  'JM',
-  'Eduardo Rodriguez':  'ER',
   'Carlos Garcia':      'CA',
   'Montserrat Valerio': 'MV',
 };
@@ -230,7 +229,7 @@ async function init() {
     const progPct = Math.round(prog/total*100);
     $('bar-done').style.width = donePct + '%';
     $('bar-prog').style.width = progPct + '%';
-    $('pct-label').textContent = donePct + '%';
+    $('pct-label').textContent = donePct + '% Done';
     document.querySelector('.progress-track').setAttribute('data-tooltip',
       `Done: ${done} (${donePct}%)  |  In Progress: ${prog} (${progPct}%)  |  To Do: ${todo} (${Math.round(todo/total*100)}%)`
     );
@@ -514,14 +513,36 @@ function renderIniciativaDetail(ini) {
     }
 
     let activeStatusTab = 'in progress';
+    let activeAssigneeFilter = 'all';
 
     function renderIniciativasTab(list) {
       const filtered = list.filter(i => {
         const statusKey = i.status.toLowerCase();
         const groupKey = STATUS_ORDER[statusKey] !== undefined ? statusKey : 'to do';
-        return groupKey === activeStatusTab;
+        if (groupKey !== activeStatusTab) return false;
+        if (activeAssigneeFilter !== 'all') {
+          const label = NAME_MAP[i.assignee] || i.assignee;
+          if (label !== activeAssigneeFilter) return false;
+        }
+        return true;
       });
       tbodyIn.innerHTML = filtered.map((ini, idx) => rowIniciativa(ini, idx)).join('');
+    }
+
+    function renderAssigneeTabs() {
+      const initials = ['all', ...new Set(Object.values(NAME_MAP))];
+      const container = $('assignee-tabs');
+      container.innerHTML = initials.map(a => `
+        <button class="assignee-tab${a === activeAssigneeFilter ? ' active' : ''}" data-assignee="${a}">${a === 'all' ? 'Todos' : a}</button>
+      `).join('');
+      container.querySelectorAll('.assignee-tab').forEach(btn => {
+        btn.addEventListener('click', () => {
+          container.querySelectorAll('.assignee-tab').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeAssigneeFilter = btn.dataset.assignee;
+          renderIniciativasTab(iniciativasSorted);
+        });
+      });
     }
 
     function updateTabCounts(list) {
@@ -538,6 +559,7 @@ function renderIniciativaDetail(ini) {
     }
 
     updateTabCounts(iniciativasSorted);
+    renderAssigneeTabs();
     renderIniciativasTab(iniciativasSorted);
 
     document.querySelectorAll('.status-tab').forEach(btn => {
@@ -595,8 +617,14 @@ function renderIniciativaDetail(ini) {
         return i.due_date >= start && i.due_date <= end;
       }).length
     );
+    const bimestreNames = bimestreRanges.map(([start, end]) =>
+      iniciativas.filter(i => {
+        if (i.status.toLowerCase() !== 'done' || !i.due_date) return false;
+        return i.due_date >= start && i.due_date <= end;
+      }).map(i => i.summary)
+    );
 
-    new Chart($('chartBimestre'), {
+new Chart($('chartBimestre'), {
       type: 'bar',
       data: {
         labels: bimestreLabels,
@@ -612,7 +640,15 @@ function renderIniciativaDetail(ini) {
         maintainAspectRatio: false,
         plugins: {
           legend: { display: false },
-          tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.y} iniciativa${ctx.parsed.y !== 1 ? 's' : ''}` } }
+          tooltip: {
+            callbacks: {
+              label: ctx => {
+                const nombres = bimestreNames[ctx.dataIndex] || [];
+                if (nombres.length === 0) return ' Sin cierres';
+                return nombres.map(n => ` • ${n}`);
+              }
+            }
+          }
         },
         scales: {
           x: { grid: { display: false }, ticks: { color: '#6b7280' } },
