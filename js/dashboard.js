@@ -1,8 +1,11 @@
 //  Mapeo de nombres a iniciales 
+//  Mapeo de nombres a iniciales 
 const NAME_MAP = {
-  'Jazz Novelo':       'JN',
-  'Juan Manuel Garza': 'JM',
-  'Eduardo Rodriguez': 'ER',
+  'Jazz Novelo':        'JN',
+  'Juan Manuel Garza':  'JM',
+  'Eduardo Rodriguez':  'ER',
+  'Carlos Garcia':      'CA',
+  'Montserrat Valerio': 'MV',
 };
 
 // Color fijo por persona
@@ -10,6 +13,8 @@ const ASSIGNEE_COLORS = {
   'JN': '#c084fc',
   'ER': '#00c9ff',
   'JM': '#ffa87c',
+  'MV': '#ff86a7',
+  'CA': '#36d399',
 };
 
 // Helpers
@@ -409,6 +414,11 @@ async function init() {
       }
     });
 
+function tipoIcon(type) {
+  const icons = { 'Story': '🔰', 'Task': '☑️' };
+  return icons[type] || '';
+}
+
 function calidadDot(hasIt, label) {
       const cls = hasIt ? 'ok' : 'bad';
       const symbol = hasIt ? '✓' : '✗';
@@ -428,6 +438,7 @@ function renderIniciativaDetail(ini) {
         const stories = ordenarPorClave(storiesByEpicList[epic.key] || []);
         const storiesHtml = stories.map(st => `
           <div class="detail-row-story">
+            <span title="${st.type}">${tipoIcon(st.type)}</span>
             <span class="issue-key">${st.key}</span>
             <span class="detail-summary">${st.summary}</span>
             ${calidadDot(st.has_description, 'Desc')}
