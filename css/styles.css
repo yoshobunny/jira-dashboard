@@ -609,3 +609,20 @@ tr:hover td { background: rgba(79,124,255,0.04); }
 .calidad-dot.ok { color: var(--accent3); }
 .calidad-dot.bad { color: var(--accent2); }
 .ini-table { table-layout: fixed; }
+.assignee-tab {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.assignee-tab:hover { border-color: var(--accent); color: var(--text); }
+.assignee-tab.active {
+  color: var(--text);
+  border-color: var(--accent);
+  background: rgba(192,132,252,0.08);
+}
