@@ -212,8 +212,9 @@ async function init() {
     const prog = Object.entries(byStatus)
       .filter(([k]) => k.toLowerCase() === 'in progress')
       .reduce((s, [,v]) => s + v, 0);
-    const todo = Object.entries(byStatus)
-      .filter(([k]) => k.toLowerCase() === 'to do')
+    // cualquier estatus que no sea "in progress" o "done" cae por default en "to do"
+      const todo = Object.entries(byStatus)
+      .filter(([k]) => k.toLowerCase() !== 'done' && k.toLowerCase() !== 'in progress')
       .reduce((s, [,v]) => s + v, 0);
 
     $('kpi-total').textContent = total;
