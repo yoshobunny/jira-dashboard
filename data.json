@@ -5546,7 +5546,7 @@
   {
     "key": "UGSU01-238",
     "summary": "ÉPICA 2: Adquisición y Logística",
-    "status": "Congelación",
+    "status": "Freeze",
     "priority": "High",
     "type": "Epic",
     "assignee": "Jazz Novelo",
@@ -6158,7 +6158,7 @@
   {
     "key": "UGSU01-203",
     "summary": "ÉPICA 4: Cierre y Documentación",
-    "status": "Congelación",
+    "status": "Freeze",
     "priority": "Low",
     "type": "Epic",
     "assignee": "Jazz Novelo",
@@ -6176,7 +6176,7 @@
   {
     "key": "UGSU01-202",
     "summary": "ÉPICA 3: Implementación Técnica",
-    "status": "Congelación",
+    "status": "Freeze",
     "priority": "High",
     "type": "Epic",
     "assignee": "Jazz Novelo",
@@ -7508,7 +7508,7 @@
   {
     "key": "UGSU01-107",
     "summary": "520 J. Seguridad en campus IV: Las Torres",
-    "status": "Congelación",
+    "status": "Freeze",
     "priority": "Low",
     "type": "Iniciativa",
     "assignee": "Jazz Novelo",
@@ -8462,7 +8462,7 @@
   {
     "key": "UGSU01-52",
     "summary": "609 ÉPICA 3: Implementación Técnica",
-    "status": "Congelación",
+    "status": "Freeze",
     "priority": "High",
     "type": "Epic",
     "assignee": "Jazz Novelo",
