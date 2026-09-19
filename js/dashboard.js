@@ -438,22 +438,34 @@ function renderIniciativaDetail(ini) {
         const stories = ordenarPorClave(storiesByEpicList[epic.key] || []);
         const storiesHtml = stories.map(st => `
           <div class="detail-row-story">
-            <span title="${st.type}">${tipoIcon(st.type)}</span>
-            <span class="issue-key">${st.key}</span>
-            <span class="detail-summary">${st.summary}</span>
-            ${calidadDot(st.has_description, 'Desc')}
-            ${calidadDot(st.has_acceptance_criteria, 'CA')}
-            ${calidadDot(st.has_story_points, 'SP')}
+            <div class="detail-label">
+              <span title="${st.type}">${tipoIcon(st.type)}</span>
+              <span class="issue-key">${st.key}</span>
+              <span class="detail-summary">${st.summary}</span>
+            </div>
+            <span></span>
+            <span class="detail-due">${dueBadge(st.due_date, st.status)}</span>
+            <div class="detail-dots">
+              ${calidadDot(st.has_description, 'Desc')}
+              ${calidadDot(st.has_acceptance_criteria, 'CA')}
+              ${calidadDot(st.has_story_points, 'SP')}
+            </div>
           </div>
         `).join('');
         return `
           <div class="detail-epic-block">
             <div class="detail-row-epic">
-              <span class="expand-chevron-sm">▸</span>
-              <span class="issue-key">${epic.key}</span>
-              <span class="detail-summary">${epic.summary}</span>
-              ${calidadDot(epic.has_description, 'Desc')}
-              ${calidadDot(epic.has_story_points, 'SP')}
+              <div class="detail-label">
+                <span class="expand-chevron-sm">▸</span>
+                <span class="issue-key">${epic.key}</span>
+                <span class="detail-summary">${epic.summary}</span>
+              </div>
+              <span></span>
+              <span class="detail-due">${dueBadge(epic.due_date, epic.status)}</span>
+              <div class="detail-dots">
+                ${calidadDot(epic.has_description, 'Desc')}
+                ${calidadDot(epic.has_story_points, 'SP')}
+              </div>
             </div>
             <div class="detail-stories" style="display:none">
               ${storiesHtml || '<div class="detail-empty">Sin storys</div>'}
@@ -462,6 +474,7 @@ function renderIniciativaDetail(ini) {
         `;
       }).join('');
     }
+
 
     const STATUS_ORDER = { 'in progress': 0, 'to do': 1, 'done': 2 };
     const iniciativasSorted = [...iniciativas].sort((a,b) => {
@@ -480,8 +493,8 @@ function renderIniciativaDetail(ini) {
         const key = iniRow.dataset.iniKey;
         const detail = tbodyIn.querySelector(`.ini-detail[data-ini-key="${key}"]`);
         const chevron = iniRow.querySelector('.expand-chevron');
-        const isOpen = detail.style.display === 'block';
-        detail.style.display = isOpen ? 'none' : 'block';
+        const isOpen = detail.style.display === 'table-row';
+        detail.style.display = isOpen ? 'none' : 'table-row';
         chevron.classList.toggle('open', !isOpen);
         return;
       }
