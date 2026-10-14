@@ -1,7 +1,7 @@
 [
   {
     "key": "UGSU01-679",
-    "summary": "694 - Fit Placement Las Torres",
+    "summary": "694 Fit Placement Las Torres",
     "status": "To Do",
     "priority": "High",
     "type": "Iniciativa",
@@ -727,12 +727,12 @@
     "type": "Iniciativa",
     "assignee": "Carlos Garcia",
     "created": "2026-09-11",
-    "updated": "2026-09-11",
+    "updated": "2026-10-14",
     "parent_key": "LDP-226",
     "parent_summary": "UTM - Campus del Futuro",
     "parent_type": "Producto / Componente",
     "due_date": null,
-    "start_date": null,
+    "start_date": "2026-10-14",
     "has_description": true,
     "has_acceptance_criteria": false,
     "has_story_points": false
