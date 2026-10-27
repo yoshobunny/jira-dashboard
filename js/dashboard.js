@@ -195,7 +195,7 @@ function nombreArchivo() {
     : `Tablero_GdlU_${currentView}_${currentCycle}-${currentCycle + 1}_${hoy}`;
 }
 
-// ===== Descarga PDF (foto del tablero con la vista actual) =====
+// Descarga PDF (foto del tablero con la vista actual) 
 async function descargarPDF() {
   const btn = $('download-btn');
   const textoOriginal = btn.textContent;
@@ -204,7 +204,18 @@ async function descargarPDF() {
   try {
     let bg = getComputedStyle(document.body).backgroundColor;
     if (!bg || bg === 'rgba(0, 0, 0, 0)' || bg === 'transparent') bg = '#0f1117';
-    const canvas = await html2canvas($('dashboard'), { scale: 2, backgroundColor: bg, useCORS: true });
+    const canvas = await html2canvas($('dashboard'), {
+      scale: 2,
+      backgroundColor: bg,
+      useCORS: true,
+      // En la copia que se fotografía, quitar animaciones (fade-in) para que no salga oscuro
+      onclone: doc => {
+        const s = doc.createElement('style');
+        s.textContent = '*, *::before, *::after { animation: none !important; transition: none !important; } .fade-in { opacity: 1 !important; transform: none !important; }';
+        doc.head.appendChild(s);
+      },
+    });
+    
     const w = canvas.width / 2;
     const h = canvas.height / 2;
     const { jsPDF } = window.jspdf;
@@ -526,7 +537,7 @@ function renderDashboard() {
 
     const total = iniciativas.length;
     const byStatus = count(iniciativas, 'status');
-    
+
     // Normalizar claves
     const done = Object.entries(byStatus)
       .filter(([k]) => k.toLowerCase() === 'done')
