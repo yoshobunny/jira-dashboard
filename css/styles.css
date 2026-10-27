@@ -687,12 +687,15 @@ tr:hover td { background: rgba(79,124,255,0.04); }
   border-color: #6cd3a0;
   background: rgba(108,211,160,.10);
 }
-.cycle-select { color-scheme: dark; }
-.view-bar.is-general .cycle-select { opacity: .45; }
+.cycle-select {
+  color-scheme: dark;
+  color: #e8eaf0;
+}
+.view-bar.is-general .cycle-select { opacity: 1; }
 .view-hint {
   font-family: 'DM Mono', monospace;
   font-size: .75rem;
-  color: #6b7280;
+  color: #e8eaf0;
 }
 
 .download-wrap { position: relative; }
