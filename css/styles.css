@@ -750,5 +750,50 @@ tr:hover td { background: rgba(79,124,255,0.04); }
   white-space: nowrap;
   cursor: help;
 }
-
 .view-bar { position: relative; z-index: 20; }
+
+/* ── Responsive v2 (oct 2026) ───────────────────────────── */
+
+/* Que las gráficas se encojan con la pantalla (antes se desbordaban) */
+.kpi-grid > *,
+.charts-grid > * { min-width: 0; }
+.chart-wrap canvas { max-width: 100%; }
+
+@media (max-width: 768px) {
+  /* Listado de iniciativas: solo #, Iniciativa, Fecha fin y Asignee */
+  .ini-table th:nth-child(2), .ini-table td:nth-child(2),
+  .ini-table th:nth-child(7), .ini-table td:nth-child(7),
+  .ini-table th:nth-child(8), .ini-table td:nth-child(8) { display: none; }
+
+  .ini-table th:nth-child(1) { width: 2.4rem !important; }
+  .ini-table th:nth-child(3) { width: auto !important; }
+  .ini-table th:nth-child(5) { width: 5.5rem !important; }
+  .ini-table th:nth-child(6) { width: 4.2rem !important; }
+
+  /* Detalle de épicas/stories: nombre arriba, datos abajo */
+  .detail-row-epic,
+  .detail-row-story { grid-template-columns: 1fr auto; row-gap: 4px; padding: 7px 10px; }
+  .detail-row-epic .detail-label,
+  .detail-row-story .detail-label { grid-column: 1 / -1; }
+  .detail-row-story .detail-label { padding-left: 24px; }
+
+  /* Pestañas y chips: que bajen de línea en vez de salirse */
+  .status-tabs { flex-wrap: wrap; gap: 0.4rem; }
+
+  /* Actividad reciente: que el resumen se corte con "..." y no empuje la tabla */
+  .table-card table:not(.ini-table) { table-layout: fixed; width: 100%; }
+  .table-card table:not(.ini-table) td:nth-child(2) { max-width: none; }
+  .table-card table:not(.ini-table) th:nth-child(3) { width: 6.5rem; }
+}
+
+@media (max-width: 480px) {
+  /* En celular también se oculta Fecha fin */
+  .ini-table th:nth-child(5), .ini-table td:nth-child(5) { display: none; }
+
+  .chart-card { padding: 1rem; }
+
+  /* Dona de prioridad: leyenda arriba, dona abajo */
+  #chartPriority { max-height: 200px; }
+  .chart-card .chart-wrap[style*="display:flex"] { flex-direction: column; height: auto !important; }
+  .chart-card .chart-wrap[style*="display:flex"] > div:last-child { width: 100%; height: 200px !important; flex: none; }
+}
