@@ -750,3 +750,5 @@ tr:hover td { background: rgba(79,124,255,0.04); }
   white-space: nowrap;
   cursor: help;
 }
+
+.view-bar { position: relative; z-index: 20; }
