@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dashboard Portafolio</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&family=Abril+Fatface&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
@@ -24,13 +27,35 @@
     <header class="fade-in">
       <div class="header-left">
         <h1>Gestión de la <span>Universidad</span></h1>
-        <p> Tablero se seguimiento Jira</p>
+        <p>Tablero se seguimiento Jira</p>
       </div>
       <div class="last-updated">
         Última actualización
         <span id="update-date">—</span>
       </div>
     </header>
+
+    <!-- Vista: General / Quarters + descarga -->
+    <div class="view-bar is-general fade-in" id="view-bar">
+      <div class="view-left">
+        <div class="view-tabs" id="view-tabs">
+          <button class="view-tab active" data-view="general">General</button>
+          <button class="view-tab" data-view="Q1" title="Agosto a octubre">Q1</button>
+          <button class="view-tab" data-view="Q2" title="Noviembre a enero">Q2</button>
+          <button class="view-tab" data-view="Q3" title="Febrero a abril">Q3</button>
+          <button class="view-tab" data-view="Q4" title="Mayo a julio">Q4</button>
+        </div>
+        <select class="cycle-select" id="cycle-select" title="Ciclo (agosto a julio)"></select>
+        <span class="view-hint" id="view-hint"></span>
+      </div>
+      <div class="download-wrap" data-html2canvas-ignore="true">
+        <button class="download-btn" id="download-btn">⬇ Descargar tablero</button>
+        <div class="download-menu" id="download-menu">
+          <button data-format="pdf">PDF<small>Foto del tablero con la vista actual</small></button>
+          <button data-format="xlsx">Excel<small>Resumen, iniciativas, épicas y storys</small></button>
+        </div>
+      </div>
+    </div>
 
     <!-- KPIs -->
     <div class="kpi-grid fade-in">
