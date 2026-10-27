@@ -653,3 +653,100 @@ tr:hover td { background: rgba(79,124,255,0.04); }
   white-space: nowrap;
   text-align: right;
 }
+
+
+/* ===== Barra de vista (General / Quarters) y descarga ===== */
+.view-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 0 0 1.75rem;
+}
+.view-left { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
+.view-tabs { display: flex; gap: .5rem; flex-wrap: wrap; }
+
+.view-tab,
+.cycle-select,
+.download-btn {
+  font-family: 'DM Mono', monospace;
+  font-size: .8rem;
+  letter-spacing: .04em;
+  background: #161922;
+  color: #9ca3af;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px;
+  padding: .55rem 1rem;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+.view-tab:hover { color: #e8eaf0; border-color: rgba(255,255,255,.2); }
+.view-tab.active {
+  color: #e8eaf0;
+  border-color: #6cd3a0;
+  background: rgba(108,211,160,.10);
+}
+.cycle-select { color-scheme: dark; }
+.view-bar.is-general .cycle-select { opacity: .45; }
+.view-hint {
+  font-family: 'DM Mono', monospace;
+  font-size: .75rem;
+  color: #6b7280;
+}
+
+.download-wrap { position: relative; }
+.download-btn {
+  color: #0f1117;
+  background: #6cd3a0;
+  border-color: #6cd3a0;
+  font-weight: 500;
+}
+.download-btn:hover { filter: brightness(1.08); }
+.download-btn:disabled { opacity: .6; cursor: wait; }
+.download-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  min-width: 240px;
+  background: #161922;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 10px;
+  padding: .35rem;
+  z-index: 50;
+  box-shadow: 0 10px 30px rgba(0,0,0,.45);
+}
+.download-menu.open { display: block; }
+.download-menu button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  color: #e8eaf0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .85rem;
+  padding: .6rem .75rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.download-menu button:hover { background: rgba(255,255,255,.06); }
+.download-menu small {
+  display: block;
+  color: #6b7280;
+  font-size: .72rem;
+  margin-top: 2px;
+}
+
+/* Etiqueta para iniciativas sin End Date */
+.badge-sin-fecha {
+  font-family: 'DM Mono', monospace;
+  font-size: .68rem;
+  color: #fbbf24;
+  border: 1px dashed rgba(251,191,36,.5);
+  border-radius: 6px;
+  padding: 2px 6px;
+  white-space: nowrap;
+  cursor: help;
+}
