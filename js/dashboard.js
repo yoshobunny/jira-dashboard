@@ -524,6 +524,9 @@ function renderDashboard() {
     allIssues = issues;
     actualizarBarraVista(iniciativas);
 
+    const total = iniciativas.length;
+    const byStatus = count(iniciativas, 'status');
+    
     // Normalizar claves
     const done = Object.entries(byStatus)
       .filter(([k]) => k.toLowerCase() === 'done')
