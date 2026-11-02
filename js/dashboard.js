@@ -1057,6 +1057,7 @@ new Chart($('chartBimestre'), {
           backgroundColor: mesesVista.map(m => MONTH_COLORS[m.monthIdx]),
           borderRadius: 6,
           borderSkipped: false,
+          maxBarThickness: 130,
         }]
       },
       options: {
