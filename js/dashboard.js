@@ -147,7 +147,7 @@ function getViewData() {
         const fin = (i.due_date || (done ? i.updated : '') || '').slice(0, 10);
         const empezo = ini && ini <= rango.end;            // empezó antes de que terminara el quarter
         const cerroAntes = done && fin && fin < rango.start; // ya estaba cerrada antes de que empezara
-        return (empezo && !cerroAntes) || !!hist[i.key];
+        return !cerroAntes && (empezo || !!hist[i.key]);
       })
       .map(i => ({ ...i, _etapa: etapaEnQuarter(i, rango, hist, terminado) }));
   }
@@ -212,19 +212,25 @@ function fechaFinCell(ini) {
 
 function actualizarBarraVista(iniciativas, foto) {
   $('view-bar').classList.toggle('is-general', currentView === 'general');
+  const sinFecha = iniciativas.filter(i => !i.due_date).length;
   let txt = `${vistaLabel()} · ${iniciativas.length} ${iniciativas.length === 1 ? 'iniciativa' : 'iniciativas'}`;
-  if (currentView !== 'general') {
+
+  // Detalle solo en quarters que ya cerraron
+  if (currentView !== 'general' && quarterTerminado(currentCycle, currentView)) {
     const n = t => iniciativas.filter(i => i._etapa && i._etapa.tipo === t).length;
-    const cerro = n('cerro'), cierra = n('cierra'), venc = n('vencida'), repro = n('repro'), cont = n('continua');
+    const cerro = n('cerro'), venc = n('vencida'), repro = n('repro'), cont = n('continua');
     txt += ` trabajadas · ${cerro} cerradas` +
-      (cierra ? ` · ${cierra} por cerrar` : '') +
       (venc ? ` · ${venc} vencidas` : '') +
       (repro ? ` · ${repro} reprogramadas` : '') +
       (cont ? ` · ${cont} continúan` : '');
-    if (foto) txt += ` · 📷 Foto al cierre (${foto.fecha_foto})`;
-    else if (quarterTerminado(currentCycle, currentView)) txt += ' · Sin foto de cierre (datos actuales)';
-    else txt += ' · En vivo';
   }
+
+  if (sinFecha) txt += ` · ${sinFecha} sin fecha fin`;
+
+  if (currentView !== 'general' && quarterTerminado(currentCycle, currentView)) {
+    txt += foto ? ` · 📷 Foto al cierre (${foto.fecha_foto})` : ' · Sin foto de cierre (datos actuales)';
+  }
+
   $('view-hint').textContent = txt;
 }
 
