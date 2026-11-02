@@ -23,6 +23,7 @@ const $ = id => document.getElementById(id);
 // ===== Vista General / Quarters (ciclo Tecmilenio: agosto a julio) =====
 let RAW_ISSUES   = [];
 let QUARTER_HISTORY = {};   // { '2026-Q1': { 'UGSU01-185': {...} } }
+let SNAPSHOTS = {};         // fotos al cierre: { '2026-Q1': { fecha_foto, issues } }
 let currentView  = 'general';     // 'general' | 'Q1' | 'Q2' | 'Q3' | 'Q4'
 let currentCycle = cicloActual(); // año en que inicia el ciclo (2026 = ago 2026 a jul 2027)
 
@@ -78,37 +79,87 @@ function vistaLabel() {
   return `${currentView} ciclo ${currentCycle}-${currentCycle + 1} (${mesAbsTxt(ini)} a ${mesAbsTxt(ini + 2)})`;
 }
 
-// Iniciativas de la vista + sus épicas y storys/tasks
+// Rango de fechas del quarter (AAAA-MM-DD)
+function rangoQuarter(cycle, q) {
+  const ini = mesInicioQuarter(cycle, q);
+  const fin = ini + 2;
+  const pad = n => String(n).padStart(2, '0');
+  const yF = Math.floor(fin / 12), mF = fin % 12;
+  return {
+    start: `${Math.floor(ini / 12)}-${pad(ini % 12 + 1)}-01`,
+    end:   `${yF}-${pad(mF + 1)}-${pad(new Date(yF, mF + 1, 0).getDate())}`,
+  };
+}
+
+function quarterTerminado(cycle, q) {
+  const n = parseInt(q.slice(1), 10);
+  return cycle < cicloActual() || (cycle === cicloActual() && n < quarterActual());
+}
+
+// Carga la foto al cierre del quarter (solo si ya terminó)
+async function cargarFoto(cycle, q) {
+  if (q === 'general' || !quarterTerminado(cycle, q)) return;
+  const key = `${cycle}-${q}`;
+  if (key in SNAPSHOTS) return;
+  try {
+    const r = await fetch(`snapshots/${key}.json`);
+    SNAPSHOTS[key] = r.ok ? await r.json() : null;
+  } catch (e) { SNAPSHOTS[key] = null; }
+}
+
+// Etiqueta de cada iniciativa dentro del quarter
+function etapaEnQuarter(i, rango, hist, terminado) {
+  const fin = (i.due_date || '').slice(0, 10);
+  const done = i.status.toLowerCase() === 'done';
+  const q = quarterDe(i);
+  const qTxt = q ? `${q.q} ${q.cycle}-${q.cycle + 1}` : 'sin fecha';
+  if (fin && fin >= rango.start && fin <= rango.end) {
+    if (done) return { tipo: 'cerro',  txt: `Cerró en ${currentView}`, color: '#36d399' };
+    return terminado
+      ? { tipo: 'vencida', txt: 'Vencida al cierre', color: '#ff6b6b' }
+      : { tipo: 'cierra',  txt: `Cierra en ${currentView}`, color: '#00c9ff' };
+  }
+  if (done) return { tipo: 'cerro', txt: 'Cerrada', color: '#36d399' };
+  if (hist[i.key]) return { tipo: 'repro', txt: `Reprogramada a ${qTxt}`, color: '#ffa87c' };
+  if (!fin) return { tipo: 'continua', txt: 'Continúa (sin fecha fin)', color: '#9ca3af' };
+  if (fin < rango.start) return { tipo: 'vencida', txt: 'Vencida de antes', color: '#ff6b6b' };
+  return { tipo: 'continua', txt: `Continúa en ${qTxt}`, color: '#9ca3af' };
+}
+
+// Iniciativas trabajadas en la vista + sus épicas y storys/tasks
 function getViewData() {
-  const iniAll = RAW_ISSUES.filter(i => i.type === 'Iniciativa');
+  const key = `${currentCycle}-${currentView}`;
+  const foto = currentView === 'general' ? null : SNAPSHOTS[key];
+  const fuente = foto ? foto.issues : RAW_ISSUES;
+  const iniAll = fuente.filter(i => i.type === 'Iniciativa');
+
   let iniciativas;
   if (currentView === 'general') {
     iniciativas = iniAll;
   } else {
-    // Actuales del quarter + las que estuvieron en él y se reprogramaron (histórico)
-    const hist = QUARTER_HISTORY[`${currentCycle}-${currentView}`] || {};
+    const rango = rangoQuarter(currentCycle, currentView);
+    const hist = QUARTER_HISTORY[key] || {};
+    const terminado = quarterTerminado(currentCycle, currentView);
     iniciativas = iniAll
       .filter(i => {
-        const q = quarterDe(i);
-        return (q && q.cycle === currentCycle && q.q === currentView) || !!hist[i.key];
+        const ini = (i.start_date || i.created || '').slice(0, 10);
+        const done = i.status.toLowerCase() === 'done';
+        const fin = (i.due_date || (done ? i.updated : '') || '').slice(0, 10);
+        const empezo = ini && ini <= rango.end;            // empezó antes de que terminara el quarter
+        const cerroAntes = done && fin && fin < rango.start; // ya estaba cerrada antes de que empezara
+        return (empezo && !cerroAntes) || !!hist[i.key];
       })
-      .map(i => {
-        const q = quarterDe(i);
-        if (q && q.cycle === currentCycle && q.q === currentView) return i;
-        return { ...i, _reprogramada: {
-          a: q ? `${q.q} ${q.cycle}-${q.cycle + 1}` : 'sin fecha',
-          fechaOriginal: hist[i.key].due_date_en_q,
-        } };
-      });
+      .map(i => ({ ...i, _etapa: etapaEnQuarter(i, rango, hist, terminado) }));
   }
+
   const iniKeys = new Set(iniciativas.map(i => i.key));
-  const epics = RAW_ISSUES.filter(i =>
+  const epics = fuente.filter(i =>
     i.type === 'Epic' && i.parent_type === 'Iniciativa' && iniKeys.has(i.parent_key));
   const epicKeys = new Set(epics.map(e => e.key));
-  const stories = RAW_ISSUES.filter(i =>
+  const stories = fuente.filter(i =>
     (i.type === 'Story' || i.type === 'Task') && i.parent_type === 'Epic' && epicKeys.has(i.parent_key));
-  const issues = currentView === 'general' ? RAW_ISSUES : [...iniciativas, ...epics, ...stories];
-  return { iniciativas, issues, epics, stories };
+  const issues = currentView === 'general' ? fuente : [...iniciativas, ...epics, ...stories];
+  return { iniciativas, issues, epics, stories, foto };
 }
 
 // Meses para la gráfica "Cierres por mes"
@@ -147,25 +198,34 @@ function mesesDeVista(iniciativas) {
 
 // Celda Fecha fin: semáforo o etiqueta "Sin fecha fin"
 function fechaFinCell(ini) {
-  const repro = ini._reprogramada
-    ? `<br><span title="End Date que tenía en este quarter: ${ini._reprogramada.fechaOriginal}" style="display:inline-block;margin-top:3px;padding:1px 6px;border-radius:6px;font-size:0.62rem;background:rgba(255,168,124,0.15);color:#ffa87c">Reprogramada a ${ini._reprogramada.a}</span>`
+  const e = ini._etapa;
+  const repro = e
+    ? `<br><span style="display:inline-block;margin-top:3px;padding:1px 6px;border-radius:6px;font-size:0.62rem;background:${e.color}22;color:${e.color}">${e.txt}</span>`
     : '';
   if (ini.due_date) return dueBadge(ini.due_date, ini.status) + repro;
   const q = quarterDe(ini);
   const tip = q
     ? `Sin End Date. Quarter ${q.q} asignado por ${q.base} (${q.fecha})`
     : 'Sin End Date';
-  return `<span class="badge-sin-fecha" title="${tip}">Sin fecha fin</span>`;
+  return `<span class="badge-sin-fecha" title="${tip}">Sin fecha fin</span>` + repro;
 }
 
-function actualizarBarraVista(iniciativas) {
+function actualizarBarraVista(iniciativas, foto) {
   $('view-bar').classList.toggle('is-general', currentView === 'general');
-  const sinFecha = iniciativas.filter(i => !i.due_date).length;
-  const repro = iniciativas.filter(i => i._reprogramada).length;
-  $('view-hint').textContent =
-    `${vistaLabel()} · ${iniciativas.length} ${iniciativas.length === 1 ? 'iniciativa' : 'iniciativas'}` +
-    (sinFecha ? ` · ${sinFecha} sin fecha fin` : '') +
-    (repro ? ` · ${repro} reprogramadas a otro quarter` : '');
+  let txt = `${vistaLabel()} · ${iniciativas.length} ${iniciativas.length === 1 ? 'iniciativa' : 'iniciativas'}`;
+  if (currentView !== 'general') {
+    const n = t => iniciativas.filter(i => i._etapa && i._etapa.tipo === t).length;
+    const cerro = n('cerro'), cierra = n('cierra'), venc = n('vencida'), repro = n('repro'), cont = n('continua');
+    txt += ` trabajadas · ${cerro} cerradas` +
+      (cierra ? ` · ${cierra} por cerrar` : '') +
+      (venc ? ` · ${venc} vencidas` : '') +
+      (repro ? ` · ${repro} reprogramadas` : '') +
+      (cont ? ` · ${cont} continúan` : '');
+    if (foto) txt += ` · 📷 Foto al cierre (${foto.fecha_foto})`;
+    else if (quarterTerminado(currentCycle, currentView)) txt += ' · Sin foto de cierre (datos actuales)';
+    else txt += ' · En vivo';
+  }
+  $('view-hint').textContent = txt;
 }
 
 // Desactiva los quarters que aún no empiezan
@@ -207,17 +267,19 @@ function setupViewBar() {
   sel.innerHTML = [...ciclos].sort((a, b) => b - a)
     .map(c => `<option value="${c}">Ciclo ${c}-${c + 1}</option>`).join('');
   sel.value = currentCycle;
-  sel.onchange = () => {
+  sel.onchange = async () => {
     currentCycle = parseInt(sel.value, 10);
     actualizarTabsQuarter();
+    await cargarFoto(currentCycle, currentView);
     renderDashboard();
   };
 
   document.querySelectorAll('.view-tab').forEach(btn => {
-    btn.onclick = () => {
+    btn.onclick = async () => {
       document.querySelectorAll('.view-tab').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       currentView = btn.dataset.view;
+      await cargarFoto(currentCycle, currentView);
       renderDashboard();
     };
   });
@@ -334,6 +396,7 @@ function descargarExcel() {
       'Creada': ini.created || '',
       'Quarter': q ? `${q.q} ${q.cycle}-${q.cycle + 1}` : '',
       'Quarter asignado por': q ? q.base : '',
+      'Situación en el quarter': ini._etapa ? ini._etapa.txt : '',
       'Épicas': epicsPorIni[ini.key] || 0,
       'Storys': storiesPorIni[ini.key] || 0,
     };
@@ -371,7 +434,7 @@ function descargarExcel() {
   const wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, hoja(XLSX.utils.aoa_to_sheet(resumen), [26, 45, 12]), 'Resumen');
   XLSX.utils.book_append_sheet(wb, hoja(XLSX.utils.json_to_sheet(filasIni),
-    [5, 13, 55, 13, 12, 22, 13, 13, 12, 14, 20, 8, 8]), 'Iniciativas');
+    [5, 13, 55, 13, 12, 22, 13, 13, 12, 14, 20, 26, 8, 8]), 'Iniciativas');
   XLSX.utils.book_append_sheet(wb, hoja(XLSX.utils.json_to_sheet(filasDet),
     [13, 8, 13, 55, 13, 13, 22, 12, 12, 22, 12]), 'Épicas y storys');
   XLSX.writeFile(wb, `${nombreArchivo()}.xlsx`);
@@ -586,9 +649,9 @@ function renderDashboard() {
     // Destruir gráficas anteriores antes de volver a dibujar
     Object.values(Chart.instances).forEach(c => c.destroy());
 
-    const { iniciativas, issues } = getViewData();
+    const { iniciativas, issues, foto } = getViewData();
     allIssues = issues;
-    actualizarBarraVista(iniciativas);
+    actualizarBarraVista(iniciativas, foto);
 
     const total = iniciativas.length;
     const byStatus = count(iniciativas, 'status');
