@@ -22,6 +22,7 @@ const $ = id => document.getElementById(id);
 
 // ===== Vista General / Quarters (ciclo Tecmilenio: agosto a julio) =====
 let RAW_ISSUES   = [];
+let QUARTER_HISTORY = {};   // { '2026-Q1': { 'UGSU01-185': {...} } }
 let currentView  = 'general';     // 'general' | 'Q1' | 'Q2' | 'Q3' | 'Q4'
 let currentCycle = cicloActual(); // año en que inicia el ciclo (2026 = ago 2026 a jul 2027)
 
@@ -80,12 +81,26 @@ function vistaLabel() {
 // Iniciativas de la vista + sus épicas y storys/tasks
 function getViewData() {
   const iniAll = RAW_ISSUES.filter(i => i.type === 'Iniciativa');
-  const iniciativas = currentView === 'general'
-    ? iniAll
-    : iniAll.filter(i => {
+  let iniciativas;
+  if (currentView === 'general') {
+    iniciativas = iniAll;
+  } else {
+    // Actuales del quarter + las que estuvieron en él y se reprogramaron (histórico)
+    const hist = QUARTER_HISTORY[`${currentCycle}-${currentView}`] || {};
+    iniciativas = iniAll
+      .filter(i => {
         const q = quarterDe(i);
-        return q && q.cycle === currentCycle && q.q === currentView;
+        return (q && q.cycle === currentCycle && q.q === currentView) || !!hist[i.key];
+      })
+      .map(i => {
+        const q = quarterDe(i);
+        if (q && q.cycle === currentCycle && q.q === currentView) return i;
+        return { ...i, _reprogramada: {
+          a: q ? `${q.q} ${q.cycle}-${q.cycle + 1}` : 'sin fecha',
+          fechaOriginal: hist[i.key].due_date_en_q,
+        } };
       });
+  }
   const iniKeys = new Set(iniciativas.map(i => i.key));
   const epics = RAW_ISSUES.filter(i =>
     i.type === 'Epic' && i.parent_type === 'Iniciativa' && iniKeys.has(i.parent_key));
@@ -132,7 +147,10 @@ function mesesDeVista(iniciativas) {
 
 // Celda Fecha fin: semáforo o etiqueta "Sin fecha fin"
 function fechaFinCell(ini) {
-  if (ini.due_date) return dueBadge(ini.due_date, ini.status);
+  const repro = ini._reprogramada
+    ? `<br><span title="End Date que tenía en este quarter: ${ini._reprogramada.fechaOriginal}" style="display:inline-block;margin-top:3px;padding:1px 6px;border-radius:6px;font-size:0.62rem;background:rgba(255,168,124,0.15);color:#ffa87c">Reprogramada a ${ini._reprogramada.a}</span>`
+    : '';
+  if (ini.due_date) return dueBadge(ini.due_date, ini.status) + repro;
   const q = quarterDe(ini);
   const tip = q
     ? `Sin End Date. Quarter ${q.q} asignado por ${q.base} (${q.fecha})`
@@ -143,9 +161,11 @@ function fechaFinCell(ini) {
 function actualizarBarraVista(iniciativas) {
   $('view-bar').classList.toggle('is-general', currentView === 'general');
   const sinFecha = iniciativas.filter(i => !i.due_date).length;
+  const repro = iniciativas.filter(i => i._reprogramada).length;
   $('view-hint').textContent =
     `${vistaLabel()} · ${iniciativas.length} ${iniciativas.length === 1 ? 'iniciativa' : 'iniciativas'}` +
-    (sinFecha ? ` · ${sinFecha} sin fecha fin` : '');
+    (sinFecha ? ` · ${sinFecha} sin fecha fin` : '') +
+    (repro ? ` · ${repro} reprogramadas a otro quarter` : '');
 }
 
 function setupViewBar() {
@@ -504,6 +524,11 @@ async function init() {
     const res = await fetch('data.json');
     if (!res.ok) throw new Error(`No se pudo cargar data.json (${res.status})`);
     RAW_ISSUES = await res.json();
+    // Histórico de quarters (si no existe, el tablero funciona igual)
+    try {
+      const resH = await fetch('quarter_history.json');
+      if (resH.ok) QUARTER_HISTORY = await resH.json();
+    } catch (e) { QUARTER_HISTORY = {}; }
 
     setupViewBar();
     renderDashboard();
