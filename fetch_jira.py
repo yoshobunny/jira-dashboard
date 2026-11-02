@@ -2,6 +2,7 @@ import requests
 import json
 import base64
 import os
+from datetime import date
 
 # Config — se leen de variables de entorno (GitHub Secrets)
 JIRA_URL    = "https://tecdemonterrey.atlassian.net"
@@ -16,7 +17,54 @@ headers = {
     "Content-Type": "application/json"
 }
 
+# ===== Histórico de quarters =====
+HISTORY_FILE = "quarter_history.json"
 
+def quarter_de(i):
+    """Mismo cálculo que el tablero: End Date, si no Start Date, si no Created. Ciclo ago a jul."""
+    f = i.get("due_date") or i.get("start_date") or i.get("created")
+    if not f:
+        return None
+    y, m = int(f[:4]), int(f[5:7])
+    ciclo = y if m >= 8 else y - 1
+    return f"{ciclo}-Q{(m - 8) % 12 // 3 + 1}"
+
+def actualizar_historico(processed, hoy, history=None):
+    """Registra en qué quarter estuvo cada iniciativa. Nunca borra: si la reprograman, se queda en el quarter original."""
+    if history is None:
+        try:
+            with open(HISTORY_FILE, encoding="utf-8") as f:
+                history = json.load(f)
+        except FileNotFoundError:
+            history = {}
+
+    for i in processed:
+        # Solo cuenta como compromiso del quarter si tiene End Date real
+        if i["type"] != "Iniciativa" or not i.get("due_date"):
+            continue
+        q = quarter_de(i)
+        if not q:
+            continue
+        reg = history.setdefault(q, {}).get(i["key"])
+        if reg is None:
+            history[q][i["key"]] = {
+                "summary":        i["summary"],
+                "due_date_en_q":  i.get("due_date"),
+                "primera_vez":    hoy,
+                "ultima_vez":     hoy,
+                "status_en_q":    i["status"],
+            }
+        else:
+            # Mientras siga en este quarter, se actualiza su foto
+            reg.update({"summary": i["summary"], "due_date_en_q": i.get("due_date"),
+                        "ultima_vez": hoy, "status_en_q": i["status"]})
+    return history
+
+def guardar_historico(history):
+    with open(HISTORY_FILE, "w", encoding="utf-8") as f:
+        json.dump(dict(sorted(history.items())), f, ensure_ascii=False, indent=2)
+
+# Funciones principales
 def get_issues():
     """Trae todos los issues del proyecto con paginación"""
     all_issues = []
@@ -113,6 +161,10 @@ def main():
 
     with open("data.json", "w", encoding="utf-8") as f:
         json.dump(processed, f, ensure_ascii=False, indent=2)
+
+    history = actualizar_historico(processed, date.today().isoformat())
+    guardar_historico(history)
+    print(f"📚 Histórico de quarters actualizado ({len(history)} quarters)")
 
     print(f"\n✅ Listo — {len(processed)} issues guardados en data.json")
 
