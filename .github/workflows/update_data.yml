@@ -2,7 +2,7 @@ name: Actualizar datos de Jira
 
 on:
   schedule:
-    - cron: '0 13,18 * * *'
+    - cron: '0 11,18 * * *'
   workflow_dispatch:          # También permite correrlo manualmente desde GitHub
 
 jobs:
@@ -31,6 +31,6 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json
+          git add data.json quarter_history.json
           git diff --cached --quiet || git commit -m "chore: actualizar data.json $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push
