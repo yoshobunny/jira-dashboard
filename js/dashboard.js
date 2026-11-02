@@ -228,7 +228,7 @@ function actualizarBarraVista(iniciativas, foto) {
   if (sinFecha) txt += ` · ${sinFecha} sin fecha fin`;
 
   if (currentView !== 'general' && quarterTerminado(currentCycle, currentView)) {
-    txt += foto ? ` · 📷 Foto al cierre (${foto.fecha_foto})` : ' · Sin foto de cierre (datos actuales)';
+    txt += foto ? ` · Foto al cierre (${foto.fecha_foto})` : ' · Sin foto de cierre (datos actuales)';
   }
 
   $('view-hint').textContent = txt;
