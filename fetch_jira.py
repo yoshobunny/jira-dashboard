@@ -2,7 +2,8 @@ import requests
 import json
 import base64
 import os
-from datetime import date
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 # Config — se leen de variables de entorno (GitHub Secrets)
 JIRA_URL    = "https://tecdemonterrey.atlassian.net"
@@ -59,6 +60,17 @@ def actualizar_historico(processed, hoy, history=None):
             reg.update({"summary": i["summary"], "due_date_en_q": i.get("due_date"),
                         "ultima_vez": hoy, "status_en_q": i["status"]})
     return history
+
+# Snapshots de los quarters
+SNAP_DIR = "snapshots"
+
+def guardar_foto_quarter(processed, hoy):
+    """Guarda la foto del quarter en curso. La última corrida del quarter queda como foto al cierre."""
+    q = quarter_de({"due_date": hoy})
+    os.makedirs(SNAP_DIR, exist_ok=True)
+    with open(os.path.join(SNAP_DIR, f"{q}.json"), "w", encoding="utf-8") as f:
+        json.dump({"fecha_foto": hoy, "issues": processed}, f, ensure_ascii=False)
+    return q
 
 def guardar_historico(history):
     with open(HISTORY_FILE, "w", encoding="utf-8") as f:
@@ -162,9 +174,12 @@ def main():
     with open("data.json", "w", encoding="utf-8") as f:
         json.dump(processed, f, ensure_ascii=False, indent=2)
 
-    history = actualizar_historico(processed, date.today().isoformat())
+    hoy = datetime.now(ZoneInfo("America/Monterrey")).date().isoformat()
+    history = actualizar_historico(processed, hoy)
     guardar_historico(history)
     print(f"📚 Histórico de quarters actualizado ({len(history)} quarters)")
+    q_foto = guardar_foto_quarter(processed, hoy)
+    print(f"📷 Foto de {q_foto} guardada ({hoy})")
 
     print(f"\n✅ Listo — {len(processed)} issues guardados en data.json")
 
