@@ -168,6 +168,34 @@ function actualizarBarraVista(iniciativas) {
     (repro ? ` · ${repro} reprogramadas a otro quarter` : '');
 }
 
+// Desactiva los quarters que aún no empiezan
+function quarterActual() {
+  const m = new Date().getMonth() + 1;
+  return Math.floor(((m - 8 + 12) % 12) / 3) + 1; // 1 a 4
+}
+
+function actualizarTabsQuarter() {
+  const cicloHoy = cicloActual();
+  const qHoy = quarterActual();
+  document.querySelectorAll('.view-tab').forEach(btn => {
+    if (btn.dataset.view === 'general') return;
+    if (btn.dataset.tituloOriginal === undefined) btn.dataset.tituloOriginal = btn.title;
+    const n = parseInt(btn.dataset.view.slice(1), 10);
+    const futuro = currentCycle > cicloHoy || (currentCycle === cicloHoy && n > qHoy);
+    btn.disabled = futuro;
+    btn.style.opacity = futuro ? '0.35' : '';
+    btn.style.cursor = futuro ? 'not-allowed' : '';
+    btn.title = futuro ? 'Este quarter aún no empieza' : btn.dataset.tituloOriginal;
+  });
+  // Si la vista seleccionada quedó desactivada, regresar a General
+  const activo = document.querySelector(`.view-tab[data-view="${currentView}"]`);
+  if (activo && activo.disabled) {
+    document.querySelectorAll('.view-tab').forEach(b => b.classList.remove('active'));
+    document.querySelector('.view-tab[data-view="general"]').classList.add('active');
+    currentView = 'general';
+  }
+}
+
 function setupViewBar() {
   // Ciclos disponibles según los datos (siempre incluye el actual)
   const ciclos = new Set([cicloActual()]);
@@ -181,6 +209,7 @@ function setupViewBar() {
   sel.value = currentCycle;
   sel.onchange = () => {
     currentCycle = parseInt(sel.value, 10);
+    actualizarTabsQuarter();
     renderDashboard();
   };
 
@@ -192,6 +221,7 @@ function setupViewBar() {
       renderDashboard();
     };
   });
+  actualizarTabsQuarter();
 
   // Menú de descarga
   const dBtn = $('download-btn');
