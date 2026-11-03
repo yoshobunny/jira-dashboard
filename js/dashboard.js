@@ -169,17 +169,9 @@ function mesesDeVista(iniciativas) {
     inicio = mesInicioQuarter(currentCycle, currentView);
     fin = inicio + 2;
   } else {
-    const absDe = f => parseInt(f.slice(0, 4), 10) * 12 + parseInt(f.slice(5, 7), 10) - 1;
-    const meses = iniciativas
-      .filter(i => i.status.toLowerCase() === 'done' && i.due_date)
-      .map(i => absDe(i.due_date));
-    if (meses.length) {
-      inicio = Math.min(...meses);
-      fin = Math.max(...meses);
-    } else {
-      inicio = mesInicioQuarter(currentCycle, 'Q1');
-      fin = inicio + 11;
-    }
+    // Vista General: siempre el ciclo completo (ago a jul)
+    inicio = mesInicioQuarter(currentCycle, 'Q1');
+    fin = inicio + 11;
   }
   const lista = [];
   for (let a = inicio; a <= fin; a++) {
@@ -271,7 +263,10 @@ function setupViewBar() {
   });
   const sel = $('cycle-select');
   sel.innerHTML = [...ciclos].sort((a, b) => b - a)
-    .map(c => `<option value="${c}">Ciclo ${c}-${c + 1}</option>`).join('');
+    .map(c => {
+      const futuro = c > cicloActual();
+      return `<option value="${c}"${futuro ? ' disabled' : ''}>Ciclo ${c}-${c + 1}${futuro ? ' (aún no inicia)' : ''}</option>`;
+    }).join('');
   sel.value = currentCycle;
   sel.onchange = async () => {
     currentCycle = parseInt(sel.value, 10);
