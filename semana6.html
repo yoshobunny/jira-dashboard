@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semana 6: Repaso del módulo 3 y funciones | Fundamentos de Programación</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+<style>
+  * { font-variant-ligatures: none !important; font-feature-settings: "liga" 0, "calt" 0 !important; }
+  .code .com{color:#7FD99A;font-style:italic}
+  .code.salida{background:#10131A;color:#E9F5DB;border-left:6px solid #7FD99A}
+  .tt td,.tt th{text-align:center}
+  .pasos-eval{counter-reset:p;list-style:none;padding-left:0 !important}
+  .pasos-eval li{counter-increment:p;position:relative;padding:8px 12px 8px 44px;margin:6px 0;background:#FFFDF8;border:2px solid #F3EADB;border-radius:12px}
+  .pasos-eval li::before{content:counter(p);position:absolute;left:10px;top:8px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;font-family:'Fredoka';font-size:.85rem;display:flex;align-items:center;justify-content:center}
+  .tabs-temas{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:18px 0 8px}
+  .tab.tema{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:2px;padding:14px 16px;border-radius:18px}
+  .tab.tema .t-num{font-size:.8rem;opacity:.75;letter-spacing:.5px}
+  .tab.tema .t-nom{font-size:1.12rem;line-height:1.25}
+  .tab.tema .t-ej{font-family:'Nunito';font-weight:800;font-size:.82rem;background:rgba(43,45,66,.08);border-radius:999px;padding:3px 10px;margin-top:8px}
+  .tab.tema.active .t-ej{background:rgba(255,255,255,.25)}
+
+  /* ---------- diagramas ---------- */
+  .diagrama{width:100%;max-width:720px;display:block;margin:10px auto;font-family:'Nunito',sans-serif;font-size:14px}
+  .diagrama text{fill:var(--ink)}
+  .fd-proc{fill:#E8F4FF;stroke:var(--ink);stroke-width:2}
+  .fd-in{fill:#EDE7FF;stroke:var(--ink);stroke-width:2}
+  .fd-rombo{fill:#FFF3D6;stroke:var(--ink);stroke-width:2}
+  .fd-ini{fill:var(--ink)} .diagrama .fd-ini + text{fill:#fff}
+  .fd-linea{fill:none;stroke:var(--ink);stroke-width:2}
+  .fd-punta{fill:var(--ink)}
+  .diagrama .fd-si{fill:#1E8E3E;font-weight:800} .diagrama .fd-no{fill:#C62828;font-weight:800} .diagrama .fd-rep{fill:#6B4FBB;font-weight:800}
+  .leyenda{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;font-size:.9rem;margin:6px 0 14px}
+  .leyenda span{background:#FFFDF8;border:2px solid #F3EADB;border-radius:999px;padding:3px 12px}
+  .dos-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;align-items:start}
+  .mini{background:#FFFDF8;border:2px solid #F3EADB;border-radius:16px;padding:14px 16px}
+  .mini h4{margin-top:0}
+  /* ---------- lista visual ---------- */
+  .fila-lista{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:14px 0}
+  .caja-lista{width:74px;border:3px solid var(--ink);border-radius:12px;text-align:center;background:#fff;transition:.25s;padding:6px 0}
+  .caja-lista .caja-val{display:block;font-family:'Fredoka',sans-serif;font-size:1.3rem}
+  .caja-lista .caja-pos,.caja-lista .caja-neg{display:block;font-size:.78rem;opacity:.7}
+  .caja-lista .caja-neg{color:#C62828}
+  .caja-lista.sel{background:var(--sun);transform:translateY(-6px)}
+  .controles{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;margin:8px 0}
+  .controles input[type=number]{width:70px;font-size:1.05rem;padding:6px;border-radius:10px;border:2px solid var(--ink);text-align:center}
+  .salida-mini{font-family:'JetBrains Mono',monospace;background:#10131A;color:#E9F5DB;border-radius:10px;padding:8px 14px;display:inline-block}
+  /* ---------- juegos ---------- */
+  .juego{border:3px solid var(--ink);border-radius:22px;padding:18px;margin:22px 0;background:#fff}
+  .juego-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+  .juego-head h3{margin:0}
+  .marcador{display:flex;gap:8px;flex-wrap:wrap}
+  .marcador span{background:var(--ink);color:#fff;border-radius:999px;padding:4px 12px;font-family:'Fredoka',sans-serif;font-size:.95rem}
+  .btn-j{font-family:'Fredoka',sans-serif;font-size:1rem;border:none;border-radius:999px;padding:10px 18px;cursor:pointer;background:var(--ink);color:#fff}
+  .btn-j.sec{background:#fff;color:var(--ink);border:2px solid var(--ink)}
+  .btn-j:disabled{opacity:.4;cursor:not-allowed}
+  .opciones{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:12px 0}
+  .opcion{font-family:'JetBrains Mono',monospace;white-space:pre;text-align:left;font-size:.95rem;border:2px solid var(--ink);border-radius:14px;background:#fff;padding:12px;cursor:pointer;min-height:48px}
+  .opcion.texto{font-family:'Nunito',sans-serif;white-space:normal;font-weight:700}
+  .opcion:hover:not(:disabled){background:#FFF6E0}
+  .opcion.bien{background:#D9F5E1;border-color:#1E8E3E}
+  .opcion.mal{background:#FDE2E2;border-color:#C62828}
+  .retro{border-radius:14px;padding:10px 14px;margin:8px 0;font-weight:700}
+  .retro.bien{background:#D9F5E1} .retro.mal{background:#FDE2E2}
+  .tema-chip{display:inline-block;background:#EDE7FF;border-radius:999px;padding:2px 10px;font-size:.8rem;font-weight:800;margin-bottom:6px}
+  .barra-prog{height:10px;background:#EEE;border-radius:999px;overflow:hidden;margin:6px 0 12px}
+  .barra-prog div{height:100%;background:var(--mint);width:0;transition:.3s}
+  /* casillas */
+  .casillas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+  .casilla{width:86px;border:3px solid var(--ink);border-radius:16px;background:#fff;cursor:pointer;padding:10px 0;font-family:'Fredoka',sans-serif;text-align:center}
+  .casilla .vale{display:block;font-size:.85rem;opacity:.7}
+  .casilla .bit{display:block;font-size:2rem}
+  .casilla.on{background:var(--sun)}
+  .meta{font-family:'Fredoka',sans-serif;font-size:1.6rem;text-align:center}
+  .suma-bits{font-family:'JetBrains Mono',monospace;text-align:center;font-size:1.1rem;margin:6px 0}
+  /* burbuja */
+  .barras{display:flex;align-items:flex-end;justify-content:center;gap:0;height:250px;margin:14px 0 4px}
+  .col-swap{display:flex;align-items:flex-end;height:100%;padding:0 4px}
+  .col-barra{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+  .barra{width:54px;background:var(--sky);border:3px solid var(--ink);border-radius:10px 10px 4px 4px;display:flex;align-items:flex-start;justify-content:center;font-family:'Fredoka',sans-serif;font-size:1.05rem;padding-top:4px;transition:height .3s,background .3s}
+  .barra.comp{background:var(--sun)} .barra.ok{background:var(--mint)}
+  .swap{width:34px;height:34px;border-radius:50%;border:2px solid var(--ink);background:#fff;cursor:pointer;font-size:1rem;margin-bottom:2px}
+  @media (max-width:600px){.barra{width:38px;font-size:.85rem}.swap{width:26px;height:26px;font-size:.8rem}.col-swap{padding:0 2px}}
+  .swap:hover:not(:disabled){background:var(--sun)}
+  .fila-swaps{display:flex;justify-content:center;gap:4px}
+  .narracion{text-align:center;font-weight:700;min-height:1.6em}
+  /* simulacro */
+  .resultado-sim{font-family:'Fredoka',sans-serif;font-size:1.8rem;text-align:center}
+  .revision li{margin:10px 0;padding:10px;border-radius:12px;background:#FFFDF8;border:2px solid #F3EADB}
+  .revision pre{background:#10131A;color:#E9F5DB;border-radius:8px;padding:8px;white-space:pre-wrap}
+  .codigo-j{background:#2B2D42;color:#fff;font-family:'JetBrains Mono',monospace;border-radius:14px;padding:14px 16px;white-space:pre;overflow-x:auto;font-size:1rem}
+  .video-hueco{border:3px dashed #C9BFAE;border-radius:16px;padding:22px;text-align:center;background:#FFFDF8}
+  .indice-sec{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:16px 0 4px;padding:10px 14px;background:#FFFDF8;border:2px solid #F3EADB;border-radius:14px}
+  .indice-sec a{background:var(--ink);color:#fff;text-decoration:none;border-radius:999px;padding:4px 12px;font-weight:700;font-size:.9rem}
+  .tab.tema.bloq{opacity:.45}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag" style="background:var(--grape)">Fundamentos de Programación</span>
+    <h1><span class="c1">Semana 6.</span> <span class="c2">Repaso del módulo 3</span> y <span class="c3">funciones</span></h1>
+    <div class="badges">
+      <span class="badge">📚 Semana 6</span>
+      <span class="badge">🎮 Repaso con juegos</span>
+      <span class="badge">🧩 Funciones</span>
+      <span class="badge">📨 return y alcance</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="temas">
+  <span class="tag" style="background:var(--sky)">Sesiones</span>
+  <h2 class="title">Sesiones de la semana 6</h2>
+  <p class="sub">Elige la sesión en las pestañas. Las pestañas con 🔒 se abren el día de su clase.</p>
+  <div class="tabs tabs-temas" role="tablist">
+    <button class="tab tema active" type="button" role="tab" data-tab="repaso" style="--c:var(--grape)"><span class="t-num">SESIÓN 1</span><span class="t-nom">🎮 Repaso del módulo 3</span><span class="t-ej">Diagramas y juegos</span></button>
+    <button class="tab tema" type="button" role="tab" data-tab="funciones" style="--c:var(--sky)"><span class="t-num">SESIÓN 2</span><span class="t-nom">🧩 Funciones</span><span class="t-ej">def, parámetros y argumentos</span></button>
+    <button class="tab tema" type="button" role="tab" data-tab="return" style="--c:var(--orange)"><span class="t-num">SESIÓN 3</span><span class="t-nom">📨 return y alcance</span><span class="t-ej">Devolver resultados</span></button>
+  </div>
+</section>
+
+<div class="tab-panel" data-panel="repaso" role="tabpanel">
+  <div class="day-head" style="background:var(--grape);margin-top:26px">
+    <h2>🎮 Repaso del módulo 3</h2>
+    <p>Todo lo que vimos, en dibujos y juegos. Practica aquí antes de la certificación.</p>
+    <div class="topics"><span>🔀 if</span><span>🔁 Ciclos</span><span>🤝 and / or / not</span><span>⚙️ Bits</span><span>📦 Listas</span><span>🫧 Burbuja</span></div>
+  </div>
+  <nav class="indice-sec"><b>En esta sesión:</b> <a href="#r-decisiones">🔀 Decisiones</a> <a href="#r-ciclos">🔁 Ciclos</a> <a href="#r-listas">📦 Listas</a> <a href="#r-videos">🎬 Videos</a> <a href="#j-imprime">🎮 ¿Qué imprime?</a> <a href="#j-casillas">🎮 Enciende las casillas</a> <a href="#j-burbuja">🎮 Ordena a mano</a> <a href="#j-simulacro">📝 Simulacro</a></nav>
+
+  <section id="r-decisiones">
+    <div class="card">
+      <h3>🔀 Decisiones: if, elif y else</h3>
+      <p>El programa hace una <b>pregunta</b> (rombo) y, según la respuesta, toma un camino. Python revisa de arriba hacia abajo y entra <b>solo a la primera</b> condición que sea True.</p>
+      <div class="leyenda"><span>⬭ Inicio y fin</span><span>▱ Paralelogramo: input</span><span>▭ Rectángulo: print y procesos</span><span>◇ Rombo: condición</span><span><b style="color:#1E8E3E">Sí</b> a la izquierda · <b style="color:#C62828">No</b> a la derecha</span></div>
+      <p style="text-align:center"><b>Ejemplo:</b> una tienda da envío gratis desde $2000 y 50% de descuento en el envío desde $1000.</p>
+      <svg class="diagrama" viewBox="0 0 760 545" role="img" aria-label="Diagrama de flujo de if, elif y else"><defs><marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="fd-punta"/></marker></defs>
+<ellipse class="fd-ini" cx="380" cy="30" rx="60" ry="22"/><text x="380" y="35" text-anchor="middle" font-weight="700">Inicio</text>
+<polyline class="fd-linea" points="380,52 380,72" marker-end="url(#fl)"/>
+<polygon class="fd-in" points="279.0,73.0 509.0,73.0 481.0,117.0 251.0,117.0"/><text x="380" y="100" text-anchor="middle">Leer total_compra</text>
+<polyline class="fd-linea" points="380,117 380,146" marker-end="url(#fl)"/>
+<polygon class="fd-rombo" points="380,146.0 505.0,190 380,234.0 255.0,190"/><text x="380" y="195" text-anchor="middle">total_compra &gt;= 2000</text>
+<polyline class="fd-linea" points="255,190 225,190" marker-end="url(#fl)"/><text class="fd-si" x="240" y="180" text-anchor="middle">Sí</text>
+<rect class="fd-proc" x="35.0" y="166.0" width="190" height="48" rx="6"/><text x="130" y="195" text-anchor="middle">print(&quot;Envío gratis&quot;)</text>
+<polyline class="fd-linea" points="505,190 600,190 600,258" marker-end="url(#fl)"/><text class="fd-no" x="530" y="180" text-anchor="middle">No</text>
+<polygon class="fd-rombo" points="600,258.0 720.0,302 600,346.0 480.0,302"/><text x="600" y="307" text-anchor="middle">total_compra &gt;= 1000</text>
+<polyline class="fd-linea" points="480,302 465,302" marker-end="url(#fl)"/><text class="fd-si" x="474" y="292" text-anchor="middle">Sí</text>
+<rect class="fd-proc" x="275.0" y="278.0" width="190" height="48" rx="6"/><text x="370" y="307" text-anchor="middle">print(&quot;Envío 50%&quot;)</text>
+<polyline class="fd-linea" points="720,302 745,302 745,400 735,400" marker-end="url(#fl)"/><text class="fd-no" x="735" y="292" text-anchor="middle">No</text>
+<rect class="fd-proc" x="545.0" y="376.0" width="190" height="48" rx="6"/><text x="640" y="405" text-anchor="middle">print(&quot;Envío normal&quot;)</text>
+<polyline class="fd-linea" points="130,214 130,475 380,475" /><polyline class="fd-linea" points="370,326 370,475" /><polyline class="fd-linea" points="640,424 640,475 380,475" />
+<polyline class="fd-linea" points="380,475 380,498" marker-end="url(#fl)"/>
+<ellipse class="fd-ini" cx="380" cy="520" rx="60" ry="22"/><text x="380" y="525" text-anchor="middle" font-weight="700">Fin</text>
+</svg>
+      <div class="dos-col">
+        <div class="mini"><h4>🤝 and · 🔀 or · 🔄 not</h4><p><b>and:</b> pide <b>todas</b> (factura <b>y</b> pedimento).<br><b>or:</b> con <b>una</b> basta (tarjeta <b>o</b> transferencia).<br><b>not:</b> invierte (si <b>no</b> hay pedimento...).<br><b>Prioridad:</b> not → and → or. Los paréntesis van primero.</p></div>
+        <div class="mini"><h4>⚠️ Trampas del examen</h4><p><code class="in">=</code> guarda; <code class="in">==</code> pregunta.<br><code class="in">1000 &gt; 1000</code> es False (es igual, no mayor).<br>Cada lado del or es una pregunta completa: <code class="in">pais == "EU" or pais == "CANADA"</code>.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="r-ciclos">
+    <div class="card">
+      <h3>🔁 Ciclos: while y for</h3>
+      <div class="dos-col">
+        <div>
+          <p><b>while</b> repite <b>mientras</b> la condición sea True. Fíjate en la flecha <b style="color:#6B4FBB">Repite</b>: después de restar una caja, el programa <b>vuelve a preguntar</b>.</p>
+          <svg class="diagrama" viewBox="0 0 620 420" role="img" aria-label="Diagrama de flujo de while"><defs><marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="fd-punta"/></marker></defs>
+<ellipse class="fd-ini" cx="330" cy="30" rx="60" ry="22"/><text x="330" y="35" text-anchor="middle" font-weight="700">Inicio</text>
+<polyline class="fd-linea" points="330,52 330,72" marker-end="url(#fl)"/>
+<rect class="fd-proc" x="245.0" y="73.0" width="170" height="44" rx="6"/><text x="330" y="100" text-anchor="middle">cajas = 3</text>
+<polyline class="fd-linea" points="330,117 330,151" marker-end="url(#fl)"/>
+<polygon class="fd-rombo" points="330,151.0 430.0,195 330,239.0 230.0,195"/><text x="330" y="200" text-anchor="middle">cajas &gt; 0</text>
+<polyline class="fd-linea" points="230,195 150,195 150,246" marker-end="url(#fl)"/><text class="fd-si" x="205" y="185" text-anchor="middle">Sí</text>
+<rect class="fd-proc" x="45.0" y="246.0" width="210" height="48" rx="6"/><text x="150" y="275" text-anchor="middle">print(&quot;Cargando caja&quot;)</text>
+<polyline class="fd-linea" points="150,294 150,326" marker-end="url(#fl)"/>
+<rect class="fd-proc" x="45.0" y="326.0" width="210" height="48" rx="6"/><text x="150" y="355" text-anchor="middle">cajas = cajas - 1</text>
+<polyline class="fd-linea" points="45,350 20,350 20,135 330,135" /><text class="fd-rep" x="60" y="128" text-anchor="middle">Repite</text>
+<polyline class="fd-linea" points="430,195 510,195 510,266" marker-end="url(#fl)"/><text class="fd-no" x="455" y="185" text-anchor="middle">No</text>
+<rect class="fd-proc" x="410.0" y="266.0" width="200" height="48" rx="6"/><text x="510" y="295" text-anchor="middle">print(&quot;¡Camión listo!&quot;)</text>
+<polyline class="fd-linea" points="510,314 510,346" marker-end="url(#fl)"/>
+<ellipse class="fd-ini" cx="510" cy="368" rx="60" ry="22"/><text x="510" y="373" text-anchor="middle" font-weight="700">Fin</text>
+</svg>
+        </div>
+        <div>
+          <div class="mini"><h4>🔢 range: el final NO entra</h4>
+            <p><code class="in">range(4)</code> → 0, 1, 2, 3<br><code class="in">range(1, 4)</code> → 1, 2, 3<br><code class="in">range(2, 10, 3)</code> → 2, 5, 8</p></div>
+          <div class="mini" style="margin-top:12px"><h4>🛑 break y ⏭️ continue</h4>
+            <p>Revisando pedidos: <b>P1, P2, CANCELADO, P4</b></p>
+            <p><b>break</b> → se detiene en CANCELADO: revisa P1 y P2.<br><b>continue</b> → se salta CANCELADO: envía P1, P2 y P4.</p></div>
+          <div class="mini" style="margin-top:12px"><h4>⚠️ Ciclo infinito</h4><p>Si en el while olvidas restar las cajas, <code class="in">cajas &gt; 0</code> siempre es True y el ciclo <b>nunca termina</b>.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="r-listas">
+    <div class="card">
+      <h3>📦 Listas y rebanadas</h3>
+      <p>Una lista es una fila de cajas. Cada caja tiene su <b>posición</b> (negro, desde 0) y su <b>posición desde el final</b> (<span style="color:#C62828">rojo, desde -1</span>). Estas son las ventas del semestre:</p>
+      <div class="fila-lista" id="cajas-rebanada"><div class="caja-lista" data-pos="0"><span class="caja-val">120</span><span class="caja-pos">0</span><span class="caja-neg">-6</span></div><div class="caja-lista" data-pos="1"><span class="caja-val">95</span><span class="caja-pos">1</span><span class="caja-neg">-5</span></div><div class="caja-lista" data-pos="2"><span class="caja-val">140</span><span class="caja-pos">2</span><span class="caja-neg">-4</span></div><div class="caja-lista" data-pos="3"><span class="caja-val">160</span><span class="caja-pos">3</span><span class="caja-neg">-3</span></div><div class="caja-lista" data-pos="4"><span class="caja-val">110</span><span class="caja-pos">4</span><span class="caja-neg">-2</span></div><div class="caja-lista" data-pos="5"><span class="caja-val">175</span><span class="caja-pos">5</span><span class="caja-neg">-1</span></div></div>
+      <p style="text-align:center"><b>Prueba una rebanada:</b> escribe el inicio y el fin, y mira qué cajas toma.</p>
+      <div class="controles">
+        <span class="salida-mini">ventas[<input type="number" id="reb-ini" value="1" min="-6" max="6">:<input type="number" id="reb-fin" value="3" min="-6" max="6">]</span>
+        <span>→</span><span class="salida-mini" id="reb-res"></span>
+      </div>
+      <p style="text-align:center;font-size:.92rem">💡 El <b>inicio sí entra</b> y el <b>fin no entra</b>, igual que en range.</p>
+      <div class="dos-col" style="margin-top:12px">
+        <div class="mini"><h4>🧰 Lo básico</h4><p><code class="in">append</code> agrega al final · <code class="in">insert(pos, x)</code> agrega en una posición · <code class="in">del lista[pos]</code> borra · <code class="in">len</code> cuenta · <code class="in">x in lista</code> pregunta si está.</p></div>
+        <div class="mini"><h4>📄 Copias</h4><p><code class="in">mismo = precios</code> es el <b>mismo</b> Google Doc compartido.<br><code class="in">copia = precios[:]</code> es una <b>copia descargada</b>.</p></div>
+        <div class="mini"><h4>🫧 Ordenar</h4><p><code class="in">sort()</code> ordena de menor a mayor. <code class="in">reverse()</code> <b>solo voltea</b>, no ordena. La burbuja compara vecinos y los intercambia: pruébala en el juego <b>Ordena a mano</b>.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="r-videos">
+    <div class="card">
+      <h3>🎬 Videos</h3>
+      <div class="dos-col">
+        <div class="video-hueco"><p>🎬 <b>Video: Dr. Strange</b> (while)</p><p style="font-size:.9rem">Espacio para el video.</p></div>
+        <div class="video-hueco"><p>🎬 <b>Video de películas</b> (ciclos)</p><p style="font-size:.9rem">Espacio para el video.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== JUEGO 1 ===== -->
+  <section id="j-imprime" class="juego">
+    <div class="juego-head"><h3>🎮 ¿Qué imprime?</h3><div class="marcador"><span id="qi-preg">Pregunta 1 de 10</span><span id="qi-pts">⭐ 0 puntos</span><span id="qi-racha">🔥 Racha 0</span><span id="qi-record">🏆 Récord 0</span></div></div>
+    <p>Lee el código y elige qué sale en pantalla. <b>+10</b> por acierto y <b>+5 extra</b> desde la tercera respuesta seguida.</p>
+    <div class="barra-prog"><div id="qi-barra"></div></div>
+    <div id="qi-zona"></div>
+  </section>
+
+  <!-- ===== JUEGO 2 ===== -->
+  <section id="j-casillas" class="juego">
+    <div class="juego-head"><h3>🎮 Enciende las casillas</h3><div class="marcador"><span id="ca-aciertos">✅ Aciertos 0</span><span id="ca-record">🏆 Récord 0</span></div></div>
+    <div class="controles"><button class="btn-j" id="ca-modo1" type="button">Modo 1: forma el número</button><button class="btn-j sec" id="ca-modo2" type="button">Modo 2: lee el binario</button></div>
+    <div id="ca-zona"></div>
+  </section>
+
+  <!-- ===== JUEGO 3 ===== -->
+  <section id="j-burbuja" class="juego">
+    <div class="juego-head"><h3>🎮 Ordena a mano</h3><div class="marcador"><span id="bu-int">🔄 Intercambios 0</span><span id="bu-min">🎯 Mínimo posible ?</span></div></div>
+    <p>Ordena los precios de <b>menor a mayor</b>. Solo puedes intercambiar <b>vecinos</b> con el botón ⇄, como hace el método burbuja.</p>
+    <div class="barras" id="bu-barras"></div>
+        <p class="narracion" id="bu-msg"></p>
+    <div class="controles"><button class="btn-j sec" id="bu-nuevo" type="button">🎲 Nuevos precios</button><button class="btn-j" id="bu-ver" type="button">▶️ Ver cómo lo hace la burbuja</button><button class="btn-j sec" id="bu-paso" type="button" hidden>Siguiente paso</button><button class="btn-j sec" id="bu-auto" type="button" hidden>⏩ Automático</button></div>
+  </section>
+
+  <!-- ===== JUEGO 4 ===== -->
+  <section id="j-simulacro" class="juego">
+    <div class="juego-head"><h3>📝 Simulacro de examen</h3><div class="marcador"><span id="si-preg">10 preguntas</span><span id="si-tiempo">⏱️ 0:00</span></div></div>
+    <p>10 preguntas al azar de todo el módulo 3. No verás si acertaste hasta el final, como en la certificación. Al terminar, <b>toma captura de tu resultado</b>.</p>
+    <div id="si-zona"><div class="controles"><button class="btn-j" id="si-iniciar" type="button">▶️ Empezar simulacro</button></div></div>
+  </section>
+</div>
+
+<div class="tab-panel" data-panel="funciones" role="tabpanel" hidden>
+  <div class="lock-msg card" style="text-align:center;margin-top:26px">
+    <p style="font-size:1.25rem">🔒 <b>Esta sesión se abre el jueves 19 de noviembre a las 7:00 a. m.</b></p>
+  </div>
+  <div class="panel-content">
+  <div class="day-head" style="background:var(--sky);margin-top:26px"><h2>🧩 Funciones</h2><p>Qué es una función, cómo se crea con def, parámetros y argumentos.</p></div>
+  <div class="card" style="text-align:center"><p style="font-size:1.15rem">🛠️ <b>Próximamente.</b> La explicación se publica el día de la clase.</p></div>
+  </div>
+</div>
+
+<div class="tab-panel" data-panel="return" role="tabpanel" hidden>
+  <div class="lock-msg card" style="text-align:center;margin-top:26px">
+    <p style="font-size:1.25rem">🔒 <b>Esta sesión se abre el viernes 20 de noviembre a las 7:00 a. m.</b></p>
+  </div>
+  <div class="panel-content">
+  <div class="day-head" style="background:var(--orange);margin-top:26px"><h2>📨 return y alcance</h2><p>Devolver resultados y variables locales y globales.</p></div>
+  <div class="card" style="text-align:center"><p style="font-size:1.15rem">🛠️ <b>Próximamente.</b> La explicación se publica el día de la clase.</p></div>
+  </div>
+</div>
+
+</main>
+
+<footer>Fundamentos de Programación · Python Fundamentals · Semana 6</footer>
+
+<script src="menu.js"></script>
+<script>
+  // ===== FECHAS EN QUE SE ABREN LAS PESTAÑAS (año-mes-díaThora:minutos) =====
+  const DESBLOQUEO = { funciones: "2026-11-19T07:00", return: "2026-11-20T07:00" };
+  const bloqueada = n => DESBLOQUEO[n] ? new Date() < new Date(DESBLOQUEO[n]) : false;
+  const tabs = document.querySelectorAll(".tabs .tab");
+  const panels = document.querySelectorAll(".tab-panel");
+  tabs.forEach(t => { if (bloqueada(t.dataset.tab)) { t.classList.add("bloq"); const n = t.querySelector(".t-nom"); n.textContent = "🔒 " + n.textContent; } });
+  panels.forEach(p => { const m = p.querySelector(".lock-msg"), c = p.querySelector(".panel-content"); if (m && c) { const b = bloqueada(p.dataset.panel); m.hidden = !b; c.hidden = b; } });
+  function mostrar(nombre) {
+    tabs.forEach(t => { const a = t.dataset.tab === nombre; t.classList.toggle("active", a); t.setAttribute("aria-selected", a); });
+    panels.forEach(p => { p.hidden = p.dataset.panel !== nombre; });
+  }
+  tabs.forEach(t => t.addEventListener("click", () => mostrar(t.dataset.tab)));
+
+  // ===== utilidades =====
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  const barajar = a => { const b = a.slice(); for (let k = b.length - 1; k > 0; k--) { const r = Math.floor(Math.random() * (k + 1)); [b[k], b[r]] = [b[r], b[k]]; } return b; };
+  const leer = (c, d) => { try { return JSON.parse(localStorage.getItem(c)) ?? d; } catch (e) { return d; } };
+  const guardar = (c, v) => { try { localStorage.setItem(c, JSON.stringify(v)); } catch (e) {} };
+  const BANCO = [{"tipo": "codigo", "tema": "Comparaciones", "codigo": "stock = 15\nprint(stock > 10 and stock < 20)", "opciones": ["True", "False", "15", "Error"], "correcta": "True", "explicacion": "15 es mayor que 10 Y menor que 20: las dos son True, así que and da True."}, {"tipo": "codigo", "tema": "if / elif / else", "codigo": "total_compra = 1500\nif total_compra >= 2000:\n    print(\"Envío gratis\")\nelif total_compra >= 1000:\n    print(\"Envío con descuento\")\nelse:\n    print(\"Envío normal\")", "opciones": ["Envío gratis", "Envío con descuento", "Envío normal", "Envío con descuento\nEnvío normal"], "correcta": "Envío con descuento", "explicacion": "1500 no llega a 2000, pero sí es mayor o igual a 1000. Python entra solo a la primera condición True."}, {"tipo": "codigo", "tema": "if / elif / else", "codigo": "kilos = 1000\nif kilos > 1000:\n    print(\"Cargo especial\")\nelse:\n    print(\"Sin cargo\")", "opciones": ["Cargo especial", "Sin cargo", "1000", "Error"], "correcta": "Sin cargo", "explicacion": "1000 > 1000 es False (es igual, no mayor). Por eso entra al else."}, {"tipo": "codigo", "tema": "while", "codigo": "cajas = 3\nwhile cajas > 0:\n    cajas = cajas - 1\nprint(cajas)", "opciones": ["0", "1", "3", "-1"], "correcta": "0", "explicacion": "El ciclo resta hasta que cajas > 0 es False, o sea cuando cajas vale 0."}, {"tipo": "codigo", "tema": "while", "codigo": "contador = 0\nwhile contador < 10:\n    contador = contador + 4\nprint(contador)", "opciones": ["12", "10", "8", "4"], "correcta": "12", "explicacion": "Vale 0, 4, 8 y 12. Cuando llega a 12, 12 < 10 es False y el ciclo termina."}, {"tipo": "codigo", "tema": "for y range", "codigo": "for semana in range(1, 4):\n    print(semana)", "opciones": ["1\n2\n3", "0\n1\n2\n3", "1\n2\n3\n4", "1\n4"], "correcta": "1\n2\n3", "explicacion": "range(1, 4) empieza en 1 y termina ANTES del 4: da 1, 2 y 3."}, {"tipo": "codigo", "tema": "for y range", "codigo": "print(list(range(2, 10, 3)))", "opciones": ["[2, 5, 8]", "[2, 5, 8, 11]", "[2, 3, 4]", "[3, 6, 9]"], "correcta": "[2, 5, 8]", "explicacion": "Empieza en 2 y va de 3 en 3: 2, 5, 8. El 11 ya pasa del 10."}, {"tipo": "codigo", "tema": "for y range", "codigo": "total = 0\nfor venta in [10, 20, 30]:\n    total = total + venta\nprint(total)", "opciones": ["60", "30", "10", "0"], "correcta": "60", "explicacion": "En cada vuelta se suma una venta: 10 + 20 + 30 = 60."}, {"tipo": "codigo", "tema": "break y continue", "codigo": "pedidos = [\"P1\", \"P2\", \"CANCELADO\", \"P4\"]\nrevisados = 0\nfor pedido in pedidos:\n    if pedido == \"CANCELADO\":\n        break\n    revisados = revisados + 1\nprint(revisados)", "opciones": ["2", "3", "4", "1"], "correcta": "2", "explicacion": "break detiene el ciclo al llegar a CANCELADO. Solo se revisaron P1 y P2."}, {"tipo": "codigo", "tema": "break y continue", "codigo": "pedidos = [\"P1\", \"P2\", \"CANCELADO\", \"P4\"]\nenviados = 0\nfor pedido in pedidos:\n    if pedido == \"CANCELADO\":\n        continue\n    enviados = enviados + 1\nprint(enviados)", "opciones": ["3", "2", "4", "1"], "correcta": "3", "explicacion": "continue se salta solo la vuelta de CANCELADO y sigue con P4: se envían 3."}, {"tipo": "codigo", "tema": "and / or / not", "codigo": "factura = True\npedimento = False\nprint(factura and pedimento)", "opciones": ["False", "True", "None", "Error"], "correcta": "False", "explicacion": "and pide que TODAS sean True. pedimento es False."}, {"tipo": "codigo", "tema": "and / or / not", "codigo": "carta_credito = False\ntransferencia = True\nprint(carta_credito or transferencia)", "opciones": ["True", "False", "None", "Error"], "correcta": "True", "explicacion": "or se conforma con UNA True."}, {"tipo": "codigo", "tema": "and / or / not", "codigo": "print(True or False and False)", "opciones": ["True", "False", "None", "Error"], "correcta": "True", "explicacion": "and va primero: False and False = False. Luego True or False = True."}, {"tipo": "codigo", "tema": "and / or / not", "codigo": "print(not True or False)", "opciones": ["False", "True", "None", "Error"], "correcta": "False", "explicacion": "not va primero: not True = False. Luego False or False = False."}, {"tipo": "codigo", "tema": "Bit a bit", "codigo": "print(5 & 3)", "opciones": ["1", "7", "6", "8"], "correcta": "1", "explicacion": "0101 & 0011 = 0001. Solo la última casilla tiene 1 en los dos."}, {"tipo": "codigo", "tema": "Bit a bit", "codigo": "print(5 | 2)", "opciones": ["7", "3", "0", "10"], "correcta": "7", "explicacion": "0101 | 0010 = 0111 = 4 + 2 + 1 = 7."}, {"tipo": "codigo", "tema": "Bit a bit", "codigo": "print(6 ^ 3)", "opciones": ["5", "7", "2", "9"], "correcta": "5", "explicacion": "0110 ^ 0011 = 0101 = 5. Queda 1 donde los bits son diferentes."}, {"tipo": "codigo", "tema": "Bit a bit", "codigo": "print(~4)", "opciones": ["-5", "-4", "3", "5"], "correcta": "-5", "explicacion": "~x siempre da -(x + 1). ~4 = -5."}, {"tipo": "codigo", "tema": "Bit a bit", "codigo": "print(3 << 2)", "opciones": ["12", "6", "5", "1"], "correcta": "12", "explicacion": "Correr 2 lugares a la izquierda es multiplicar por 2 dos veces: 3 × 2 × 2 = 12."}, {"tipo": "codigo", "tema": "Listas", "codigo": "productos = [\"Café\", \"Miel\", \"Cacao\"]\nprint(productos[-1])", "opciones": ["Cacao", "Café", "Miel", "Error"], "correcta": "Cacao", "explicacion": "-1 siempre es el último elemento."}, {"tipo": "codigo", "tema": "Listas", "codigo": "productos = [\"Café\", \"Miel\", \"Cacao\"]\nproductos.append(\"Vainilla\")\nprint(len(productos))", "opciones": ["4", "3", "5", "1"], "correcta": "4", "explicacion": "append agrega uno al final: ahora hay 4."}, {"tipo": "codigo", "tema": "Listas", "codigo": "productos = [\"Café\", \"Miel\", \"Cacao\"]\nproductos.insert(0, \"Tequila\")\nprint(productos[1])", "opciones": ["Café", "Tequila", "Miel", "Cacao"], "correcta": "Café", "explicacion": "Tequila entró en la posición 0 y todo se recorrió: Café quedó en la 1."}, {"tipo": "codigo", "tema": "Listas", "codigo": "precio_a = 100\nprecio_b = 250\nprecio_a, precio_b = precio_b, precio_a\nprint(precio_a)", "opciones": ["250", "100", "350", "Error"], "correcta": "250", "explicacion": "Esta línea intercambia los valores: precio_a se queda con 250."}, {"tipo": "codigo", "tema": "Ordenamiento", "codigo": "ventas = [160, 95, 140, 120]\nventas.sort()\nventas.reverse()\nprint(ventas[0])", "opciones": ["160", "95", "120", "140"], "correcta": "160", "explicacion": "sort ordena de menor a mayor y reverse la voltea: queda de mayor a menor."}, {"tipo": "codigo", "tema": "Ordenamiento", "codigo": "ventas = [160, 95, 140]\nventas.reverse()\nprint(ventas)", "opciones": ["[140, 95, 160]", "[95, 140, 160]", "[160, 140, 95]", "[160, 95, 140]"], "correcta": "[140, 95, 160]", "explicacion": "reverse NO ordena: solo voltea la lista como esté."}, {"tipo": "codigo", "tema": "Operaciones con listas", "codigo": "ventas = [120, 95, 140, 160]\nprint(ventas[1:3])", "opciones": ["[95, 140]", "[120, 95, 140]", "[95, 140, 160]", "[140, 160]"], "correcta": "[95, 140]", "explicacion": "Toma las posiciones 1 y 2. La 3 (el fin) no entra."}, {"tipo": "codigo", "tema": "Operaciones con listas", "codigo": "ventas = [120, 95, 140, 160]\nprint(ventas[-2:])", "opciones": ["[140, 160]", "[160]", "[120, 95]", "[95, 140, 160]"], "correcta": "[140, 160]", "explicacion": "-2: significa desde el penúltimo hasta el final."}, {"tipo": "codigo", "tema": "Operaciones con listas", "codigo": "paises = [\"MEXICO\", \"CANADA\"]\nprint(\"CHINA\" in paises)", "opciones": ["False", "True", "None", "Error"], "correcta": "False", "explicacion": "CHINA no está en la lista."}, {"tipo": "codigo", "tema": "Operaciones con listas", "codigo": "precios = [100, 250]\nmismo = precios\nmismo[0] = 50\nprint(precios)", "opciones": ["[50, 250]", "[100, 250]", "[50, 100, 250]", "Error"], "correcta": "[50, 250]", "explicacion": "Con = no se copia: mismo y precios son la MISMA lista. Para copiar se usa precios[:]."}, {"tipo": "codigo", "tema": "Operaciones con listas", "codigo": "precios = [100, 250]\ncopia = precios[:]\ncopia[0] = 50\nprint(precios)", "opciones": ["[100, 250]", "[50, 250]", "[50, 100, 250]", "Error"], "correcta": "[100, 250]", "explicacion": "[:] crea una copia nueva: cambiar la copia no afecta a precios."}, {"tipo": "concepto", "tema": "Comparaciones", "pregunta": "¿Qué operador PREGUNTA si dos valores son iguales?", "opciones": ["==", "=", "!=", "==="], "correcta": "==", "explicacion": "== pregunta; = guarda un valor."}, {"tipo": "concepto", "tema": "if / elif / else", "pregunta": "Si varias condiciones de un if/elif son True, ¿a cuál entra Python?", "opciones": ["Solo a la primera que sea True", "A todas las que sean True", "A la última que sea True", "A ninguna"], "correcta": "Solo a la primera que sea True", "explicacion": "Python revisa de arriba hacia abajo y entra solo a la primera True."}, {"tipo": "concepto", "tema": "while", "pregunta": "¿Qué pasa si la condición de un while nunca se vuelve False?", "opciones": ["Es un ciclo infinito", "Python lo detiene solo", "Marca error de sintaxis", "Se repite una vez"], "correcta": "Es un ciclo infinito", "explicacion": "Si la condición nunca cambia, el ciclo nunca termina."}, {"tipo": "concepto", "tema": "for y range", "pregunta": "¿Cuántas vueltas da for semana in range(5)?", "opciones": ["5", "4", "6", "0"], "correcta": "5", "explicacion": "range(5) da 0, 1, 2, 3 y 4: cinco números."}, {"tipo": "concepto", "tema": "break y continue", "pregunta": "¿Qué hace break dentro de un ciclo?", "opciones": ["Termina el ciclo por completo", "Se salta solo esa vuelta", "Reinicia el ciclo", "Termina el programa"], "correcta": "Termina el ciclo por completo", "explicacion": "break sale del ciclo; continue se salta la vuelta."}, {"tipo": "concepto", "tema": "and / or / not", "pregunta": "¿Qué se resuelve primero en una condición sin paréntesis?", "opciones": ["not", "and", "or", "Lo que esté a la izquierda"], "correcta": "not", "explicacion": "Orden: not, luego and, luego or."}, {"tipo": "concepto", "tema": "Bit a bit", "pregunta": "¿Cuánto vale el número binario 1011?", "opciones": ["11", "13", "1011", "7"], "correcta": "11", "explicacion": "8 + 0 + 2 + 1 = 11."}, {"tipo": "concepto", "tema": "Bit a bit", "pregunta": "¿Por qué las casillas de 4 bits valen 8 · 4 · 2 · 1?", "opciones": ["Porque cada posición vale el doble de la de su derecha", "Porque son los números pares", "Porque así lo decide el programador", "Porque son potencias de 10"], "correcta": "Porque cada posición vale el doble de la de su derecha", "explicacion": "En binario hay 2 dígitos, así que cada posición vale el doble."}, {"tipo": "concepto", "tema": "Listas", "pregunta": "Una lista tiene 3 elementos. ¿Qué pasa con productos[3]?", "opciones": ["IndexError", "Da el último elemento", "Da None", "Agrega un elemento"], "correcta": "IndexError", "explicacion": "Las posiciones son 0, 1 y 2. La 3 no existe."}, {"tipo": "concepto", "tema": "Ordenamiento", "pregunta": "¿Qué hace el método burbuja en cada paso?", "opciones": ["Compara dos vecinos y los intercambia si están en desorden", "Busca el mayor y lo borra", "Voltea la lista", "Copia la lista ordenada"], "correcta": "Compara dos vecinos y los intercambia si están en desorden", "explicacion": "Compara pares de vecinos; los grandes suben al final como burbujas."}, {"tipo": "concepto", "tema": "Operaciones con listas", "pregunta": "¿Cómo se hace una copia REAL de la lista precios?", "opciones": ["copia = precios[:]", "copia = precios", "copia == precios", "copia = precios[0]"], "correcta": "copia = precios[:]", "explicacion": "[:] crea una lista nueva; = solo le pone otro nombre."}, {"tipo": "concepto", "tema": "Operaciones con listas", "pregunta": "¿Qué diferencia hay entre del lista[:] y del lista?", "opciones": ["La primera la vacía; la segunda borra la variable", "Son iguales", "La primera borra la variable; la segunda la vacía", "Ninguna funciona"], "correcta": "La primera la vacía; la segunda borra la variable", "explicacion": "del lista[:] deja la lista vacía; del lista la elimina."}];
+
+  // ===== rebanadas =====
+  function rebanar() {
+    const ini = parseInt($("reb-ini").value), fin = parseInt($("reb-fin").value);
+    const n = 6, norm = x => isNaN(x) ? null : Math.max(0, Math.min(n, x < 0 ? n + x : x));
+    const a = norm(ini), b = norm(fin), tomadas = [];
+    document.querySelectorAll("#cajas-rebanada .caja-lista").forEach((c, pos) => {
+      const dentro = a !== null && b !== null && pos >= a && pos < b;
+      c.classList.toggle("sel", dentro);
+      if (dentro) tomadas.push(c.querySelector(".caja-val").textContent);
+    });
+    $("reb-res").textContent = "[" + tomadas.join(", ") + "]";
+  }
+  $("reb-ini").addEventListener("input", rebanar); $("reb-fin").addEventListener("input", rebanar); rebanar();
+
+  // ===== JUEGO 1: ¿Qué imprime? =====
+  const qi = { lista: [], n: 0, pts: 0, racha: 0, record: leer("s6_qi_record", 0) };
+  $("qi-record").textContent = "🏆 Récord " + qi.record;
+  function qiNueva() {
+    qi.lista = barajar(BANCO.filter(p => p.tipo === "codigo")).slice(0, 10); qi.n = 0; qi.pts = 0; qi.racha = 0; qiMostrar();
+  }
+  function qiMarcador() {
+    $("qi-preg").textContent = "Pregunta " + Math.min(qi.n + 1, 10) + " de 10";
+    $("qi-pts").textContent = "⭐ " + qi.pts + " puntos"; $("qi-racha").textContent = "🔥 Racha " + qi.racha;
+    $("qi-barra").style.width = (qi.n * 10) + "%";
+  }
+  function qiMostrar() {
+    qiMarcador();
+    if (qi.n >= 10) {
+      if (qi.pts > qi.record) { qi.record = qi.pts; guardar("s6_qi_record", qi.record); $("qi-record").textContent = "🏆 Récord " + qi.record; }
+      $("qi-zona").innerHTML = '<p class="resultado-sim">🎉 Terminaste con ' + qi.pts + ' puntos</p><div class="controles"><button class="btn-j" id="qi-otra" type="button">🔁 Jugar otra vez</button></div>';
+      $("qi-otra").onclick = qiNueva; return;
+    }
+    const p = qi.lista[qi.n];
+    $("qi-zona").innerHTML = '<span class="tema-chip">' + esc(p.tema) + '</span><div class="codigo-j">' + esc(p.codigo) + '</div>' +
+      '<div class="opciones">' + barajar(p.opciones).map(o => '<button type="button" class="opcion" data-v="' + esc(o) + '">' + esc(o) + '</button>').join("") + '</div><div id="qi-retro"></div>';
+    document.querySelectorAll("#qi-zona .opcion").forEach(b => b.onclick = () => {
+      const bien = b.dataset.v === p.correcta;
+      document.querySelectorAll("#qi-zona .opcion").forEach(x => { x.disabled = true; if (x.dataset.v === p.correcta) x.classList.add("bien"); });
+      if (!bien) b.classList.add("mal");
+      if (bien) { qi.racha++; qi.pts += 10 + (qi.racha >= 3 ? 5 : 0); } else qi.racha = 0;
+      qi.n++; qiMarcador(); $("qi-preg").textContent = "Pregunta " + qi.n + " de 10";
+      $("qi-retro").innerHTML = '<div class="retro ' + (bien ? "bien" : "mal") + '">' + (bien ? "✅ ¡Correcto! " : "❌ No era esa. ") + esc(p.explicacion) + '</div><div class="controles"><button class="btn-j" id="qi-sig" type="button">' + (qi.n >= 10 ? "Ver resultado" : "Siguiente →") + '</button></div>';
+      $("qi-sig").onclick = qiMostrar;
+    });
+  }
+  qiNueva();
+
+  // ===== JUEGO 2: Enciende las casillas =====
+  const VALORES = [8, 4, 2, 1];
+  const ca = { modo: 1, bits: [0,0,0,0], meta: 0, aciertos: 0, record: leer("s6_ca_record", 0) };
+  $("ca-record").textContent = "🏆 Récord " + ca.record;
+  const nuevoNumero = ant => { let x; do { x = 1 + Math.floor(Math.random() * 15); } while (x === ant); return x; };
+  function caAcierto() {
+    ca.aciertos++; $("ca-aciertos").textContent = "✅ Aciertos " + ca.aciertos;
+    if (ca.aciertos > ca.record) { ca.record = ca.aciertos; guardar("s6_ca_record", ca.record); $("ca-record").textContent = "🏆 Récord " + ca.record; }
+  }
+  function caModo1() {
+    ca.modo = 1; ca.bits = [0,0,0,0]; ca.meta = nuevoNumero(ca.meta);
+    $("ca-modo1").className = "btn-j"; $("ca-modo2").className = "btn-j sec";
+    $("ca-zona").innerHTML = '<p class="meta">Forma el número <b>' + ca.meta + '</b></p><p style="text-align:center">Pica las casillas para prenderlas (1) o apagarlas (0).</p><div class="casillas" id="ca-cas"></div><p class="suma-bits" id="ca-suma"></p><div id="ca-retro"></div>';
+    caPintar();
+  }
+  function caPintar() {
+    $("ca-cas").innerHTML = VALORES.map((v, k) => '<button type="button" class="casilla' + (ca.bits[k] ? " on" : "") + '" data-k="' + k + '"><span class="vale">vale ' + v + '</span><span class="bit">' + ca.bits[k] + '</span></button>').join("");
+    const total = VALORES.reduce((s, v, k) => s + v * ca.bits[k], 0);
+    $("ca-suma").textContent = VALORES.map((v, k) => v * ca.bits[k]).join(" + ") + " = " + total;
+    document.querySelectorAll("#ca-cas .casilla").forEach(b => b.onclick = () => {
+      if (total === ca.meta && $("ca-retro").innerHTML) return;
+      ca.bits[b.dataset.k] = 1 - ca.bits[b.dataset.k]; caPintar();
+    });
+    if (total === ca.meta && !$("ca-retro").innerHTML) {
+      caAcierto();
+      $("ca-retro").innerHTML = '<div class="retro bien">✅ ¡Lo lograste! ' + ca.meta + ' en binario es ' + ca.bits.join("") + '</div><div class="controles"><button class="btn-j" id="ca-sig" type="button">Siguiente número →</button></div>';
+      $("ca-sig").onclick = caModo1;
+    }
+  }
+  function caModo2() {
+    ca.modo = 2; ca.meta = nuevoNumero(ca.meta); const bin = ca.meta.toString(2).padStart(4, "0");
+    $("ca-modo2").className = "btn-j"; $("ca-modo1").className = "btn-j sec";
+    $("ca-zona").innerHTML = '<p class="meta">¿Qué número es <b>' + bin + '</b>?</p><div class="casillas">' + VALORES.map((v, k) => '<div class="casilla' + (bin[k] === "1" ? " on" : "") + '" style="cursor:default"><span class="vale">vale ' + v + '</span><span class="bit">' + bin[k] + '</span></div>').join("") + '</div>' +
+      '<div class="controles"><input type="number" id="ca-resp" min="0" max="15" placeholder="?"><button class="btn-j" id="ca-rev" type="button">Revisar</button></div><div id="ca-retro"></div>';
+    const revisar = () => {
+      const r = parseInt($("ca-resp").value); if (isNaN(r)) return;
+      const suma = VALORES.map((v, k) => bin[k] === "1" ? v : 0).join(" + ");
+      if (r === ca.meta) { caAcierto(); $("ca-retro").innerHTML = '<div class="retro bien">✅ ¡Correcto! ' + suma + ' = ' + ca.meta + '</div><div class="controles"><button class="btn-j" id="ca-sig" type="button">Siguiente →</button></div>'; $("ca-sig").onclick = caModo2; }
+      else $("ca-retro").innerHTML = '<div class="retro mal">❌ Revisa: suma el valor de las casillas que tienen 1. Pista: ' + suma.replace(/\d+/g, "?") + '</div>';
+    };
+    $("ca-rev").onclick = revisar; $("ca-resp").onkeydown = e => { if (e.key === "Enter") revisar(); };
+  }
+  $("ca-modo1").onclick = caModo1; $("ca-modo2").onclick = caModo2; caModo1();
+
+  // ===== JUEGO 3: Ordena a mano =====
+  const bu = { precios: [], original: [], intercambios: 0, anim: null, auto: null };
+  const inversiones = a => { let c = 0; for (let x = 0; x < a.length; x++) for (let y = x + 1; y < a.length; y++) if (a[x] > a[y]) c++; return c; };
+  const ordenada = a => a.every((v, k) => k === 0 || a[k - 1] <= v);
+  function buNuevo() {
+    clearInterval(bu.auto); bu.anim = null;
+    do { const s = new Set(); while (s.size < 6) s.add(10 + Math.floor(Math.random() * 90)); bu.precios = [...s]; } while (ordenada(bu.precios));
+    bu.original = bu.precios.slice(); bu.intercambios = 0;
+    $("bu-min").textContent = "🎯 Mínimo posible " + inversiones(bu.precios);
+    $("bu-paso").hidden = true; $("bu-auto").hidden = true; $("bu-ver").hidden = false;
+    $("bu-msg").textContent = ""; buPintar();
+  }
+  function buPintar(comp, listo) {
+    const max = Math.max(...bu.precios);
+    $("bu-barras").innerHTML = bu.precios.map((v, k) => '<div class="col-barra"><div class="barra' + (comp && comp.includes(k) ? " comp" : "") + (listo && listo.has(k) ? " ok" : "") + '" style="height:' + (40 + 160 * v / max) + 'px">$' + v + '</div></div>' +
+      (k < bu.precios.length - 1 ? '<div class="col-swap">' + (bu.anim ? '<span style="width:34px"></span>' : '<button type="button" class="swap" data-k="' + k + '" title="Intercambiar">⇄</button>') + '</div>' : "")).join("");
+    $("bu-int").textContent = "🔄 Intercambios " + bu.intercambios;
+    document.querySelectorAll("#bu-barras .swap").forEach(b => b.onclick = () => {
+      const k = +b.dataset.k; [bu.precios[k], bu.precios[k + 1]] = [bu.precios[k + 1], bu.precios[k]]; bu.intercambios++; buPintar();
+      if (ordenada(bu.precios)) {
+        const m = inversiones(bu.original);
+        $("bu-msg").textContent = bu.intercambios === m ? "🏆 ¡Perfecto! Lo ordenaste con " + m + " intercambios, igual que la burbuja." : "✅ ¡Ordenado! Usaste " + bu.intercambios + " intercambios; el mínimo era " + m + ".";
+        document.querySelectorAll("#bu-barras .swap").forEach(x => x.disabled = true);
+      } else $("bu-msg").textContent = "";
+    });
+  }
+  function buVer() {
+    bu.precios = bu.original.slice(); bu.intercambios = 0;
+    bu.anim = { pasada: 1, pos: 0, cambio: false, fin: bu.precios.length - 1, listo: new Set() };
+    $("bu-ver").hidden = true; $("bu-paso").hidden = false; $("bu-auto").hidden = false;
+    $("bu-msg").textContent = "Pasada 1: la burbuja compara vecinos de izquierda a derecha."; buPintar();
+  }
+  function buPaso() {
+    const a = bu.anim; if (!a) return;
+    if (a.fin <= 0 || (a.pos === 0 && a.pasada > 1 && !a.cambioPrevio)) { buTerminar(); return; }
+    const p = bu.precios, k = a.pos;
+    let txt = "Pasada " + a.pasada + ": ¿$" + p[k] + " > $" + p[k + 1] + "? ";
+    if (p[k] > p[k + 1]) { [p[k], p[k + 1]] = [p[k + 1], p[k]]; bu.intercambios++; a.cambio = true; txt += "Sí, se intercambian."; }
+    else txt += "No, se quedan igual.";
+    buPintar([k, k + 1], a.listo); $("bu-msg").textContent = txt;
+    a.pos++;
+    if (a.pos >= a.fin) {
+      a.listo.add(a.fin); a.fin--; a.pasada++; a.cambioPrevio = a.cambio;
+      if (!a.cambio) { buTerminar(); return; }
+      a.cambio = false; a.pos = 0;
+    }
+  }
+  function buTerminar() {
+    clearInterval(bu.auto); const todo = new Set(bu.precios.map((_, k) => k));
+    buPintar(null, todo); $("bu-msg").textContent = "🎉 ¡Lista ordenada! La burbuja hizo " + bu.intercambios + " intercambios.";
+    $("bu-paso").hidden = true; $("bu-auto").hidden = true; bu.anim = null;
+    $("bu-ver").hidden = true;
+  }
+  $("bu-nuevo").onclick = buNuevo; $("bu-ver").onclick = buVer; $("bu-paso").onclick = buPaso;
+  $("bu-auto").onclick = () => { clearInterval(bu.auto); bu.auto = setInterval(() => { if (!bu.anim) clearInterval(bu.auto); else buPaso(); }, 900); };
+  buNuevo();
+
+  // ===== JUEGO 4: Simulacro =====
+  const si = { lista: [], n: 0, resp: [], t0: 0, reloj: null };
+  function siTiempo() { const s = Math.floor((Date.now() - si.t0) / 1000); $("si-tiempo").textContent = "⏱️ " + Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); }
+  function siIniciar() {
+    si.lista = barajar(BANCO).slice(0, 10); si.n = 0; si.resp = []; si.t0 = Date.now();
+    clearInterval(si.reloj); si.reloj = setInterval(siTiempo, 1000); siTiempo(); siMostrar();
+  }
+  function siMostrar() {
+    if (si.n >= 10) return siFinal();
+    const p = si.lista[si.n]; $("si-preg").textContent = "Pregunta " + (si.n + 1) + " de 10";
+    const enunciado = p.tipo === "codigo" ? '<p><b>¿Qué imprime este código?</b></p><div class="codigo-j">' + esc(p.codigo) + '</div>' : '<p style="font-size:1.1rem"><b>' + esc(p.pregunta) + '</b></p>';
+    $("si-zona").innerHTML = '<span class="tema-chip">' + esc(p.tema) + '</span>' + enunciado + '<div class="opciones">' + barajar(p.opciones).map(o => '<button type="button" class="opcion' + (p.tipo === "concepto" ? " texto" : "") + '" data-v="' + esc(o) + '">' + esc(o) + '</button>').join("") + '</div>';
+    document.querySelectorAll("#si-zona .opcion").forEach(b => b.onclick = () => { si.resp.push(b.dataset.v); si.n++; siMostrar(); });
+  }
+  function siFinal() {
+    clearInterval(si.reloj); siTiempo();
+    const buenas = si.lista.filter((p, k) => si.resp[k] === p.correcta).length;
+    const fecha = new Date().toLocaleString("es-MX");
+    $("si-preg").textContent = "Terminado";
+    $("si-zona").innerHTML = '<p class="resultado-sim">' + (buenas >= 7 ? "🎉" : "💪") + ' Calificación: ' + (buenas * 10) + ' / 100</p><p style="text-align:center">' + buenas + ' de 10 correctas · ' + $("si-tiempo").textContent + ' · ' + fecha + '</p>' +
+      '<p style="text-align:center">📸 <b>Toma captura de esta pantalla.</b> La calificación aprobatoria de la certificación es 70.</p><div class="controles"><button class="btn-j" id="si-otra" type="button">🔁 Otro simulacro</button></div>' +
+      '<h4>Revisión</h4><ol class="revision">' + si.lista.map((p, k) => {
+        const ok = si.resp[k] === p.correcta;
+        return '<li>' + (ok ? "✅" : "❌") + ' <b>' + esc(p.tema) + '</b><br>' + (p.tipo === "codigo" ? '<pre>' + esc(p.codigo) + '</pre>' : esc(p.pregunta)) +
+          '<br>Tu respuesta: <code class="in">' + esc(si.resp[k]) + '</code>' + (ok ? "" : ' · Correcta: <code class="in">' + esc(p.correcta) + '</code>') + '<br><i>' + esc(p.explicacion) + '</i></li>';
+      }).join("") + '</ol>';
+    $("si-otra").onclick = siIniciar;
+  }
+  $("si-iniciar").onclick = siIniciar;
+</script>
+</body>
+</html>
