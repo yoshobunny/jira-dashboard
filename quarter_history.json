@@ -471,6 +471,13 @@
       "primera_vez": "2026-10-27",
       "ultima_vez": "2026-11-17",
       "status_en_q": "To Do"
+    },
+    "UGSU01-731": {
+      "summary": "698 CCTV Veracruz",
+      "due_date_en_q": "2027-02-26",
+      "primera_vez": "2026-11-17",
+      "ultima_vez": "2026-11-17",
+      "status_en_q": "In Progress"
     }
   },
   "2026-Q4": {
