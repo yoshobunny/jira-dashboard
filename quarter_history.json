@@ -416,7 +416,7 @@
     },
     "UGSU01-169": {
       "summary": "664 Automatización de Software Académico (Adobe)",
-      "due_date_en_q": "2026-11-27",
+      "due_date_en_q": "2026-12-18",
       "primera_vez": "2026-10-22",
       "ultima_vez": "2026-11-20",
       "status_en_q": "In Progress"
@@ -478,6 +478,13 @@
       "primera_vez": "2026-11-17",
       "ultima_vez": "2026-11-20",
       "status_en_q": "In Progress"
+    },
+    "UGSU01-145": {
+      "summary": "638 Biblioteca exterior en campus Ferrería",
+      "due_date_en_q": "2027-04-30",
+      "primera_vez": "2026-11-20",
+      "ultima_vez": "2026-11-20",
+      "status_en_q": "To Do"
     }
   },
   "2026-Q4": {
